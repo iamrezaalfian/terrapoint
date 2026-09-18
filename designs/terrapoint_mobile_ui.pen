@@ -3,7 +3,7 @@
   "children": [
     {
       "type": "frame",
-      "id": "hfNB8",
+      "id": "RaUqs",
       "name": "TerraPoint Mining Safety Amber System (14 Complete Frames)",
       "width": 5800,
       "layout": "horizontal",
@@ -14,7 +14,7 @@
       "children": [
         {
           "type": "frame",
-          "id": "8HnxX",
+          "id": "b3hCW",
           "name": "1. Initial Login (Dark)",
           "width": 360,
           "layout": "vertical",
@@ -25,7 +25,7 @@
           "children": [
             {
               "type": "frame",
-              "id": "GgUvG",
+              "id": "j0GDL",
               "name": "TopArea",
               "width": "fill_container",
               "layout": "vertical",
@@ -36,7 +36,7 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "rZcri",
+                  "id": "SGb3L",
                   "name": "StatusTop",
                   "width": "fill_container",
                   "layout": "horizontal",
@@ -47,7 +47,7 @@
                   "children": [
                     {
                       "type": "frame",
-                      "id": "Xopw4",
+                      "id": "KI3aO",
                       "name": "OnlinePill",
                       "width": "fill_container",
                       "layout": "horizontal",
@@ -58,7 +58,7 @@
                       "children": [
                         {
                           "type": "frame",
-                          "id": "7DVTk",
+                          "id": "AXT3e",
                           "name": "Dot",
                           "width": 8,
                           "layout": "vertical",
@@ -73,33 +73,33 @@
                         },
                         {
                           "type": "text",
-                          "id": "7H0D7",
+                          "id": "bdC0u",
                           "name": "Online Setup",
                           "fill": "#D97706",
                           "content": "Online Setup",
                           "fontFamily": "$--font-mono",
                           "fontSize": 11,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ]
                     },
                     {
                       "type": "text",
-                      "id": "H4dhC",
+                      "id": "Bb1iF",
                       "name": "v4.3",
                       "fill": "#7E8B9F",
                       "content": "v4.3",
                       "fontFamily": "$--font-mono",
                       "fontSize": 11,
                       "fontWeight": "600",
-                      "textAlign": "left"
+                      "textAlign": "center"
                     }
                   ]
                 },
                 {
                   "type": "frame",
-                  "id": "OC4fR",
+                  "id": "onAVV",
                   "name": "BrandArea",
                   "width": "fill_container",
                   "layout": "vertical",
@@ -110,7 +110,7 @@
                   "children": [
                     {
                       "type": "frame",
-                      "id": "9R909",
+                      "id": "ogD9o",
                       "name": "LogoBox",
                       "width": 48,
                       "layout": "vertical",
@@ -121,14 +121,14 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "vz6jE",
+                          "id": "CSQWp",
                           "name": "TP",
                           "fill": "#FFFFFF",
                           "content": "TP",
                           "fontFamily": "$--font-mono",
                           "fontSize": 18,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ],
                       "height": 48,
@@ -137,31 +137,37 @@
                     },
                     {
                       "type": "text",
-                      "id": "Wzyu9",
+                      "id": "SM6oy",
                       "name": "Masuk TerraPoint",
                       "fill": "#F8FAFC",
                       "content": "Masuk TerraPoint",
                       "fontFamily": "$--font-heading",
                       "fontSize": 20,
                       "fontWeight": "bold",
-                      "textAlign": "left"
+                      "textAlign": "left",
+                      "textGrowth": "fixed-width",
+                      "lineHeight": 1.4,
+                      "width": "fill_container"
                     },
                     {
                       "type": "text",
-                      "id": "srKEJ",
+                      "id": "OgKJI",
                       "name": "Hubungkan perangkat deng",
                       "fill": "#7E8B9F",
                       "content": "Hubungkan perangkat dengan akun pengemudi Anda saat berada di area camp.",
                       "fontFamily": "$--font-body",
                       "fontSize": 12,
                       "fontWeight": "normal",
-                      "textAlign": "left"
+                      "textAlign": "left",
+                      "textGrowth": "fixed-width",
+                      "lineHeight": 1.4,
+                      "width": "fill_container"
                     }
                   ]
                 },
                 {
                   "type": "frame",
-                  "id": "MzNbw",
+                  "id": "RZ022",
                   "name": "FormCard",
                   "width": "fill_container",
                   "layout": "vertical",
@@ -172,7 +178,7 @@
                   "children": [
                     {
                       "type": "frame",
-                      "id": "8h2SX",
+                      "id": "Dw68f",
                       "name": "InputGroup1",
                       "width": "fill_container",
                       "layout": "vertical",
@@ -183,18 +189,21 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "4dSpM",
+                          "id": "QYqru",
                           "name": "Nomor ID Pengemudi",
                           "fill": "#F8FAFC",
                           "content": "Nomor ID Pengemudi",
                           "fontFamily": "$--font-body",
                           "fontSize": 12,
                           "fontWeight": "600",
-                          "textAlign": "left"
+                          "textAlign": "left",
+                          "textGrowth": "fixed-width",
+                          "lineHeight": 1.4,
+                          "width": "fill_container"
                         },
                         {
                           "type": "frame",
-                          "id": "IZym2",
+                          "id": "20LS1",
                           "name": "Field1",
                           "width": "fill_container",
                           "layout": "horizontal",
@@ -208,14 +217,14 @@
                           "children": [
                             {
                               "type": "text",
-                              "id": "mpYJy",
+                              "id": "tKSbO",
                               "name": "DRV-001",
                               "fill": "#F8FAFC",
                               "content": "DRV-001",
                               "fontFamily": "$--font-mono",
                               "fontSize": 14,
                               "fontWeight": "bold",
-                              "textAlign": "left"
+                              "textAlign": "center"
                             }
                           ],
                           "height": 48,
@@ -228,7 +237,7 @@
                     },
                     {
                       "type": "frame",
-                      "id": "aWjvP",
+                      "id": "eewc0",
                       "name": "InputGroup2",
                       "width": "fill_container",
                       "layout": "vertical",
@@ -239,18 +248,21 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "aC5vQ",
+                          "id": "ArBa0",
                           "name": "Kata Sandi Akun",
                           "fill": "#F8FAFC",
                           "content": "Kata Sandi Akun",
                           "fontFamily": "$--font-body",
                           "fontSize": 12,
                           "fontWeight": "600",
-                          "textAlign": "left"
+                          "textAlign": "left",
+                          "textGrowth": "fixed-width",
+                          "lineHeight": 1.4,
+                          "width": "fill_container"
                         },
                         {
                           "type": "frame",
-                          "id": "vttTz",
+                          "id": "lLC5L",
                           "name": "Field2",
                           "width": "fill_container",
                           "layout": "horizontal",
@@ -264,25 +276,25 @@
                           "children": [
                             {
                               "type": "text",
-                              "id": "E4Cah",
+                              "id": "Fh8Rw",
                               "name": "\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022",
                               "fill": "#F8FAFC",
                               "content": "\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022",
                               "fontFamily": "$--font-body",
                               "fontSize": 16,
                               "fontWeight": "bold",
-                              "textAlign": "left"
+                              "textAlign": "center"
                             },
                             {
                               "type": "text",
-                              "id": "VBS8c",
+                              "id": "oqerM",
                               "name": "LIHAT",
                               "fill": "#7E8B9F",
                               "content": "LIHAT",
                               "fontFamily": "$--font-mono",
                               "fontSize": 10,
                               "fontWeight": "bold",
-                              "textAlign": "left"
+                              "textAlign": "center"
                             }
                           ],
                           "height": 48,
@@ -295,7 +307,7 @@
                     },
                     {
                       "type": "frame",
-                      "id": "wGbGp",
+                      "id": "r2aPM",
                       "name": "RememberMe",
                       "width": "fill_container",
                       "layout": "horizontal",
@@ -306,7 +318,7 @@
                       "children": [
                         {
                           "type": "frame",
-                          "id": "Fvn1k",
+                          "id": "DZAak",
                           "name": "Check",
                           "width": 16,
                           "layout": "vertical",
@@ -317,14 +329,14 @@
                           "children": [
                             {
                               "type": "text",
-                              "id": "Hn2AQ",
+                              "id": "qSAEe",
                               "name": "\u2713",
                               "fill": "#FFFFFF",
                               "content": "\u2713",
-                              "fontFamily": "$--font-body",
+                              "fontFamily": "$--font-mono",
                               "fontSize": 11,
                               "fontWeight": "bold",
-                              "textAlign": "left"
+                              "textAlign": "center"
                             }
                           ],
                           "height": 16,
@@ -333,14 +345,17 @@
                         },
                         {
                           "type": "text",
-                          "id": "ZjrvD",
+                          "id": "PJvWk",
                           "name": "Simpan sesi login di per",
                           "fill": "#7E8B9F",
                           "content": "Simpan sesi login di perangkat ini",
                           "fontFamily": "$--font-body",
                           "fontSize": 12,
                           "fontWeight": "normal",
-                          "textAlign": "left"
+                          "textAlign": "left",
+                          "textGrowth": "fixed-width",
+                          "lineHeight": 1.4,
+                          "width": "fill_container"
                         }
                       ]
                     }
@@ -354,7 +369,7 @@
             },
             {
               "type": "frame",
-              "id": "yPUis",
+              "id": "PjBaC",
               "name": "BottomArea",
               "width": "fill_container",
               "layout": "vertical",
@@ -365,7 +380,7 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "ONDD8",
+                  "id": "Uqz9M",
                   "name": "BtnLogin",
                   "width": "fill_container",
                   "layout": "horizontal",
@@ -376,14 +391,14 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "eLjtQ",
+                      "id": "6KXoI",
                       "name": "Masuk ke Sistem",
                       "fill": "#FFFFFF",
                       "content": "Masuk ke Sistem",
                       "fontFamily": "$--font-heading",
                       "fontSize": 14,
                       "fontWeight": "bold",
-                      "textAlign": "left"
+                      "textAlign": "center"
                     }
                   ],
                   "height": 54,
@@ -392,7 +407,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "eiy35",
+                  "id": "slroL",
                   "name": "FootNote",
                   "width": "fill_container",
                   "layout": "horizontal",
@@ -403,14 +418,17 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "BDTe3",
+                      "id": "Sj7lf",
                       "name": "Koneksi Camp Wi-Fi Terve",
                       "fill": "#D97706",
                       "content": "Koneksi Camp Wi-Fi Terverifikasi",
                       "fontFamily": "$--font-mono",
                       "fontSize": 11,
                       "fontWeight": "600",
-                      "textAlign": "left"
+                      "textAlign": "center",
+                      "textGrowth": "fixed-width",
+                      "lineHeight": 1.4,
+                      "width": "fill_container"
                     }
                   ]
                 }
@@ -427,7 +445,7 @@
         },
         {
           "type": "frame",
-          "id": "Vpg2U",
+          "id": "YXw5g",
           "name": "2. Quick PIN (Dark)",
           "width": 360,
           "layout": "vertical",
@@ -438,7 +456,7 @@
           "children": [
             {
               "type": "frame",
-              "id": "zEK3t",
+              "id": "QiCmB",
               "name": "StatusTop",
               "width": "fill_container",
               "layout": "horizontal",
@@ -449,31 +467,31 @@
               "children": [
                 {
                   "type": "text",
-                  "id": "0mJLd",
+                  "id": "4RPLc",
                   "name": "08:00",
                   "fill": "#7E8B9F",
                   "content": "08:00",
                   "fontFamily": "$--font-mono",
                   "fontSize": 11,
                   "fontWeight": "bold",
-                  "textAlign": "left"
+                  "textAlign": "center"
                 },
                 {
                   "type": "text",
-                  "id": "PDF5Z",
+                  "id": "OrEKd",
                   "name": "Offline Ready",
                   "fill": "#D97706",
                   "content": "Offline Ready",
                   "fontFamily": "$--font-mono",
                   "fontSize": 11,
                   "fontWeight": "bold",
-                  "textAlign": "left"
+                  "textAlign": "center"
                 }
               ]
             },
             {
               "type": "frame",
-              "id": "NUSbn",
+              "id": "wfsQK",
               "name": "DriverHeader",
               "width": "fill_container",
               "layout": "vertical",
@@ -484,7 +502,7 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "saJ2A",
+                  "id": "vYlXa",
                   "name": "AvatarCircle",
                   "width": 52,
                   "layout": "vertical",
@@ -495,14 +513,14 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "ltHQ3",
+                      "id": "MS4nB",
                       "name": "AF",
                       "fill": "#D97706",
                       "content": "AF",
-                      "fontFamily": "$--font-body",
+                      "fontFamily": "$--font-mono",
                       "fontSize": 16,
                       "fontWeight": "bold",
-                      "textAlign": "left"
+                      "textAlign": "center"
                     }
                   ],
                   "height": 52,
@@ -513,42 +531,51 @@
                 },
                 {
                   "type": "text",
-                  "id": "eF95i",
+                  "id": "k2fOd",
                   "name": "Ahmad Fauzi",
                   "fill": "#F8FAFC",
                   "content": "Ahmad Fauzi",
                   "fontFamily": "$--font-heading",
                   "fontSize": 17,
                   "fontWeight": "bold",
-                  "textAlign": "left"
+                  "textAlign": "center",
+                  "textGrowth": "fixed-width",
+                  "lineHeight": 1.4,
+                  "width": "fill_container"
                 },
                 {
                   "type": "text",
-                  "id": "Kt6Wc",
+                  "id": "JzatT",
                   "name": "DRV-001",
                   "fill": "#7E8B9F",
                   "content": "DRV-001",
                   "fontFamily": "$--font-mono",
                   "fontSize": 12,
                   "fontWeight": "bold",
-                  "textAlign": "left"
+                  "textAlign": "center",
+                  "textGrowth": "fixed-width",
+                  "lineHeight": 1.4,
+                  "width": "fill_container"
                 },
                 {
                   "type": "text",
-                  "id": "0zmwH",
+                  "id": "2bFx9",
                   "name": "Masukkan 6-Digit PIN Shi",
                   "fill": "#7E8B9F",
                   "content": "Masukkan 6-Digit PIN Shift",
                   "fontFamily": "$--font-body",
                   "fontSize": 12,
                   "fontWeight": "normal",
-                  "textAlign": "left"
+                  "textAlign": "center",
+                  "textGrowth": "fixed-width",
+                  "lineHeight": 1.4,
+                  "width": "fill_container"
                 }
               ]
             },
             {
               "type": "frame",
-              "id": "U9lDY",
+              "id": "pZHrY",
               "name": "PINDots",
               "width": "fill_container",
               "layout": "horizontal",
@@ -559,7 +586,7 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "ta2N9",
+                  "id": "PaZlb",
                   "name": "D1",
                   "width": 14,
                   "layout": "vertical",
@@ -574,7 +601,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "5pu5U",
+                  "id": "AQfBE",
                   "name": "D2",
                   "width": 14,
                   "layout": "vertical",
@@ -589,7 +616,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "CotlW",
+                  "id": "0doQD",
                   "name": "D3",
                   "width": 14,
                   "layout": "vertical",
@@ -604,7 +631,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "Rz6zs",
+                  "id": "76KwW",
                   "name": "D4",
                   "width": 14,
                   "layout": "vertical",
@@ -619,7 +646,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "s7XpL",
+                  "id": "lF6KX",
                   "name": "D5",
                   "width": 14,
                   "layout": "vertical",
@@ -636,7 +663,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "yN0dZ",
+                  "id": "rkKHe",
                   "name": "D6",
                   "width": 14,
                   "layout": "vertical",
@@ -655,7 +682,7 @@
             },
             {
               "type": "frame",
-              "id": "MNpUn",
+              "id": "OVIJO",
               "name": "KeypadArea",
               "width": "fill_container",
               "layout": "vertical",
@@ -666,7 +693,7 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "Atfsb",
+                  "id": "gxsMZ",
                   "name": "KeyRow",
                   "width": "fill_container",
                   "layout": "horizontal",
@@ -677,7 +704,7 @@
                   "children": [
                     {
                       "type": "frame",
-                      "id": "SGxiS",
+                      "id": "TEWIE",
                       "name": "Key_1",
                       "width": "fill_container",
                       "layout": "horizontal",
@@ -688,14 +715,14 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "nZGuY",
+                          "id": "m18tA",
                           "name": "1",
                           "fill": "#F8FAFC",
                           "content": "1",
                           "fontFamily": "$--font-mono",
                           "fontSize": 20,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ],
                       "height": 52,
@@ -706,7 +733,7 @@
                     },
                     {
                       "type": "frame",
-                      "id": "R0k3B",
+                      "id": "Ebv1i",
                       "name": "Key_2",
                       "width": "fill_container",
                       "layout": "horizontal",
@@ -717,14 +744,14 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "fc5D3",
+                          "id": "p6Ag6",
                           "name": "2",
                           "fill": "#F8FAFC",
                           "content": "2",
                           "fontFamily": "$--font-mono",
                           "fontSize": 20,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ],
                       "height": 52,
@@ -735,7 +762,7 @@
                     },
                     {
                       "type": "frame",
-                      "id": "MGdh4",
+                      "id": "gthjI",
                       "name": "Key_3",
                       "width": "fill_container",
                       "layout": "horizontal",
@@ -746,14 +773,14 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "yWwxf",
+                          "id": "ouLKW",
                           "name": "3",
                           "fill": "#F8FAFC",
                           "content": "3",
                           "fontFamily": "$--font-mono",
                           "fontSize": 20,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ],
                       "height": 52,
@@ -766,7 +793,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "HFtC0",
+                  "id": "cp7fD",
                   "name": "KeyRow",
                   "width": "fill_container",
                   "layout": "horizontal",
@@ -777,7 +804,7 @@
                   "children": [
                     {
                       "type": "frame",
-                      "id": "sMUiB",
+                      "id": "gS3bp",
                       "name": "Key_4",
                       "width": "fill_container",
                       "layout": "horizontal",
@@ -788,14 +815,14 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "SJdGy",
+                          "id": "OJLwU",
                           "name": "4",
                           "fill": "#F8FAFC",
                           "content": "4",
                           "fontFamily": "$--font-mono",
                           "fontSize": 20,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ],
                       "height": 52,
@@ -806,7 +833,7 @@
                     },
                     {
                       "type": "frame",
-                      "id": "Yr44D",
+                      "id": "RD2tm",
                       "name": "Key_5",
                       "width": "fill_container",
                       "layout": "horizontal",
@@ -817,14 +844,14 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "N5LV3",
+                          "id": "roXR0",
                           "name": "5",
                           "fill": "#F8FAFC",
                           "content": "5",
                           "fontFamily": "$--font-mono",
                           "fontSize": 20,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ],
                       "height": 52,
@@ -835,7 +862,7 @@
                     },
                     {
                       "type": "frame",
-                      "id": "tiKuH",
+                      "id": "E1nVG",
                       "name": "Key_6",
                       "width": "fill_container",
                       "layout": "horizontal",
@@ -846,14 +873,14 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "BDbco",
+                          "id": "QWSNJ",
                           "name": "6",
                           "fill": "#F8FAFC",
                           "content": "6",
                           "fontFamily": "$--font-mono",
                           "fontSize": 20,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ],
                       "height": 52,
@@ -866,7 +893,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "dlHMh",
+                  "id": "oGvzl",
                   "name": "KeyRow",
                   "width": "fill_container",
                   "layout": "horizontal",
@@ -877,7 +904,7 @@
                   "children": [
                     {
                       "type": "frame",
-                      "id": "AEWFP",
+                      "id": "U4gik",
                       "name": "Key_7",
                       "width": "fill_container",
                       "layout": "horizontal",
@@ -888,14 +915,14 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "4GBHj",
+                          "id": "yvydr",
                           "name": "7",
                           "fill": "#F8FAFC",
                           "content": "7",
                           "fontFamily": "$--font-mono",
                           "fontSize": 20,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ],
                       "height": 52,
@@ -906,7 +933,7 @@
                     },
                     {
                       "type": "frame",
-                      "id": "OzFSi",
+                      "id": "jFInJ",
                       "name": "Key_8",
                       "width": "fill_container",
                       "layout": "horizontal",
@@ -917,14 +944,14 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "JqVxA",
+                          "id": "qkgqM",
                           "name": "8",
                           "fill": "#F8FAFC",
                           "content": "8",
                           "fontFamily": "$--font-mono",
                           "fontSize": 20,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ],
                       "height": 52,
@@ -935,7 +962,7 @@
                     },
                     {
                       "type": "frame",
-                      "id": "TmTXG",
+                      "id": "s6mxR",
                       "name": "Key_9",
                       "width": "fill_container",
                       "layout": "horizontal",
@@ -946,14 +973,14 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "v74IJ",
+                          "id": "RLs01",
                           "name": "9",
                           "fill": "#F8FAFC",
                           "content": "9",
                           "fontFamily": "$--font-mono",
                           "fontSize": 20,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ],
                       "height": 52,
@@ -966,7 +993,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "jlPqA",
+                  "id": "NYG6C",
                   "name": "KeyRow",
                   "width": "fill_container",
                   "layout": "horizontal",
@@ -977,7 +1004,7 @@
                   "children": [
                     {
                       "type": "frame",
-                      "id": "HZTTj",
+                      "id": "PdP3c",
                       "name": "Key_Hapus",
                       "width": "fill_container",
                       "layout": "horizontal",
@@ -988,14 +1015,14 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "jViOV",
+                          "id": "IAycW",
                           "name": "Hapus",
                           "fill": "#F43F5E",
                           "content": "Hapus",
                           "fontFamily": "$--font-mono",
                           "fontSize": 15,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ],
                       "height": 52,
@@ -1006,7 +1033,7 @@
                     },
                     {
                       "type": "frame",
-                      "id": "hryDX",
+                      "id": "BBfi4",
                       "name": "Key_0",
                       "width": "fill_container",
                       "layout": "horizontal",
@@ -1017,14 +1044,14 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "dFCLX",
+                          "id": "OsJfp",
                           "name": "0",
                           "fill": "#F8FAFC",
                           "content": "0",
                           "fontFamily": "$--font-mono",
                           "fontSize": 20,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ],
                       "height": 52,
@@ -1035,7 +1062,7 @@
                     },
                     {
                       "type": "frame",
-                      "id": "XNvqE",
+                      "id": "VgLz6",
                       "name": "Key_Buka",
                       "width": "fill_container",
                       "layout": "horizontal",
@@ -1046,14 +1073,14 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "aV0UT",
+                          "id": "L6YRw",
                           "name": "Buka",
                           "fill": "#FFFFFF",
                           "content": "Buka",
                           "fontFamily": "$--font-mono",
                           "fontSize": 15,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ],
                       "height": 52,
@@ -1068,7 +1095,7 @@
             },
             {
               "type": "frame",
-              "id": "r7vgq",
+              "id": "BTZx7",
               "name": "FooterLink",
               "width": "fill_container",
               "layout": "horizontal",
@@ -1079,14 +1106,17 @@
               "children": [
                 {
                   "type": "text",
-                  "id": "aivmo",
+                  "id": "3Mz8d",
                   "name": "Ganti Akun / Masuk Ulang",
                   "fill": "#7E8B9F",
                   "content": "Ganti Akun / Masuk Ulang",
                   "fontFamily": "$--font-mono",
                   "fontSize": 11,
                   "fontWeight": "600",
-                  "textAlign": "left"
+                  "textAlign": "center",
+                  "textGrowth": "fixed-width",
+                  "lineHeight": 1.4,
+                  "width": "fill_container"
                 }
               ]
             }
@@ -1101,7 +1131,7 @@
         },
         {
           "type": "frame",
-          "id": "jsGwZ",
+          "id": "h5gKF",
           "name": "3. Home Auto-Detect (Dark)",
           "width": 360,
           "layout": "vertical",
@@ -1112,7 +1142,7 @@
           "children": [
             {
               "type": "frame",
-              "id": "CFhw6",
+              "id": "YTt9d",
               "name": "Top",
               "width": "fill_container",
               "layout": "vertical",
@@ -1123,7 +1153,7 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "yZ6wP",
+                  "id": "vg0QD",
                   "name": "TopBar",
                   "width": "fill_container",
                   "layout": "horizontal",
@@ -1134,18 +1164,18 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "j3UW2",
+                      "id": "18lzG",
                       "name": "TERRAPOINT",
                       "fill": "#F8FAFC",
                       "content": "TERRAPOINT",
                       "fontFamily": "$--font-heading",
                       "fontSize": 14,
                       "fontWeight": "bold",
-                      "textAlign": "left"
+                      "textAlign": "center"
                     },
                     {
                       "type": "frame",
-                      "id": "9BP6e",
+                      "id": "rsP4h",
                       "name": "GpsBadge",
                       "width": "fill_container",
                       "layout": "horizontal",
@@ -1156,7 +1186,7 @@
                       "children": [
                         {
                           "type": "frame",
-                          "id": "phwFt",
+                          "id": "i2630",
                           "name": "GpsDot",
                           "width": 6,
                           "layout": "vertical",
@@ -1171,14 +1201,14 @@
                         },
                         {
                           "type": "text",
-                          "id": "DwCri",
+                          "id": "LqpWd",
                           "name": "GPS Siap",
                           "fill": "#D97706",
                           "content": "GPS Siap",
                           "fontFamily": "$--font-mono",
                           "fontSize": 11,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ]
                     }
@@ -1186,7 +1216,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "KzzmR",
+                  "id": "wi6ok",
                   "name": "DriverRow",
                   "width": "fill_container",
                   "layout": "horizontal",
@@ -1200,7 +1230,7 @@
                   "children": [
                     {
                       "type": "frame",
-                      "id": "Ygd9F",
+                      "id": "07TIl",
                       "name": "DrvTxt",
                       "width": "fill_container",
                       "layout": "vertical",
@@ -1211,31 +1241,34 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "n5Qnj",
+                          "id": "QNgOj",
                           "name": "PENGEMUDI AKTIF",
                           "fill": "#7E8B9F",
                           "content": "PENGEMUDI AKTIF",
                           "fontFamily": "$--font-mono",
                           "fontSize": 9,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         },
                         {
                           "type": "text",
-                          "id": "lLvTk",
+                          "id": "2zRZ2",
                           "name": "Ahmad Fauzi (DRV-001)",
                           "fill": "#F8FAFC",
                           "content": "Ahmad Fauzi (DRV-001)",
                           "fontFamily": "$--font-body",
                           "fontSize": 13,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "left",
+                          "textGrowth": "fixed-width",
+                          "lineHeight": 1.4,
+                          "width": "fill_container"
                         }
                       ]
                     },
                     {
                       "type": "frame",
-                      "id": "pmsIK",
+                      "id": "jlpYN",
                       "name": "ShiftPill",
                       "width": "fill_container",
                       "layout": "vertical",
@@ -1249,14 +1282,14 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "Ioc4F",
+                          "id": "oDExF",
                           "name": "Shift 1",
                           "fill": "#D97706",
                           "content": "Shift 1",
                           "fontFamily": "$--font-mono",
                           "fontSize": 10,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ],
                       "fill": "rgba(217, 119, 6, 0.12)",
@@ -1268,7 +1301,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "AIN8D",
+                  "id": "5JtIX",
                   "name": "LocationCard",
                   "width": "fill_container",
                   "layout": "vertical",
@@ -1279,7 +1312,7 @@
                   "children": [
                     {
                       "type": "frame",
-                      "id": "dzNwE",
+                      "id": "NRVS2",
                       "name": "TagRow",
                       "width": "fill_container",
                       "layout": "horizontal",
@@ -1290,18 +1323,18 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "FcKMu",
+                          "id": "qdVLf",
                           "name": "LOKASI TERDETEKSI (GPS)",
                           "fill": "#D97706",
                           "content": "LOKASI TERDETEKSI (GPS)",
                           "fontFamily": "$--font-mono",
                           "fontSize": 10,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         },
                         {
                           "type": "frame",
-                          "id": "qBt7Z",
+                          "id": "FZTQL",
                           "name": "Pill",
                           "width": "fill_container",
                           "layout": "vertical",
@@ -1315,14 +1348,14 @@
                           "children": [
                             {
                               "type": "text",
-                              "id": "yICpy",
+                              "id": "U8z8C",
                               "name": "Radius \u2264 50m",
                               "fill": "#FFFFFF",
                               "content": "Radius \u2264 50m",
                               "fontFamily": "$--font-mono",
                               "fontSize": 9,
                               "fontWeight": "bold",
-                              "textAlign": "left"
+                              "textAlign": "center"
                             }
                           ],
                           "fill": "#D97706",
@@ -1332,18 +1365,21 @@
                     },
                     {
                       "type": "text",
-                      "id": "98CPv",
+                      "id": "3KEfJ",
                       "name": "Loading Point Pit 3 Utar",
                       "fill": "#F8FAFC",
                       "content": "Loading Point Pit 3 Utara",
                       "fontFamily": "$--font-heading",
                       "fontSize": 16,
                       "fontWeight": "bold",
-                      "textAlign": "left"
+                      "textAlign": "left",
+                      "textGrowth": "fixed-width",
+                      "lineHeight": 1.4,
+                      "width": "fill_container"
                     },
                     {
                       "type": "frame",
-                      "id": "9pKWi",
+                      "id": "aUjAL",
                       "name": "LocationMeta",
                       "width": "fill_container",
                       "layout": "horizontal",
@@ -1354,25 +1390,25 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "X5B0y",
+                          "id": "UtGLD",
                           "name": "Jarak: 18m",
                           "fill": "#F8FAFC",
                           "content": "Jarak: 18m",
                           "fontFamily": "$--font-mono",
                           "fontSize": 12,
                           "fontWeight": "600",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         },
                         {
                           "type": "text",
-                          "id": "hSRP8",
+                          "id": "ju4Jz",
                           "name": "Akurasi: \u00b1 6.5m",
                           "fill": "#7E8B9F",
                           "content": "Akurasi: \u00b1 6.5m",
                           "fontFamily": "$--font-mono",
                           "fontSize": 12,
                           "fontWeight": "normal",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ]
                     }
@@ -1384,7 +1420,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "8oy4h",
+                  "id": "JTqs3",
                   "name": "SyncCard",
                   "width": "fill_container",
                   "layout": "horizontal",
@@ -1395,7 +1431,7 @@
                   "children": [
                     {
                       "type": "frame",
-                      "id": "jCV4m",
+                      "id": "VPoDd",
                       "name": "SyncInfo",
                       "width": "fill_container",
                       "layout": "vertical",
@@ -1406,31 +1442,34 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "KuPsU",
+                          "id": "PA8eM",
                           "name": "ANTREAN SINKRONISASI",
                           "fill": "#7E8B9F",
                           "content": "ANTREAN SINKRONISASI",
                           "fontFamily": "$--font-mono",
                           "fontSize": 10,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         },
                         {
                           "type": "text",
-                          "id": "30d6h",
+                          "id": "A4xPd",
                           "name": "3 Ritase Tersimpan",
                           "fill": "#F8FAFC",
                           "content": "3 Ritase Tersimpan",
                           "fontFamily": "$--font-body",
                           "fontSize": 13,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "left",
+                          "textGrowth": "fixed-width",
+                          "lineHeight": 1.4,
+                          "width": "fill_container"
                         }
                       ]
                     },
                     {
                       "type": "frame",
-                      "id": "wMyrY",
+                      "id": "k8G6k",
                       "name": "BtnQuickSync",
                       "width": "fill_container",
                       "layout": "vertical",
@@ -1444,14 +1483,14 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "fZiwV",
+                          "id": "O85hS",
                           "name": "Sync",
                           "fill": "#D97706",
                           "content": "Sync",
                           "fontFamily": "$--font-mono",
                           "fontSize": 12,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ],
                       "fill": "#131824",
@@ -1469,7 +1508,7 @@
             },
             {
               "type": "frame",
-              "id": "silFw",
+              "id": "CnLTk",
               "name": "Bottom",
               "width": "fill_container",
               "layout": "vertical",
@@ -1480,7 +1519,7 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "FwnyZ",
+                  "id": "RdMqq",
                   "name": "BtnStartPhoto",
                   "width": "fill_container",
                   "layout": "horizontal",
@@ -1491,25 +1530,25 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "8NAZi",
+                      "id": "oBxeG",
                       "name": "\ud83d\udcf7",
                       "fill": "#FFFFFF",
                       "content": "\ud83d\udcf7",
-                      "fontFamily": "$--font-body",
-                      "fontSize": 18,
-                      "fontWeight": "normal",
-                      "textAlign": "left"
+                      "fontFamily": "$--font-mono",
+                      "fontSize": 16,
+                      "fontWeight": "bold",
+                      "textAlign": "center"
                     },
                     {
                       "type": "text",
-                      "id": "crfSD",
+                      "id": "mf8rT",
                       "name": "Ambil Foto Muat & Mulai",
                       "fill": "#FFFFFF",
                       "content": "Ambil Foto Muat & Mulai",
                       "fontFamily": "$--font-heading",
                       "fontSize": 15,
                       "fontWeight": "bold",
-                      "textAlign": "left"
+                      "textAlign": "center"
                     }
                   ],
                   "height": 58,
@@ -1518,7 +1557,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "1hfbI",
+                  "id": "gH1b3",
                   "name": "Foot",
                   "width": "fill_container",
                   "layout": "horizontal",
@@ -1529,14 +1568,17 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "KS2c0",
+                      "id": "fLgwR",
                       "name": "Foto awal otomatis memul",
                       "fill": "#7E8B9F",
                       "content": "Foto awal otomatis memulai ritase",
                       "fontFamily": "$--font-mono",
                       "fontSize": 11,
                       "fontWeight": "normal",
-                      "textAlign": "left"
+                      "textAlign": "center",
+                      "textGrowth": "fixed-width",
+                      "lineHeight": 1.4,
+                      "width": "fill_container"
                     }
                   ]
                 }
@@ -1553,7 +1595,7 @@
         },
         {
           "type": "frame",
-          "id": "8ecZm",
+          "id": "nbqOb",
           "name": "4. Camera Viewfinder (Dark)",
           "width": 360,
           "layout": "vertical",
@@ -1564,7 +1606,7 @@
           "children": [
             {
               "type": "frame",
-              "id": "66fEa",
+              "id": "B0yeQ",
               "name": "BannerValid",
               "width": "fill_container",
               "layout": "horizontal",
@@ -1578,25 +1620,25 @@
               "children": [
                 {
                   "type": "text",
-                  "id": "pJMFi",
+                  "id": "eDPrs",
                   "name": "Posisi Sesuai (\u2264 50m)",
                   "fill": "#FFFFFF",
                   "content": "Posisi Sesuai (\u2264 50m)",
                   "fontFamily": "$--font-heading",
                   "fontSize": 12,
                   "fontWeight": "bold",
-                  "textAlign": "left"
+                  "textAlign": "center"
                 },
                 {
                   "type": "text",
-                  "id": "S2FNW",
+                  "id": "7wsMl",
                   "name": "\u00b1 8.2m",
                   "fill": "#FEF3C7",
                   "content": "\u00b1 8.2m",
                   "fontFamily": "$--font-mono",
                   "fontSize": 11,
                   "fontWeight": "bold",
-                  "textAlign": "left"
+                  "textAlign": "center"
                 }
               ],
               "fill": "#D97706",
@@ -1604,7 +1646,7 @@
             },
             {
               "type": "frame",
-              "id": "Of3eW",
+              "id": "G1DE8",
               "name": "ReticleBox",
               "width": "fill_container",
               "layout": "vertical",
@@ -1615,29 +1657,29 @@
               "children": [
                 {
                   "type": "text",
-                  "id": "j6i8p",
+                  "id": "5jYH0",
                   "name": "[ AREA KAMERA LANGSUNG ]",
                   "fill": "#94A3B8",
                   "content": "[ AREA KAMERA LANGSUNG ]",
                   "fontFamily": "$--font-mono",
                   "fontSize": 13,
                   "fontWeight": "bold",
-                  "textAlign": "left"
+                  "textAlign": "center"
                 },
                 {
                   "type": "text",
-                  "id": "yCFcd",
+                  "id": "Oxlpl",
                   "name": "Bidik Bak Muatan Truk",
                   "fill": "#CBD5E1",
                   "content": "Bidik Bak Muatan Truk",
                   "fontFamily": "$--font-mono",
                   "fontSize": 11,
                   "fontWeight": "normal",
-                  "textAlign": "left"
+                  "textAlign": "center"
                 },
                 {
                   "type": "frame",
-                  "id": "WBcFd",
+                  "id": "v37Y4",
                   "name": "LocLabel",
                   "width": "fill_container",
                   "layout": "vertical",
@@ -1651,14 +1693,14 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "OKCvo",
+                      "id": "5fvES",
                       "name": "Loading Point Pit 3 Utar",
                       "fill": "#D97706",
                       "content": "Loading Point Pit 3 Utara",
                       "fontFamily": "$--font-mono",
                       "fontSize": 11,
                       "fontWeight": "bold",
-                      "textAlign": "left"
+                      "textAlign": "center"
                     }
                   ],
                   "fill": "#0F172A",
@@ -1675,7 +1717,7 @@
             },
             {
               "type": "frame",
-              "id": "7ghbO",
+              "id": "aqwzR",
               "name": "ShutterBar",
               "width": "fill_container",
               "layout": "horizontal",
@@ -1689,7 +1731,7 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "1VudH",
+                  "id": "6DSxQ",
                   "name": "BtnLamp",
                   "width": 46,
                   "layout": "vertical",
@@ -1700,14 +1742,14 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "Jtffw",
+                      "id": "NqPAH",
                       "name": "\u26a1",
                       "fill": "#FFFFFF",
                       "content": "\u26a1",
-                      "fontFamily": "$--font-body",
+                      "fontFamily": "$--font-mono",
                       "fontSize": 18,
-                      "fontWeight": "normal",
-                      "textAlign": "left"
+                      "fontWeight": "bold",
+                      "textAlign": "center"
                     }
                   ],
                   "height": 46,
@@ -1716,7 +1758,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "VMXQs",
+                  "id": "e6KWk",
                   "name": "ShutterCircle",
                   "width": 68,
                   "layout": "vertical",
@@ -1727,14 +1769,14 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "wCuRM",
+                      "id": "KjllI",
                       "name": "FOTO",
                       "fill": "#FFFFFF",
                       "content": "FOTO",
                       "fontFamily": "$--font-heading",
                       "fontSize": 12,
                       "fontWeight": "bold",
-                      "textAlign": "left"
+                      "textAlign": "center"
                     }
                   ],
                   "height": 68,
@@ -1745,7 +1787,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "7I6RI",
+                  "id": "Exay7",
                   "name": "BtnCancel",
                   "width": 46,
                   "layout": "vertical",
@@ -1756,14 +1798,14 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "gxWkr",
+                      "id": "OgWIV",
                       "name": "\u2715",
                       "fill": "#D1D5DB",
                       "content": "\u2715",
-                      "fontFamily": "$--font-body",
+                      "fontFamily": "$--font-mono",
                       "fontSize": 16,
                       "fontWeight": "bold",
-                      "textAlign": "left"
+                      "textAlign": "center"
                     }
                   ],
                   "height": 46,
@@ -1787,7 +1829,7 @@
         },
         {
           "type": "frame",
-          "id": "gSk3S",
+          "id": "xczlg",
           "name": "5. Geotag Preview & Retake (Dark)",
           "width": 360,
           "layout": "vertical",
@@ -1798,7 +1840,7 @@
           "children": [
             {
               "type": "frame",
-              "id": "NMqe9",
+              "id": "tGutr",
               "name": "PreviewHdr",
               "width": "fill_container",
               "layout": "horizontal",
@@ -1809,55 +1851,55 @@
               "children": [
                 {
                   "type": "text",
-                  "id": "5kF1H",
+                  "id": "ndAFq",
                   "name": "Preview Bukti Foto",
                   "fill": "#F8FAFC",
                   "content": "Preview Bukti Foto",
                   "fontFamily": "$--font-heading",
                   "fontSize": 13,
                   "fontWeight": "bold",
-                  "textAlign": "left"
+                  "textAlign": "center"
                 },
                 {
                   "type": "text",
-                  "id": "60ZG9",
+                  "id": "MVClX",
                   "name": "Tercatat",
                   "fill": "#D97706",
                   "content": "Tercatat",
                   "fontFamily": "$--font-mono",
                   "fontSize": 11,
                   "fontWeight": "bold",
-                  "textAlign": "left"
+                  "textAlign": "center"
                 }
               ]
             },
             {
               "type": "frame",
-              "id": "9mnLL",
+              "id": "IXhop",
               "name": "PhotoContainerWithWatermark",
               "width": "fill_container",
               "layout": "vertical",
               "gap": 0,
-              "padding": 12,
+              "padding": 10,
               "justifyContent": "end",
               "alignItems": "start",
               "children": [
                 {
                   "type": "frame",
-                  "id": "zBw0K",
+                  "id": "MxplR",
                   "name": "SwissWatermarkStampCard",
                   "width": "fill_container",
                   "layout": "horizontal",
-                  "gap": 10,
-                  "padding": 12,
+                  "gap": 8,
+                  "padding": 10,
                   "justifyContent": "start",
                   "alignItems": "center",
                   "children": [
                     {
                       "type": "frame",
-                      "id": "xHc6u",
+                      "id": "UtYOs",
                       "name": "MiniMapInset",
-                      "width": 74,
+                      "width": 68,
                       "layout": "vertical",
                       "gap": 2,
                       "padding": 0,
@@ -1866,7 +1908,7 @@
                       "children": [
                         {
                           "type": "frame",
-                          "id": "rQ3a2",
+                          "id": "48C4N",
                           "name": "GpsPin",
                           "width": 12,
                           "layout": "vertical",
@@ -1883,17 +1925,17 @@
                         },
                         {
                           "type": "text",
-                          "id": "0iaYX",
+                          "id": "7Ep84",
                           "name": "50M RADIUS",
                           "fill": "#334155",
                           "content": "50M RADIUS",
                           "fontFamily": "$--font-mono",
                           "fontSize": 7,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ],
-                      "height": 84,
+                      "height": 78,
                       "fill": "#F1F5F9",
                       "stroke": "#CBD5E1",
                       "strokeWidth": 1,
@@ -1901,7 +1943,7 @@
                     },
                     {
                       "type": "frame",
-                      "id": "04VFx",
+                      "id": "4pwLw",
                       "name": "SurveyorMetadata",
                       "width": "fill_container",
                       "layout": "vertical",
@@ -1912,7 +1954,7 @@
                       "children": [
                         {
                           "type": "frame",
-                          "id": "zMcgl",
+                          "id": "lKdjc",
                           "name": "HdrRow",
                           "width": "fill_container",
                           "layout": "horizontal",
@@ -1923,82 +1965,85 @@
                           "children": [
                             {
                               "type": "text",
-                              "id": "RJSQc",
+                              "id": "zvNZX",
                               "name": "START CHECKPOINT",
                               "fill": "#D97706",
                               "content": "START CHECKPOINT",
                               "fontFamily": "$--font-mono",
                               "fontSize": 9,
                               "fontWeight": "bold",
-                              "textAlign": "left"
+                              "textAlign": "center"
                             },
                             {
                               "type": "text",
-                              "id": "UScK5",
+                              "id": "NNcWX",
                               "name": "TERRAPOINT",
                               "fill": "#64748B",
                               "content": "TERRAPOINT",
                               "fontFamily": "$--font-mono",
                               "fontSize": 8,
                               "fontWeight": "normal",
-                              "textAlign": "left"
+                              "textAlign": "center"
                             }
                           ]
                         },
                         {
                           "type": "text",
-                          "id": "ptEMI",
+                          "id": "aiqi0",
                           "name": "08:05:22 WITA (18/09/202",
                           "fill": "#DC2626",
                           "content": "08:05:22 WITA (18/09/2026)",
                           "fontFamily": "$--font-mono",
-                          "fontSize": 11,
+                          "fontSize": 10,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         },
                         {
                           "type": "text",
-                          "id": "hYXMT",
+                          "id": "JoPjE",
                           "name": "Loading Point Pit 3 Utar",
                           "fill": "#0F172A",
                           "content": "Loading Point Pit 3 Utara",
                           "fontFamily": "$--font-body",
                           "fontSize": 11,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "left",
+                          "textGrowth": "fixed-width",
+                          "lineHeight": 1.4,
+                          "width": "fill_container"
                         },
                         {
                           "type": "text",
-                          "id": "cFSA9",
+                          "id": "HiXbA",
                           "name": "Lat: -3.123456, Lng: 115",
                           "fill": "#475569",
                           "content": "Lat: -3.123456, Lng: 115.123456",
                           "fontFamily": "$--font-mono",
                           "fontSize": 9,
                           "fontWeight": "normal",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         },
                         {
                           "type": "text",
-                          "id": "DhGKC",
+                          "id": "TaX81",
                           "name": "Akurasi: \u00b18.2m | Alt: 14",
                           "fill": "#64748B",
                           "content": "Akurasi: \u00b18.2m | Alt: 142m MSL",
                           "fontFamily": "$--font-mono",
                           "fontSize": 8,
                           "fontWeight": "normal",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         },
                         {
                           "type": "text",
-                          "id": "Qo5D8",
+                          "id": "JDZxs",
                           "name": "DRV-001 (Ahmad) \u2022 TSK-00",
                           "fill": "#64748B",
                           "content": "DRV-001 (Ahmad) \u2022 TSK-001",
                           "fontFamily": "$--font-mono",
                           "fontSize": 8,
                           "fontWeight": "normal",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ]
                     }
@@ -2015,7 +2060,7 @@
             },
             {
               "type": "frame",
-              "id": "ANq9D",
+              "id": "YfO6C",
               "name": "Actions",
               "width": "fill_container",
               "layout": "vertical",
@@ -2026,7 +2071,7 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "5vmUc",
+                  "id": "MlRCG",
                   "name": "BtnUsePhoto",
                   "width": "fill_container",
                   "layout": "horizontal",
@@ -2037,14 +2082,14 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "pCqdK",
+                      "id": "9zEIS",
                       "name": "Gunakan Foto Ini (Mulai)",
                       "fill": "#FFFFFF",
                       "content": "Gunakan Foto Ini (Mulai)",
                       "fontFamily": "$--font-heading",
                       "fontSize": 14,
                       "fontWeight": "bold",
-                      "textAlign": "left"
+                      "textAlign": "center"
                     }
                   ],
                   "height": 54,
@@ -2053,7 +2098,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "EpMmT",
+                  "id": "kDCCR",
                   "name": "BtnRetake",
                   "width": "fill_container",
                   "layout": "horizontal",
@@ -2064,14 +2109,14 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "mrC60",
+                      "id": "CxyUg",
                       "name": "Foto Ulang (Retake)",
                       "fill": "#CBD5E1",
                       "content": "Foto Ulang (Retake)",
                       "fontFamily": "$--font-mono",
                       "fontSize": 12,
                       "fontWeight": "600",
-                      "textAlign": "left"
+                      "textAlign": "center"
                     }
                   ],
                   "height": 44,
@@ -2093,7 +2138,7 @@
         },
         {
           "type": "frame",
-          "id": "aZqrv",
+          "id": "Auovm",
           "name": "6. Hauling Active Status (Dark)",
           "width": 360,
           "layout": "vertical",
@@ -2104,7 +2149,7 @@
           "children": [
             {
               "type": "frame",
-              "id": "HONKa",
+              "id": "Zu5Me",
               "name": "TopArea",
               "width": "fill_container",
               "layout": "vertical",
@@ -2115,7 +2160,7 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "oLZJE",
+                  "id": "kXULu",
                   "name": "TopBar",
                   "width": "fill_container",
                   "layout": "horizontal",
@@ -2126,18 +2171,18 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "L3PVw",
+                      "id": "VuSAT",
                       "name": "RITASE BERJALAN",
                       "fill": "#F8FAFC",
                       "content": "RITASE BERJALAN",
                       "fontFamily": "$--font-heading",
                       "fontSize": 13,
                       "fontWeight": "bold",
-                      "textAlign": "left"
+                      "textAlign": "center"
                     },
                     {
                       "type": "frame",
-                      "id": "MeFc1",
+                      "id": "3pH06",
                       "name": "ActiveBadge",
                       "width": "fill_container",
                       "layout": "vertical",
@@ -2151,14 +2196,14 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "NVFMx",
+                          "id": "zLh4b",
                           "name": "SIAP HAULING",
                           "fill": "#D97706",
                           "content": "SIAP HAULING",
                           "fontFamily": "$--font-mono",
                           "fontSize": 10,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ],
                       "fill": "rgba(217, 119, 6, 0.15)",
@@ -2170,7 +2215,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "eyIll",
+                  "id": "RdUWM",
                   "name": "StatusCard",
                   "width": "fill_container",
                   "layout": "vertical",
@@ -2181,7 +2226,7 @@
                   "children": [
                     {
                       "type": "frame",
-                      "id": "uo2j0",
+                      "id": "h53qX",
                       "name": "TruckIcon",
                       "width": 44,
                       "layout": "vertical",
@@ -2192,14 +2237,14 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "MdRAZ",
+                          "id": "Wfovi",
                           "name": "\ud83d\ude9b",
                           "fill": "#FFFFFF",
                           "content": "\ud83d\ude9b",
-                          "fontFamily": "$--font-body",
+                          "fontFamily": "$--font-mono",
                           "fontSize": 20,
-                          "fontWeight": "normal",
-                          "textAlign": "left"
+                          "fontWeight": "bold",
+                          "textAlign": "center"
                         }
                       ],
                       "height": 44,
@@ -2208,25 +2253,31 @@
                     },
                     {
                       "type": "text",
-                      "id": "zOf0h",
+                      "id": "o2BpJ",
                       "name": "PERJALANAN MENUJU TITIK ",
                       "fill": "#D97706",
                       "content": "PERJALANAN MENUJU TITIK BONGKAR",
                       "fontFamily": "$--font-heading",
                       "fontSize": 12,
                       "fontWeight": "bold",
-                      "textAlign": "left"
+                      "textAlign": "center",
+                      "textGrowth": "fixed-width",
+                      "lineHeight": 1.4,
+                      "width": "fill_container"
                     },
                     {
                       "type": "text",
-                      "id": "OgjTt",
+                      "id": "fTLTW",
                       "name": "Rute hauling otomatis te",
                       "fill": "#7E8B9F",
                       "content": "Rute hauling otomatis tercatat di latar belakang dan terpantau oleh Dispatcher di dashboard.",
                       "fontFamily": "$--font-body",
                       "fontSize": 11,
                       "fontWeight": "normal",
-                      "textAlign": "center"
+                      "textAlign": "center",
+                      "textGrowth": "fixed-width",
+                      "lineHeight": 1.4,
+                      "width": "fill_container"
                     }
                   ],
                   "fill": "#131824",
@@ -2236,7 +2287,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "KQ5aN",
+                  "id": "5nC5A",
                   "name": "CheckpointCard",
                   "width": "fill_container",
                   "layout": "vertical",
@@ -2247,7 +2298,7 @@
                   "children": [
                     {
                       "type": "frame",
-                      "id": "9vtCP",
+                      "id": "gzVqM",
                       "name": "A",
                       "width": "fill_container",
                       "layout": "vertical",
@@ -2258,42 +2309,45 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "JhjBn",
+                          "id": "85J6r",
                           "name": "TITIK MUAT (AWAL)",
                           "fill": "#7E8B9F",
                           "content": "TITIK MUAT (AWAL)",
                           "fontFamily": "$--font-mono",
                           "fontSize": 9,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         },
                         {
                           "type": "text",
-                          "id": "3nmdD",
+                          "id": "9LkkH",
                           "name": "Loading Point Pit 3 Utar",
                           "fill": "#F8FAFC",
                           "content": "Loading Point Pit 3 Utara",
                           "fontFamily": "$--font-body",
                           "fontSize": 13,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "left",
+                          "textGrowth": "fixed-width",
+                          "lineHeight": 1.4,
+                          "width": "fill_container"
                         },
                         {
                           "type": "text",
-                          "id": "JSwQb",
+                          "id": "BaQKj",
                           "name": "Foto Selesai \u2022 08:05 WIT",
                           "fill": "#D97706",
                           "content": "Foto Selesai \u2022 08:05 WITA",
                           "fontFamily": "$--font-mono",
                           "fontSize": 11,
                           "fontWeight": "600",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ]
                     },
                     {
                       "type": "frame",
-                      "id": "ZxiCV",
+                      "id": "j9ELl",
                       "name": "B",
                       "width": "fill_container",
                       "layout": "vertical",
@@ -2304,36 +2358,39 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "fgiBk",
+                          "id": "q0b79",
                           "name": "TITIK BONGKAR (TUJUAN)",
                           "fill": "#7E8B9F",
                           "content": "TITIK BONGKAR (TUJUAN)",
                           "fontFamily": "$--font-mono",
                           "fontSize": 9,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         },
                         {
                           "type": "text",
-                          "id": "IoRwk",
+                          "id": "KIHZw",
                           "name": "ROM Stockpile 1",
                           "fill": "#F8FAFC",
                           "content": "ROM Stockpile 1",
                           "fontFamily": "$--font-body",
                           "fontSize": 13,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "left",
+                          "textGrowth": "fixed-width",
+                          "lineHeight": 1.4,
+                          "width": "fill_container"
                         },
                         {
                           "type": "text",
-                          "id": "oyHn7",
+                          "id": "WK0wl",
                           "name": "Ambil foto saat tiba di ",
                           "fill": "#7E8B9F",
                           "content": "Ambil foto saat tiba di radius 50m",
                           "fontFamily": "$--font-mono",
                           "fontSize": 11,
                           "fontWeight": "normal",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ]
                     }
@@ -2347,7 +2404,7 @@
             },
             {
               "type": "frame",
-              "id": "ZKSkM",
+              "id": "z7kRO",
               "name": "BottomArea",
               "width": "fill_container",
               "layout": "vertical",
@@ -2358,7 +2415,7 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "wmYlz",
+                  "id": "XKEoW",
                   "name": "BtnBongkar",
                   "width": "fill_container",
                   "layout": "horizontal",
@@ -2369,14 +2426,14 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "3LrAY",
+                      "id": "RPhce",
                       "name": "Foto Bongkar (Selesai)",
                       "fill": "#FFFFFF",
                       "content": "Foto Bongkar (Selesai)",
                       "fontFamily": "$--font-heading",
                       "fontSize": 15,
                       "fontWeight": "bold",
-                      "textAlign": "left"
+                      "textAlign": "center"
                     }
                   ],
                   "height": 58,
@@ -2385,7 +2442,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "VbuAa",
+                  "id": "slHIw",
                   "name": "K3Note",
                   "width": "fill_container",
                   "layout": "horizontal",
@@ -2396,14 +2453,17 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "SqfjI",
+                      "id": "i3OYc",
                       "name": "Fokus menyetir \u2022 Utamaka",
                       "fill": "#7E8B9F",
                       "content": "Fokus menyetir \u2022 Utamakan keselamatan K3",
                       "fontFamily": "$--font-mono",
                       "fontSize": 11,
                       "fontWeight": "normal",
-                      "textAlign": "left"
+                      "textAlign": "center",
+                      "textGrowth": "fixed-width",
+                      "lineHeight": 1.4,
+                      "width": "fill_container"
                     }
                   ]
                 }
@@ -2420,7 +2480,7 @@
         },
         {
           "type": "frame",
-          "id": "S9sDV",
+          "id": "NUSMg",
           "name": "7. Sync Queue (Dark)",
           "width": 360,
           "layout": "vertical",
@@ -2431,7 +2491,7 @@
           "children": [
             {
               "type": "frame",
-              "id": "LCk9j",
+              "id": "ecEBi",
               "name": "TopArea",
               "width": "fill_container",
               "layout": "vertical",
@@ -2442,7 +2502,7 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "aKbZX",
+                  "id": "ZKEin",
                   "name": "TopBar",
                   "width": "fill_container",
                   "layout": "horizontal",
@@ -2453,18 +2513,18 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "oTH5b",
+                      "id": "Zl1j7",
                       "name": "ANTREAN SINKRONISASI",
                       "fill": "#F8FAFC",
                       "content": "ANTREAN SINKRONISASI",
                       "fontFamily": "$--font-heading",
                       "fontSize": 13,
                       "fontWeight": "bold",
-                      "textAlign": "left"
+                      "textAlign": "center"
                     },
                     {
                       "type": "frame",
-                      "id": "rE1P5",
+                      "id": "wk64G",
                       "name": "OnlinePill",
                       "width": "fill_container",
                       "layout": "vertical",
@@ -2478,14 +2538,14 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "bNKaM",
+                          "id": "d3YTy",
                           "name": "CAMP ONLINE",
                           "fill": "#D97706",
                           "content": "CAMP ONLINE",
                           "fontFamily": "$--font-mono",
                           "fontSize": 10,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ],
                       "fill": "rgba(217, 119, 6, 0.15)",
@@ -2497,7 +2557,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "ZnxXo",
+                  "id": "QHIkQ",
                   "name": "SummaryCard",
                   "width": "fill_container",
                   "layout": "vertical",
@@ -2508,25 +2568,28 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "xLNgr",
+                      "id": "lUHDD",
                       "name": "STATUS PENGIRIMAN",
                       "fill": "#7E8B9F",
                       "content": "STATUS PENGIRIMAN",
                       "fontFamily": "$--font-mono",
                       "fontSize": 10,
                       "fontWeight": "bold",
-                      "textAlign": "left"
+                      "textAlign": "center"
                     },
                     {
                       "type": "text",
-                      "id": "Dlb7f",
+                      "id": "z4kzU",
                       "name": "3 Ritase Siap Dikirim ke",
                       "fill": "#F8FAFC",
                       "content": "3 Ritase Siap Dikirim ke Kantor",
                       "fontFamily": "$--font-body",
                       "fontSize": 15,
                       "fontWeight": "bold",
-                      "textAlign": "left"
+                      "textAlign": "left",
+                      "textGrowth": "fixed-width",
+                      "lineHeight": 1.4,
+                      "width": "fill_container"
                     }
                   ],
                   "fill": "#131824",
@@ -2536,7 +2599,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "XnmiZ",
+                  "id": "7Zlls",
                   "name": "TaskRow",
                   "width": "fill_container",
                   "layout": "horizontal",
@@ -2547,7 +2610,7 @@
                   "children": [
                     {
                       "type": "frame",
-                      "id": "aZi6d",
+                      "id": "Q8hsw",
                       "name": "T",
                       "width": "fill_container",
                       "layout": "vertical",
@@ -2558,38 +2621,41 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "fwFtt",
+                          "id": "rPhyy",
                           "name": "Ritase 1: Pit 3 Utara \u2794 ",
                           "fill": "#F8FAFC",
                           "content": "Ritase 1: Pit 3 Utara \u2794 ROM 1",
                           "fontFamily": "$--font-body",
                           "fontSize": 13,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "left",
+                          "textGrowth": "fixed-width",
+                          "lineHeight": 1.4,
+                          "width": "fill_container"
                         },
                         {
                           "type": "text",
-                          "id": "7RLKY",
+                          "id": "ZCrMv",
                           "name": "Muat 08:05 \u2022 Bongkar 08:",
                           "fill": "#7E8B9F",
                           "content": "Muat 08:05 \u2022 Bongkar 08:35",
                           "fontFamily": "$--font-mono",
                           "fontSize": 11,
                           "fontWeight": "normal",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ]
                     },
                     {
                       "type": "text",
-                      "id": "oIPkx",
+                      "id": "jQOqA",
                       "name": "Siap",
                       "fill": "#D97706",
                       "content": "Siap",
                       "fontFamily": "$--font-mono",
                       "fontSize": 12,
                       "fontWeight": "bold",
-                      "textAlign": "left"
+                      "textAlign": "center"
                     }
                   ],
                   "fill": "#131824",
@@ -2599,7 +2665,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "9zHiH",
+                  "id": "2e7KO",
                   "name": "TaskRow",
                   "width": "fill_container",
                   "layout": "horizontal",
@@ -2610,7 +2676,7 @@
                   "children": [
                     {
                       "type": "frame",
-                      "id": "LoM7t",
+                      "id": "FnN6b",
                       "name": "T",
                       "width": "fill_container",
                       "layout": "vertical",
@@ -2621,38 +2687,41 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "X8tsk",
+                          "id": "CgQJb",
                           "name": "Ritase 2: Pit 3 Utara \u2794 ",
                           "fill": "#F8FAFC",
                           "content": "Ritase 2: Pit 3 Utara \u2794 ROM 1",
                           "fontFamily": "$--font-body",
                           "fontSize": 13,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "left",
+                          "textGrowth": "fixed-width",
+                          "lineHeight": 1.4,
+                          "width": "fill_container"
                         },
                         {
                           "type": "text",
-                          "id": "zvrwr",
+                          "id": "7ykYa",
                           "name": "Muat 09:10 \u2022 Bongkar 09:",
                           "fill": "#7E8B9F",
                           "content": "Muat 09:10 \u2022 Bongkar 09:40",
                           "fontFamily": "$--font-mono",
                           "fontSize": 11,
                           "fontWeight": "normal",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ]
                     },
                     {
                       "type": "text",
-                      "id": "wmKlD",
+                      "id": "2NFp2",
                       "name": "Siap",
                       "fill": "#D97706",
                       "content": "Siap",
                       "fontFamily": "$--font-mono",
                       "fontSize": 12,
                       "fontWeight": "bold",
-                      "textAlign": "left"
+                      "textAlign": "center"
                     }
                   ],
                   "fill": "#131824",
@@ -2662,7 +2731,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "jTYfw",
+                  "id": "Q9TWg",
                   "name": "TaskRow",
                   "width": "fill_container",
                   "layout": "horizontal",
@@ -2673,7 +2742,7 @@
                   "children": [
                     {
                       "type": "frame",
-                      "id": "rZJPP",
+                      "id": "L6f1d",
                       "name": "T",
                       "width": "fill_container",
                       "layout": "vertical",
@@ -2684,38 +2753,41 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "drAFO",
+                          "id": "KGjU7",
                           "name": "Ritase 3: Pit 2 Barat \u2794 ",
                           "fill": "#F8FAFC",
                           "content": "Ritase 3: Pit 2 Barat \u2794 ROM 2",
                           "fontFamily": "$--font-body",
                           "fontSize": 13,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "left",
+                          "textGrowth": "fixed-width",
+                          "lineHeight": 1.4,
+                          "width": "fill_container"
                         },
                         {
                           "type": "text",
-                          "id": "SI2yt",
+                          "id": "yzZu5",
                           "name": "Muat 10:15 \u2022 Bongkar 10:",
                           "fill": "#7E8B9F",
                           "content": "Muat 10:15 \u2022 Bongkar 10:48",
                           "fontFamily": "$--font-mono",
                           "fontSize": 11,
                           "fontWeight": "normal",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ]
                     },
                     {
                       "type": "text",
-                      "id": "BY6Le",
+                      "id": "RJRrL",
                       "name": "Siap",
                       "fill": "#D97706",
                       "content": "Siap",
                       "fontFamily": "$--font-mono",
                       "fontSize": 12,
                       "fontWeight": "bold",
-                      "textAlign": "left"
+                      "textAlign": "center"
                     }
                   ],
                   "fill": "#131824",
@@ -2727,7 +2799,7 @@
             },
             {
               "type": "frame",
-              "id": "oAeGE",
+              "id": "ad4pZ",
               "name": "BottomArea",
               "width": "fill_container",
               "layout": "vertical",
@@ -2738,7 +2810,7 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "7KwFp",
+                  "id": "CjV3b",
                   "name": "ProgRow",
                   "width": "fill_container",
                   "layout": "vertical",
@@ -2749,7 +2821,7 @@
                   "children": [
                     {
                       "type": "frame",
-                      "id": "AMLwP",
+                      "id": "REmUr",
                       "name": "ProgText",
                       "width": "fill_container",
                       "layout": "horizontal",
@@ -2760,31 +2832,31 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "ZGWcm",
+                          "id": "aG5Jc",
                           "name": "Kemajuan Pengiriman",
                           "fill": "#7E8B9F",
                           "content": "Kemajuan Pengiriman",
                           "fontFamily": "$--font-mono",
                           "fontSize": 11,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         },
                         {
                           "type": "text",
-                          "id": "Q74UT",
+                          "id": "RyEj9",
                           "name": "66%",
                           "fill": "#D97706",
                           "content": "66%",
                           "fontFamily": "$--font-mono",
                           "fontSize": 11,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ]
                     },
                     {
                       "type": "frame",
-                      "id": "4Q83v",
+                      "id": "JWg2Y",
                       "name": "BarBg",
                       "width": "fill_container",
                       "layout": "vertical",
@@ -2795,7 +2867,7 @@
                       "children": [
                         {
                           "type": "frame",
-                          "id": "PAoFn",
+                          "id": "yJBhA",
                           "name": "BarFill",
                           "width": 220,
                           "layout": "vertical",
@@ -2817,7 +2889,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "f6MAg",
+                  "id": "98OXf",
                   "name": "BtnSync",
                   "width": "fill_container",
                   "layout": "horizontal",
@@ -2828,14 +2900,14 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "zNdJG",
+                      "id": "lFuJN",
                       "name": "Sinkronkan Sekarang",
                       "fill": "#FFFFFF",
                       "content": "Sinkronkan Sekarang",
                       "fontFamily": "$--font-heading",
                       "fontSize": 15,
                       "fontWeight": "bold",
-                      "textAlign": "left"
+                      "textAlign": "center"
                     }
                   ],
                   "height": 58,
@@ -2855,7 +2927,7 @@
         },
         {
           "type": "frame",
-          "id": "xi3hr",
+          "id": "huUx7",
           "name": "1. Initial Login (Light)",
           "width": 360,
           "layout": "vertical",
@@ -2866,7 +2938,7 @@
           "children": [
             {
               "type": "frame",
-              "id": "pHETb",
+              "id": "dWItO",
               "name": "TopArea",
               "width": "fill_container",
               "layout": "vertical",
@@ -2877,7 +2949,7 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "MVpE5",
+                  "id": "BEV7b",
                   "name": "StatusTop",
                   "width": "fill_container",
                   "layout": "horizontal",
@@ -2888,7 +2960,7 @@
                   "children": [
                     {
                       "type": "frame",
-                      "id": "KyMUq",
+                      "id": "BDG7z",
                       "name": "OnlinePill",
                       "width": "fill_container",
                       "layout": "horizontal",
@@ -2899,7 +2971,7 @@
                       "children": [
                         {
                           "type": "frame",
-                          "id": "ONoV7",
+                          "id": "8ku3S",
                           "name": "Dot",
                           "width": 8,
                           "layout": "vertical",
@@ -2914,33 +2986,33 @@
                         },
                         {
                           "type": "text",
-                          "id": "bwJzX",
+                          "id": "memPz",
                           "name": "Online Setup",
                           "fill": "#D97706",
                           "content": "Online Setup",
                           "fontFamily": "$--font-mono",
                           "fontSize": 11,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ]
                     },
                     {
                       "type": "text",
-                      "id": "8G5BO",
+                      "id": "J7L2s",
                       "name": "v4.3",
                       "fill": "#475569",
                       "content": "v4.3",
                       "fontFamily": "$--font-mono",
                       "fontSize": 11,
                       "fontWeight": "600",
-                      "textAlign": "left"
+                      "textAlign": "center"
                     }
                   ]
                 },
                 {
                   "type": "frame",
-                  "id": "qanlm",
+                  "id": "NSfkH",
                   "name": "BrandArea",
                   "width": "fill_container",
                   "layout": "vertical",
@@ -2951,7 +3023,7 @@
                   "children": [
                     {
                       "type": "frame",
-                      "id": "rhbd9",
+                      "id": "Q5Ofd",
                       "name": "LogoBox",
                       "width": 48,
                       "layout": "vertical",
@@ -2962,14 +3034,14 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "ovRVu",
+                          "id": "mIlk1",
                           "name": "TP",
                           "fill": "#FFFFFF",
                           "content": "TP",
                           "fontFamily": "$--font-mono",
                           "fontSize": 18,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ],
                       "height": 48,
@@ -2978,31 +3050,37 @@
                     },
                     {
                       "type": "text",
-                      "id": "uCP9J",
+                      "id": "aJDoC",
                       "name": "Masuk TerraPoint",
                       "fill": "#0F172A",
                       "content": "Masuk TerraPoint",
                       "fontFamily": "$--font-heading",
                       "fontSize": 20,
                       "fontWeight": "bold",
-                      "textAlign": "left"
+                      "textAlign": "left",
+                      "textGrowth": "fixed-width",
+                      "lineHeight": 1.4,
+                      "width": "fill_container"
                     },
                     {
                       "type": "text",
-                      "id": "Tp0se",
+                      "id": "ivP1e",
                       "name": "Hubungkan perangkat deng",
                       "fill": "#475569",
                       "content": "Hubungkan perangkat dengan akun pengemudi Anda saat berada di area camp.",
                       "fontFamily": "$--font-body",
                       "fontSize": 12,
                       "fontWeight": "normal",
-                      "textAlign": "left"
+                      "textAlign": "left",
+                      "textGrowth": "fixed-width",
+                      "lineHeight": 1.4,
+                      "width": "fill_container"
                     }
                   ]
                 },
                 {
                   "type": "frame",
-                  "id": "pFaMz",
+                  "id": "1qgQR",
                   "name": "FormCard",
                   "width": "fill_container",
                   "layout": "vertical",
@@ -3013,7 +3091,7 @@
                   "children": [
                     {
                       "type": "frame",
-                      "id": "fz9sq",
+                      "id": "9Ao6L",
                       "name": "InputGroup1",
                       "width": "fill_container",
                       "layout": "vertical",
@@ -3024,18 +3102,21 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "Mtbva",
+                          "id": "kn70Y",
                           "name": "Nomor ID Pengemudi",
                           "fill": "#0F172A",
                           "content": "Nomor ID Pengemudi",
                           "fontFamily": "$--font-body",
                           "fontSize": 12,
                           "fontWeight": "600",
-                          "textAlign": "left"
+                          "textAlign": "left",
+                          "textGrowth": "fixed-width",
+                          "lineHeight": 1.4,
+                          "width": "fill_container"
                         },
                         {
                           "type": "frame",
-                          "id": "jgUIf",
+                          "id": "IEVIY",
                           "name": "Field1",
                           "width": "fill_container",
                           "layout": "horizontal",
@@ -3049,14 +3130,14 @@
                           "children": [
                             {
                               "type": "text",
-                              "id": "pytMF",
+                              "id": "e41Un",
                               "name": "DRV-001",
                               "fill": "#0F172A",
                               "content": "DRV-001",
                               "fontFamily": "$--font-mono",
                               "fontSize": 14,
                               "fontWeight": "bold",
-                              "textAlign": "left"
+                              "textAlign": "center"
                             }
                           ],
                           "height": 48,
@@ -3069,7 +3150,7 @@
                     },
                     {
                       "type": "frame",
-                      "id": "JVYeh",
+                      "id": "SJcs6",
                       "name": "InputGroup2",
                       "width": "fill_container",
                       "layout": "vertical",
@@ -3080,18 +3161,21 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "0PTYF",
+                          "id": "ThbJ6",
                           "name": "Kata Sandi Akun",
                           "fill": "#0F172A",
                           "content": "Kata Sandi Akun",
                           "fontFamily": "$--font-body",
                           "fontSize": 12,
                           "fontWeight": "600",
-                          "textAlign": "left"
+                          "textAlign": "left",
+                          "textGrowth": "fixed-width",
+                          "lineHeight": 1.4,
+                          "width": "fill_container"
                         },
                         {
                           "type": "frame",
-                          "id": "dolB1",
+                          "id": "fsj6H",
                           "name": "Field2",
                           "width": "fill_container",
                           "layout": "horizontal",
@@ -3105,25 +3189,25 @@
                           "children": [
                             {
                               "type": "text",
-                              "id": "17HFN",
+                              "id": "IHY35",
                               "name": "\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022",
                               "fill": "#0F172A",
                               "content": "\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022",
                               "fontFamily": "$--font-body",
                               "fontSize": 16,
                               "fontWeight": "bold",
-                              "textAlign": "left"
+                              "textAlign": "center"
                             },
                             {
                               "type": "text",
-                              "id": "jiRkg",
+                              "id": "5tiwd",
                               "name": "LIHAT",
                               "fill": "#475569",
                               "content": "LIHAT",
                               "fontFamily": "$--font-mono",
                               "fontSize": 10,
                               "fontWeight": "bold",
-                              "textAlign": "left"
+                              "textAlign": "center"
                             }
                           ],
                           "height": 48,
@@ -3136,7 +3220,7 @@
                     },
                     {
                       "type": "frame",
-                      "id": "TwNvk",
+                      "id": "zb84q",
                       "name": "RememberMe",
                       "width": "fill_container",
                       "layout": "horizontal",
@@ -3147,7 +3231,7 @@
                       "children": [
                         {
                           "type": "frame",
-                          "id": "9pKSm",
+                          "id": "oI5gy",
                           "name": "Check",
                           "width": 16,
                           "layout": "vertical",
@@ -3158,14 +3242,14 @@
                           "children": [
                             {
                               "type": "text",
-                              "id": "O9hKq",
+                              "id": "02PsF",
                               "name": "\u2713",
                               "fill": "#FFFFFF",
                               "content": "\u2713",
-                              "fontFamily": "$--font-body",
+                              "fontFamily": "$--font-mono",
                               "fontSize": 11,
                               "fontWeight": "bold",
-                              "textAlign": "left"
+                              "textAlign": "center"
                             }
                           ],
                           "height": 16,
@@ -3174,14 +3258,17 @@
                         },
                         {
                           "type": "text",
-                          "id": "ufrbT",
+                          "id": "bxMsN",
                           "name": "Simpan sesi login di per",
                           "fill": "#475569",
                           "content": "Simpan sesi login di perangkat ini",
                           "fontFamily": "$--font-body",
                           "fontSize": 12,
                           "fontWeight": "normal",
-                          "textAlign": "left"
+                          "textAlign": "left",
+                          "textGrowth": "fixed-width",
+                          "lineHeight": 1.4,
+                          "width": "fill_container"
                         }
                       ]
                     }
@@ -3195,7 +3282,7 @@
             },
             {
               "type": "frame",
-              "id": "dG2DH",
+              "id": "XU4m7",
               "name": "BottomArea",
               "width": "fill_container",
               "layout": "vertical",
@@ -3206,7 +3293,7 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "pbQvL",
+                  "id": "t50WQ",
                   "name": "BtnLogin",
                   "width": "fill_container",
                   "layout": "horizontal",
@@ -3217,14 +3304,14 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "OQL4O",
+                      "id": "wPtAd",
                       "name": "Masuk ke Sistem",
                       "fill": "#FFFFFF",
                       "content": "Masuk ke Sistem",
                       "fontFamily": "$--font-heading",
                       "fontSize": 14,
                       "fontWeight": "bold",
-                      "textAlign": "left"
+                      "textAlign": "center"
                     }
                   ],
                   "height": 54,
@@ -3233,7 +3320,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "pT0I5",
+                  "id": "KA7sJ",
                   "name": "FootNote",
                   "width": "fill_container",
                   "layout": "horizontal",
@@ -3244,14 +3331,17 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "CTzzk",
+                      "id": "TD7KL",
                       "name": "Koneksi Camp Wi-Fi Terve",
                       "fill": "#D97706",
                       "content": "Koneksi Camp Wi-Fi Terverifikasi",
                       "fontFamily": "$--font-mono",
                       "fontSize": 11,
                       "fontWeight": "600",
-                      "textAlign": "left"
+                      "textAlign": "center",
+                      "textGrowth": "fixed-width",
+                      "lineHeight": 1.4,
+                      "width": "fill_container"
                     }
                   ]
                 }
@@ -3268,7 +3358,7 @@
         },
         {
           "type": "frame",
-          "id": "dIVOK",
+          "id": "qLuoi",
           "name": "2. Quick PIN (Light)",
           "width": 360,
           "layout": "vertical",
@@ -3279,7 +3369,7 @@
           "children": [
             {
               "type": "frame",
-              "id": "9m5xY",
+              "id": "EE9l3",
               "name": "StatusTop",
               "width": "fill_container",
               "layout": "horizontal",
@@ -3290,31 +3380,31 @@
               "children": [
                 {
                   "type": "text",
-                  "id": "aPmW0",
+                  "id": "f6wLu",
                   "name": "08:00",
                   "fill": "#475569",
                   "content": "08:00",
                   "fontFamily": "$--font-mono",
                   "fontSize": 11,
                   "fontWeight": "bold",
-                  "textAlign": "left"
+                  "textAlign": "center"
                 },
                 {
                   "type": "text",
-                  "id": "u4J3P",
+                  "id": "yYnEC",
                   "name": "Offline Ready",
                   "fill": "#D97706",
                   "content": "Offline Ready",
                   "fontFamily": "$--font-mono",
                   "fontSize": 11,
                   "fontWeight": "bold",
-                  "textAlign": "left"
+                  "textAlign": "center"
                 }
               ]
             },
             {
               "type": "frame",
-              "id": "uKS0F",
+              "id": "nzP3n",
               "name": "DriverHeader",
               "width": "fill_container",
               "layout": "vertical",
@@ -3325,7 +3415,7 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "aPYul",
+                  "id": "fnVw2",
                   "name": "AvatarCircle",
                   "width": 52,
                   "layout": "vertical",
@@ -3336,14 +3426,14 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "R7mpj",
+                      "id": "PxlfR",
                       "name": "AF",
                       "fill": "#D97706",
                       "content": "AF",
-                      "fontFamily": "$--font-body",
+                      "fontFamily": "$--font-mono",
                       "fontSize": 16,
                       "fontWeight": "bold",
-                      "textAlign": "left"
+                      "textAlign": "center"
                     }
                   ],
                   "height": 52,
@@ -3354,42 +3444,51 @@
                 },
                 {
                   "type": "text",
-                  "id": "5zDJO",
+                  "id": "efxsp",
                   "name": "Ahmad Fauzi",
                   "fill": "#0F172A",
                   "content": "Ahmad Fauzi",
                   "fontFamily": "$--font-heading",
                   "fontSize": 17,
                   "fontWeight": "bold",
-                  "textAlign": "left"
+                  "textAlign": "center",
+                  "textGrowth": "fixed-width",
+                  "lineHeight": 1.4,
+                  "width": "fill_container"
                 },
                 {
                   "type": "text",
-                  "id": "NFu4D",
+                  "id": "irmU3",
                   "name": "DRV-001",
                   "fill": "#475569",
                   "content": "DRV-001",
                   "fontFamily": "$--font-mono",
                   "fontSize": 12,
                   "fontWeight": "bold",
-                  "textAlign": "left"
+                  "textAlign": "center",
+                  "textGrowth": "fixed-width",
+                  "lineHeight": 1.4,
+                  "width": "fill_container"
                 },
                 {
                   "type": "text",
-                  "id": "bf1kw",
+                  "id": "5GMMZ",
                   "name": "Masukkan 6-Digit PIN Shi",
                   "fill": "#475569",
                   "content": "Masukkan 6-Digit PIN Shift",
                   "fontFamily": "$--font-body",
                   "fontSize": 12,
                   "fontWeight": "normal",
-                  "textAlign": "left"
+                  "textAlign": "center",
+                  "textGrowth": "fixed-width",
+                  "lineHeight": 1.4,
+                  "width": "fill_container"
                 }
               ]
             },
             {
               "type": "frame",
-              "id": "58ex6",
+              "id": "lJ0sp",
               "name": "PINDots",
               "width": "fill_container",
               "layout": "horizontal",
@@ -3400,7 +3499,7 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "dy43a",
+                  "id": "CKTIs",
                   "name": "D1",
                   "width": 14,
                   "layout": "vertical",
@@ -3415,7 +3514,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "XjhGZ",
+                  "id": "f7ar1",
                   "name": "D2",
                   "width": 14,
                   "layout": "vertical",
@@ -3430,7 +3529,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "ZhU8v",
+                  "id": "PKCFt",
                   "name": "D3",
                   "width": 14,
                   "layout": "vertical",
@@ -3445,7 +3544,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "4XpCA",
+                  "id": "etOE0",
                   "name": "D4",
                   "width": 14,
                   "layout": "vertical",
@@ -3460,7 +3559,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "5vqQq",
+                  "id": "7qcOJ",
                   "name": "D5",
                   "width": 14,
                   "layout": "vertical",
@@ -3477,7 +3576,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "Te8J0",
+                  "id": "Alp7n",
                   "name": "D6",
                   "width": 14,
                   "layout": "vertical",
@@ -3496,7 +3595,7 @@
             },
             {
               "type": "frame",
-              "id": "tV53o",
+              "id": "0fxoj",
               "name": "KeypadArea",
               "width": "fill_container",
               "layout": "vertical",
@@ -3507,7 +3606,7 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "UKFOF",
+                  "id": "WNXco",
                   "name": "KeyRow",
                   "width": "fill_container",
                   "layout": "horizontal",
@@ -3518,7 +3617,7 @@
                   "children": [
                     {
                       "type": "frame",
-                      "id": "DKRuC",
+                      "id": "fvizd",
                       "name": "Key_1",
                       "width": "fill_container",
                       "layout": "horizontal",
@@ -3529,14 +3628,14 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "eVeRd",
+                          "id": "OLWtE",
                           "name": "1",
                           "fill": "#0F172A",
                           "content": "1",
                           "fontFamily": "$--font-mono",
                           "fontSize": 20,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ],
                       "height": 52,
@@ -3547,7 +3646,7 @@
                     },
                     {
                       "type": "frame",
-                      "id": "VOfoZ",
+                      "id": "JBOIW",
                       "name": "Key_2",
                       "width": "fill_container",
                       "layout": "horizontal",
@@ -3558,14 +3657,14 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "eSDI0",
+                          "id": "HJCog",
                           "name": "2",
                           "fill": "#0F172A",
                           "content": "2",
                           "fontFamily": "$--font-mono",
                           "fontSize": 20,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ],
                       "height": 52,
@@ -3576,7 +3675,7 @@
                     },
                     {
                       "type": "frame",
-                      "id": "EzaPo",
+                      "id": "kviGr",
                       "name": "Key_3",
                       "width": "fill_container",
                       "layout": "horizontal",
@@ -3587,14 +3686,14 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "5AmHb",
+                          "id": "naWFA",
                           "name": "3",
                           "fill": "#0F172A",
                           "content": "3",
                           "fontFamily": "$--font-mono",
                           "fontSize": 20,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ],
                       "height": 52,
@@ -3607,7 +3706,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "QSHG0",
+                  "id": "7kYT6",
                   "name": "KeyRow",
                   "width": "fill_container",
                   "layout": "horizontal",
@@ -3618,7 +3717,7 @@
                   "children": [
                     {
                       "type": "frame",
-                      "id": "BLyaT",
+                      "id": "xunEt",
                       "name": "Key_4",
                       "width": "fill_container",
                       "layout": "horizontal",
@@ -3629,14 +3728,14 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "3k66K",
+                          "id": "IufCp",
                           "name": "4",
                           "fill": "#0F172A",
                           "content": "4",
                           "fontFamily": "$--font-mono",
                           "fontSize": 20,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ],
                       "height": 52,
@@ -3647,7 +3746,7 @@
                     },
                     {
                       "type": "frame",
-                      "id": "TnVhY",
+                      "id": "bgLyr",
                       "name": "Key_5",
                       "width": "fill_container",
                       "layout": "horizontal",
@@ -3658,14 +3757,14 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "2byrq",
+                          "id": "wktgn",
                           "name": "5",
                           "fill": "#0F172A",
                           "content": "5",
                           "fontFamily": "$--font-mono",
                           "fontSize": 20,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ],
                       "height": 52,
@@ -3676,7 +3775,7 @@
                     },
                     {
                       "type": "frame",
-                      "id": "Pg2pn",
+                      "id": "x7Zfk",
                       "name": "Key_6",
                       "width": "fill_container",
                       "layout": "horizontal",
@@ -3687,14 +3786,14 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "r45h1",
+                          "id": "N7ATp",
                           "name": "6",
                           "fill": "#0F172A",
                           "content": "6",
                           "fontFamily": "$--font-mono",
                           "fontSize": 20,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ],
                       "height": 52,
@@ -3707,7 +3806,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "0G9i7",
+                  "id": "9XWQr",
                   "name": "KeyRow",
                   "width": "fill_container",
                   "layout": "horizontal",
@@ -3718,7 +3817,7 @@
                   "children": [
                     {
                       "type": "frame",
-                      "id": "03sN4",
+                      "id": "oTe0W",
                       "name": "Key_7",
                       "width": "fill_container",
                       "layout": "horizontal",
@@ -3729,14 +3828,14 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "g9wC2",
+                          "id": "6YxWz",
                           "name": "7",
                           "fill": "#0F172A",
                           "content": "7",
                           "fontFamily": "$--font-mono",
                           "fontSize": 20,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ],
                       "height": 52,
@@ -3747,7 +3846,7 @@
                     },
                     {
                       "type": "frame",
-                      "id": "0xnPW",
+                      "id": "ENg1h",
                       "name": "Key_8",
                       "width": "fill_container",
                       "layout": "horizontal",
@@ -3758,14 +3857,14 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "pKG19",
+                          "id": "ltZ2J",
                           "name": "8",
                           "fill": "#0F172A",
                           "content": "8",
                           "fontFamily": "$--font-mono",
                           "fontSize": 20,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ],
                       "height": 52,
@@ -3776,7 +3875,7 @@
                     },
                     {
                       "type": "frame",
-                      "id": "2l7f6",
+                      "id": "Sc8ou",
                       "name": "Key_9",
                       "width": "fill_container",
                       "layout": "horizontal",
@@ -3787,14 +3886,14 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "4Y06O",
+                          "id": "J88nO",
                           "name": "9",
                           "fill": "#0F172A",
                           "content": "9",
                           "fontFamily": "$--font-mono",
                           "fontSize": 20,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ],
                       "height": 52,
@@ -3807,7 +3906,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "RgQMs",
+                  "id": "YDagX",
                   "name": "KeyRow",
                   "width": "fill_container",
                   "layout": "horizontal",
@@ -3818,7 +3917,7 @@
                   "children": [
                     {
                       "type": "frame",
-                      "id": "a76y6",
+                      "id": "k9g4h",
                       "name": "Key_Hapus",
                       "width": "fill_container",
                       "layout": "horizontal",
@@ -3829,14 +3928,14 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "JB4kg",
+                          "id": "soOTH",
                           "name": "Hapus",
                           "fill": "#F43F5E",
                           "content": "Hapus",
                           "fontFamily": "$--font-mono",
                           "fontSize": 15,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ],
                       "height": 52,
@@ -3847,7 +3946,7 @@
                     },
                     {
                       "type": "frame",
-                      "id": "CSFFg",
+                      "id": "fXJVh",
                       "name": "Key_0",
                       "width": "fill_container",
                       "layout": "horizontal",
@@ -3858,14 +3957,14 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "siq5M",
+                          "id": "f6Cqm",
                           "name": "0",
                           "fill": "#0F172A",
                           "content": "0",
                           "fontFamily": "$--font-mono",
                           "fontSize": 20,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ],
                       "height": 52,
@@ -3876,7 +3975,7 @@
                     },
                     {
                       "type": "frame",
-                      "id": "wo0OH",
+                      "id": "apLjK",
                       "name": "Key_Buka",
                       "width": "fill_container",
                       "layout": "horizontal",
@@ -3887,14 +3986,14 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "Uz2jf",
+                          "id": "x9m93",
                           "name": "Buka",
                           "fill": "#FFFFFF",
                           "content": "Buka",
                           "fontFamily": "$--font-mono",
                           "fontSize": 15,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ],
                       "height": 52,
@@ -3909,7 +4008,7 @@
             },
             {
               "type": "frame",
-              "id": "GGWO4",
+              "id": "FnIdY",
               "name": "FooterLink",
               "width": "fill_container",
               "layout": "horizontal",
@@ -3920,14 +4019,17 @@
               "children": [
                 {
                   "type": "text",
-                  "id": "eGfrw",
+                  "id": "ZmhGP",
                   "name": "Ganti Akun / Masuk Ulang",
                   "fill": "#475569",
                   "content": "Ganti Akun / Masuk Ulang",
                   "fontFamily": "$--font-mono",
                   "fontSize": 11,
                   "fontWeight": "600",
-                  "textAlign": "left"
+                  "textAlign": "center",
+                  "textGrowth": "fixed-width",
+                  "lineHeight": 1.4,
+                  "width": "fill_container"
                 }
               ]
             }
@@ -3942,7 +4044,7 @@
         },
         {
           "type": "frame",
-          "id": "PLkZ6",
+          "id": "Jy5A1",
           "name": "3. Home Auto-Detect (Light)",
           "width": 360,
           "layout": "vertical",
@@ -3953,7 +4055,7 @@
           "children": [
             {
               "type": "frame",
-              "id": "3b6zo",
+              "id": "piBit",
               "name": "Top",
               "width": "fill_container",
               "layout": "vertical",
@@ -3964,7 +4066,7 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "yhqSi",
+                  "id": "M5iVN",
                   "name": "TopBar",
                   "width": "fill_container",
                   "layout": "horizontal",
@@ -3975,18 +4077,18 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "rJuCA",
+                      "id": "GJDFr",
                       "name": "TERRAPOINT",
                       "fill": "#0F172A",
                       "content": "TERRAPOINT",
                       "fontFamily": "$--font-heading",
                       "fontSize": 14,
                       "fontWeight": "bold",
-                      "textAlign": "left"
+                      "textAlign": "center"
                     },
                     {
                       "type": "frame",
-                      "id": "32Mes",
+                      "id": "OIqZo",
                       "name": "GpsBadge",
                       "width": "fill_container",
                       "layout": "horizontal",
@@ -3997,7 +4099,7 @@
                       "children": [
                         {
                           "type": "frame",
-                          "id": "5dl5C",
+                          "id": "ZpivJ",
                           "name": "GpsDot",
                           "width": 6,
                           "layout": "vertical",
@@ -4012,14 +4114,14 @@
                         },
                         {
                           "type": "text",
-                          "id": "jMkht",
+                          "id": "u8wZm",
                           "name": "GPS Siap",
                           "fill": "#D97706",
                           "content": "GPS Siap",
                           "fontFamily": "$--font-mono",
                           "fontSize": 11,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ]
                     }
@@ -4027,7 +4129,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "LCtk5",
+                  "id": "WSxfb",
                   "name": "DriverRow",
                   "width": "fill_container",
                   "layout": "horizontal",
@@ -4041,7 +4143,7 @@
                   "children": [
                     {
                       "type": "frame",
-                      "id": "P44vi",
+                      "id": "zxAj0",
                       "name": "DrvTxt",
                       "width": "fill_container",
                       "layout": "vertical",
@@ -4052,31 +4154,34 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "s1W41",
+                          "id": "ovSbf",
                           "name": "PENGEMUDI AKTIF",
                           "fill": "#475569",
                           "content": "PENGEMUDI AKTIF",
                           "fontFamily": "$--font-mono",
                           "fontSize": 9,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         },
                         {
                           "type": "text",
-                          "id": "RkkNM",
+                          "id": "4J5Rz",
                           "name": "Ahmad Fauzi (DRV-001)",
                           "fill": "#0F172A",
                           "content": "Ahmad Fauzi (DRV-001)",
                           "fontFamily": "$--font-body",
                           "fontSize": 13,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "left",
+                          "textGrowth": "fixed-width",
+                          "lineHeight": 1.4,
+                          "width": "fill_container"
                         }
                       ]
                     },
                     {
                       "type": "frame",
-                      "id": "Edn57",
+                      "id": "HpR9d",
                       "name": "ShiftPill",
                       "width": "fill_container",
                       "layout": "vertical",
@@ -4090,14 +4195,14 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "51rwL",
+                          "id": "w8k12",
                           "name": "Shift 1",
                           "fill": "#D97706",
                           "content": "Shift 1",
                           "fontFamily": "$--font-mono",
                           "fontSize": 10,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ],
                       "fill": "#FFFBEB",
@@ -4109,7 +4214,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "Br24M",
+                  "id": "wAU8L",
                   "name": "LocationCard",
                   "width": "fill_container",
                   "layout": "vertical",
@@ -4120,7 +4225,7 @@
                   "children": [
                     {
                       "type": "frame",
-                      "id": "t9EoN",
+                      "id": "XLYFN",
                       "name": "TagRow",
                       "width": "fill_container",
                       "layout": "horizontal",
@@ -4131,18 +4236,18 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "FR0fM",
+                          "id": "JCSuA",
                           "name": "LOKASI TERDETEKSI (GPS)",
                           "fill": "#D97706",
                           "content": "LOKASI TERDETEKSI (GPS)",
                           "fontFamily": "$--font-mono",
                           "fontSize": 10,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         },
                         {
                           "type": "frame",
-                          "id": "1Rfvw",
+                          "id": "eCiqk",
                           "name": "Pill",
                           "width": "fill_container",
                           "layout": "vertical",
@@ -4156,14 +4261,14 @@
                           "children": [
                             {
                               "type": "text",
-                              "id": "UW244",
+                              "id": "UlEXP",
                               "name": "Radius \u2264 50m",
                               "fill": "#FFFFFF",
                               "content": "Radius \u2264 50m",
                               "fontFamily": "$--font-mono",
                               "fontSize": 9,
                               "fontWeight": "bold",
-                              "textAlign": "left"
+                              "textAlign": "center"
                             }
                           ],
                           "fill": "#D97706",
@@ -4173,18 +4278,21 @@
                     },
                     {
                       "type": "text",
-                      "id": "2ssej",
+                      "id": "aeJK8",
                       "name": "Loading Point Pit 3 Utar",
                       "fill": "#0F172A",
                       "content": "Loading Point Pit 3 Utara",
                       "fontFamily": "$--font-heading",
                       "fontSize": 16,
                       "fontWeight": "bold",
-                      "textAlign": "left"
+                      "textAlign": "left",
+                      "textGrowth": "fixed-width",
+                      "lineHeight": 1.4,
+                      "width": "fill_container"
                     },
                     {
                       "type": "frame",
-                      "id": "TVLei",
+                      "id": "vQcLf",
                       "name": "LocationMeta",
                       "width": "fill_container",
                       "layout": "horizontal",
@@ -4195,25 +4303,25 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "g7CaX",
+                          "id": "3E5Ng",
                           "name": "Jarak: 18m",
                           "fill": "#0F172A",
                           "content": "Jarak: 18m",
                           "fontFamily": "$--font-mono",
                           "fontSize": 12,
                           "fontWeight": "600",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         },
                         {
                           "type": "text",
-                          "id": "ZKIZ2",
+                          "id": "1q52i",
                           "name": "Akurasi: \u00b1 6.5m",
                           "fill": "#475569",
                           "content": "Akurasi: \u00b1 6.5m",
                           "fontFamily": "$--font-mono",
                           "fontSize": 12,
                           "fontWeight": "normal",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ]
                     }
@@ -4225,7 +4333,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "Cfvpl",
+                  "id": "XinOX",
                   "name": "SyncCard",
                   "width": "fill_container",
                   "layout": "horizontal",
@@ -4236,7 +4344,7 @@
                   "children": [
                     {
                       "type": "frame",
-                      "id": "LqEzw",
+                      "id": "yM3uc",
                       "name": "SyncInfo",
                       "width": "fill_container",
                       "layout": "vertical",
@@ -4247,31 +4355,34 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "Hh1M9",
+                          "id": "XBfJg",
                           "name": "ANTREAN SINKRONISASI",
                           "fill": "#475569",
                           "content": "ANTREAN SINKRONISASI",
                           "fontFamily": "$--font-mono",
                           "fontSize": 10,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         },
                         {
                           "type": "text",
-                          "id": "fKfJe",
+                          "id": "5YRXd",
                           "name": "3 Ritase Tersimpan",
                           "fill": "#0F172A",
                           "content": "3 Ritase Tersimpan",
                           "fontFamily": "$--font-body",
                           "fontSize": 13,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "left",
+                          "textGrowth": "fixed-width",
+                          "lineHeight": 1.4,
+                          "width": "fill_container"
                         }
                       ]
                     },
                     {
                       "type": "frame",
-                      "id": "MQDTP",
+                      "id": "N9LMi",
                       "name": "BtnQuickSync",
                       "width": "fill_container",
                       "layout": "vertical",
@@ -4285,14 +4396,14 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "cijer",
+                          "id": "9C8U4",
                           "name": "Sync",
                           "fill": "#D97706",
                           "content": "Sync",
                           "fontFamily": "$--font-mono",
                           "fontSize": 12,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ],
                       "fill": "#F8FAFC",
@@ -4310,7 +4421,7 @@
             },
             {
               "type": "frame",
-              "id": "iLPbz",
+              "id": "gKPJb",
               "name": "Bottom",
               "width": "fill_container",
               "layout": "vertical",
@@ -4321,7 +4432,7 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "4AoGl",
+                  "id": "oFwq5",
                   "name": "BtnStartPhoto",
                   "width": "fill_container",
                   "layout": "horizontal",
@@ -4332,25 +4443,25 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "oVCQa",
+                      "id": "DYSzM",
                       "name": "\ud83d\udcf7",
                       "fill": "#FFFFFF",
                       "content": "\ud83d\udcf7",
-                      "fontFamily": "$--font-body",
-                      "fontSize": 18,
-                      "fontWeight": "normal",
-                      "textAlign": "left"
+                      "fontFamily": "$--font-mono",
+                      "fontSize": 16,
+                      "fontWeight": "bold",
+                      "textAlign": "center"
                     },
                     {
                       "type": "text",
-                      "id": "11D7B",
+                      "id": "s5fLx",
                       "name": "Ambil Foto Muat & Mulai",
                       "fill": "#FFFFFF",
                       "content": "Ambil Foto Muat & Mulai",
                       "fontFamily": "$--font-heading",
                       "fontSize": 15,
                       "fontWeight": "bold",
-                      "textAlign": "left"
+                      "textAlign": "center"
                     }
                   ],
                   "height": 58,
@@ -4359,7 +4470,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "ujmg2",
+                  "id": "LsZo7",
                   "name": "Foot",
                   "width": "fill_container",
                   "layout": "horizontal",
@@ -4370,14 +4481,17 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "uW3t6",
+                      "id": "R19pB",
                       "name": "Foto awal otomatis memul",
                       "fill": "#475569",
                       "content": "Foto awal otomatis memulai ritase",
                       "fontFamily": "$--font-mono",
                       "fontSize": 11,
                       "fontWeight": "normal",
-                      "textAlign": "left"
+                      "textAlign": "center",
+                      "textGrowth": "fixed-width",
+                      "lineHeight": 1.4,
+                      "width": "fill_container"
                     }
                   ]
                 }
@@ -4394,7 +4508,7 @@
         },
         {
           "type": "frame",
-          "id": "98lwY",
+          "id": "9OWbF",
           "name": "4. Camera Viewfinder (Light)",
           "width": 360,
           "layout": "vertical",
@@ -4405,7 +4519,7 @@
           "children": [
             {
               "type": "frame",
-              "id": "HJfiN",
+              "id": "zN7pw",
               "name": "BannerValid",
               "width": "fill_container",
               "layout": "horizontal",
@@ -4419,25 +4533,25 @@
               "children": [
                 {
                   "type": "text",
-                  "id": "V82F5",
+                  "id": "fBEUO",
                   "name": "Posisi Sesuai (\u2264 50m)",
                   "fill": "#FFFFFF",
                   "content": "Posisi Sesuai (\u2264 50m)",
                   "fontFamily": "$--font-heading",
                   "fontSize": 12,
                   "fontWeight": "bold",
-                  "textAlign": "left"
+                  "textAlign": "center"
                 },
                 {
                   "type": "text",
-                  "id": "TLsDC",
+                  "id": "gpMiS",
                   "name": "\u00b1 8.2m",
                   "fill": "#FEF3C7",
                   "content": "\u00b1 8.2m",
                   "fontFamily": "$--font-mono",
                   "fontSize": 11,
                   "fontWeight": "bold",
-                  "textAlign": "left"
+                  "textAlign": "center"
                 }
               ],
               "fill": "#D97706",
@@ -4445,7 +4559,7 @@
             },
             {
               "type": "frame",
-              "id": "usgdw",
+              "id": "ufiCp",
               "name": "ReticleBox",
               "width": "fill_container",
               "layout": "vertical",
@@ -4456,29 +4570,29 @@
               "children": [
                 {
                   "type": "text",
-                  "id": "OCsHy",
+                  "id": "VRRnV",
                   "name": "[ AREA KAMERA LANGSUNG ]",
                   "fill": "#94A3B8",
                   "content": "[ AREA KAMERA LANGSUNG ]",
                   "fontFamily": "$--font-mono",
                   "fontSize": 13,
                   "fontWeight": "bold",
-                  "textAlign": "left"
+                  "textAlign": "center"
                 },
                 {
                   "type": "text",
-                  "id": "4Ks9r",
+                  "id": "HVLDT",
                   "name": "Bidik Bak Muatan Truk",
                   "fill": "#CBD5E1",
                   "content": "Bidik Bak Muatan Truk",
                   "fontFamily": "$--font-mono",
                   "fontSize": 11,
                   "fontWeight": "normal",
-                  "textAlign": "left"
+                  "textAlign": "center"
                 },
                 {
                   "type": "frame",
-                  "id": "4kMAp",
+                  "id": "bPtbs",
                   "name": "LocLabel",
                   "width": "fill_container",
                   "layout": "vertical",
@@ -4492,14 +4606,14 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "q8VqL",
+                      "id": "CSHYg",
                       "name": "Loading Point Pit 3 Utar",
                       "fill": "#D97706",
                       "content": "Loading Point Pit 3 Utara",
                       "fontFamily": "$--font-mono",
                       "fontSize": 11,
                       "fontWeight": "bold",
-                      "textAlign": "left"
+                      "textAlign": "center"
                     }
                   ],
                   "fill": "#0F172A",
@@ -4516,7 +4630,7 @@
             },
             {
               "type": "frame",
-              "id": "aPDS1",
+              "id": "EMG1h",
               "name": "ShutterBar",
               "width": "fill_container",
               "layout": "horizontal",
@@ -4530,7 +4644,7 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "KAxYd",
+                  "id": "LUyTc",
                   "name": "BtnLamp",
                   "width": 46,
                   "layout": "vertical",
@@ -4541,14 +4655,14 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "1YYgt",
+                      "id": "rqTrb",
                       "name": "\u26a1",
                       "fill": "#FFFFFF",
                       "content": "\u26a1",
-                      "fontFamily": "$--font-body",
+                      "fontFamily": "$--font-mono",
                       "fontSize": 18,
-                      "fontWeight": "normal",
-                      "textAlign": "left"
+                      "fontWeight": "bold",
+                      "textAlign": "center"
                     }
                   ],
                   "height": 46,
@@ -4557,7 +4671,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "vNxsg",
+                  "id": "GHv0j",
                   "name": "ShutterCircle",
                   "width": 68,
                   "layout": "vertical",
@@ -4568,14 +4682,14 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "CryGX",
+                      "id": "ANYa5",
                       "name": "FOTO",
                       "fill": "#FFFFFF",
                       "content": "FOTO",
                       "fontFamily": "$--font-heading",
                       "fontSize": 12,
                       "fontWeight": "bold",
-                      "textAlign": "left"
+                      "textAlign": "center"
                     }
                   ],
                   "height": 68,
@@ -4586,7 +4700,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "Uta3H",
+                  "id": "bLkhc",
                   "name": "BtnCancel",
                   "width": 46,
                   "layout": "vertical",
@@ -4597,14 +4711,14 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "iBmu4",
+                      "id": "bxQjf",
                       "name": "\u2715",
                       "fill": "#D1D5DB",
                       "content": "\u2715",
-                      "fontFamily": "$--font-body",
+                      "fontFamily": "$--font-mono",
                       "fontSize": 16,
                       "fontWeight": "bold",
-                      "textAlign": "left"
+                      "textAlign": "center"
                     }
                   ],
                   "height": 46,
@@ -4628,7 +4742,7 @@
         },
         {
           "type": "frame",
-          "id": "eznWS",
+          "id": "WoljP",
           "name": "5. Geotag Preview & Retake (Light)",
           "width": 360,
           "layout": "vertical",
@@ -4639,7 +4753,7 @@
           "children": [
             {
               "type": "frame",
-              "id": "5wtRN",
+              "id": "Po79X",
               "name": "PreviewHdr",
               "width": "fill_container",
               "layout": "horizontal",
@@ -4650,55 +4764,55 @@
               "children": [
                 {
                   "type": "text",
-                  "id": "xb1Qd",
+                  "id": "qpCu8",
                   "name": "Preview Bukti Foto",
                   "fill": "#F8FAFC",
                   "content": "Preview Bukti Foto",
                   "fontFamily": "$--font-heading",
                   "fontSize": 13,
                   "fontWeight": "bold",
-                  "textAlign": "left"
+                  "textAlign": "center"
                 },
                 {
                   "type": "text",
-                  "id": "WTvZQ",
+                  "id": "in9Gz",
                   "name": "Tercatat",
                   "fill": "#D97706",
                   "content": "Tercatat",
                   "fontFamily": "$--font-mono",
                   "fontSize": 11,
                   "fontWeight": "bold",
-                  "textAlign": "left"
+                  "textAlign": "center"
                 }
               ]
             },
             {
               "type": "frame",
-              "id": "pURNb",
+              "id": "LR8bl",
               "name": "PhotoContainerWithWatermark",
               "width": "fill_container",
               "layout": "vertical",
               "gap": 0,
-              "padding": 12,
+              "padding": 10,
               "justifyContent": "end",
               "alignItems": "start",
               "children": [
                 {
                   "type": "frame",
-                  "id": "us6u4",
+                  "id": "0SG9D",
                   "name": "SwissWatermarkStampCard",
                   "width": "fill_container",
                   "layout": "horizontal",
-                  "gap": 10,
-                  "padding": 12,
+                  "gap": 8,
+                  "padding": 10,
                   "justifyContent": "start",
                   "alignItems": "center",
                   "children": [
                     {
                       "type": "frame",
-                      "id": "hnPbM",
+                      "id": "7MBse",
                       "name": "MiniMapInset",
-                      "width": 74,
+                      "width": 68,
                       "layout": "vertical",
                       "gap": 2,
                       "padding": 0,
@@ -4707,7 +4821,7 @@
                       "children": [
                         {
                           "type": "frame",
-                          "id": "n2FLg",
+                          "id": "ftYU0",
                           "name": "GpsPin",
                           "width": 12,
                           "layout": "vertical",
@@ -4724,17 +4838,17 @@
                         },
                         {
                           "type": "text",
-                          "id": "ctDDF",
+                          "id": "yE2Nu",
                           "name": "50M RADIUS",
                           "fill": "#334155",
                           "content": "50M RADIUS",
                           "fontFamily": "$--font-mono",
                           "fontSize": 7,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ],
-                      "height": 84,
+                      "height": 78,
                       "fill": "#F1F5F9",
                       "stroke": "#CBD5E1",
                       "strokeWidth": 1,
@@ -4742,7 +4856,7 @@
                     },
                     {
                       "type": "frame",
-                      "id": "Tq4dU",
+                      "id": "1Vy8m",
                       "name": "SurveyorMetadata",
                       "width": "fill_container",
                       "layout": "vertical",
@@ -4753,7 +4867,7 @@
                       "children": [
                         {
                           "type": "frame",
-                          "id": "9jveg",
+                          "id": "ssB3O",
                           "name": "HdrRow",
                           "width": "fill_container",
                           "layout": "horizontal",
@@ -4764,82 +4878,85 @@
                           "children": [
                             {
                               "type": "text",
-                              "id": "0roo2",
+                              "id": "L98Ea",
                               "name": "START CHECKPOINT",
                               "fill": "#D97706",
                               "content": "START CHECKPOINT",
                               "fontFamily": "$--font-mono",
                               "fontSize": 9,
                               "fontWeight": "bold",
-                              "textAlign": "left"
+                              "textAlign": "center"
                             },
                             {
                               "type": "text",
-                              "id": "YUbUl",
+                              "id": "x2bo8",
                               "name": "TERRAPOINT",
                               "fill": "#64748B",
                               "content": "TERRAPOINT",
                               "fontFamily": "$--font-mono",
                               "fontSize": 8,
                               "fontWeight": "normal",
-                              "textAlign": "left"
+                              "textAlign": "center"
                             }
                           ]
                         },
                         {
                           "type": "text",
-                          "id": "mFbaZ",
+                          "id": "Nwurw",
                           "name": "08:05:22 WITA (18/09/202",
                           "fill": "#DC2626",
                           "content": "08:05:22 WITA (18/09/2026)",
                           "fontFamily": "$--font-mono",
-                          "fontSize": 11,
+                          "fontSize": 10,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         },
                         {
                           "type": "text",
-                          "id": "WRwy0",
+                          "id": "eAzms",
                           "name": "Loading Point Pit 3 Utar",
                           "fill": "#0F172A",
                           "content": "Loading Point Pit 3 Utara",
                           "fontFamily": "$--font-body",
                           "fontSize": 11,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "left",
+                          "textGrowth": "fixed-width",
+                          "lineHeight": 1.4,
+                          "width": "fill_container"
                         },
                         {
                           "type": "text",
-                          "id": "4hnpe",
+                          "id": "THG21",
                           "name": "Lat: -3.123456, Lng: 115",
                           "fill": "#475569",
                           "content": "Lat: -3.123456, Lng: 115.123456",
                           "fontFamily": "$--font-mono",
                           "fontSize": 9,
                           "fontWeight": "normal",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         },
                         {
                           "type": "text",
-                          "id": "Jx5mu",
+                          "id": "GLZ0B",
                           "name": "Akurasi: \u00b18.2m | Alt: 14",
                           "fill": "#64748B",
                           "content": "Akurasi: \u00b18.2m | Alt: 142m MSL",
                           "fontFamily": "$--font-mono",
                           "fontSize": 8,
                           "fontWeight": "normal",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         },
                         {
                           "type": "text",
-                          "id": "EjguP",
+                          "id": "9XTMU",
                           "name": "DRV-001 (Ahmad) \u2022 TSK-00",
                           "fill": "#64748B",
                           "content": "DRV-001 (Ahmad) \u2022 TSK-001",
                           "fontFamily": "$--font-mono",
                           "fontSize": 8,
                           "fontWeight": "normal",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ]
                     }
@@ -4856,7 +4973,7 @@
             },
             {
               "type": "frame",
-              "id": "wZ6An",
+              "id": "UVrtI",
               "name": "Actions",
               "width": "fill_container",
               "layout": "vertical",
@@ -4867,7 +4984,7 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "sK57i",
+                  "id": "oxw3Q",
                   "name": "BtnUsePhoto",
                   "width": "fill_container",
                   "layout": "horizontal",
@@ -4878,14 +4995,14 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "X79Px",
+                      "id": "bY4W2",
                       "name": "Gunakan Foto Ini (Mulai)",
                       "fill": "#FFFFFF",
                       "content": "Gunakan Foto Ini (Mulai)",
                       "fontFamily": "$--font-heading",
                       "fontSize": 14,
                       "fontWeight": "bold",
-                      "textAlign": "left"
+                      "textAlign": "center"
                     }
                   ],
                   "height": 54,
@@ -4894,7 +5011,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "MfL7Q",
+                  "id": "pilpO",
                   "name": "BtnRetake",
                   "width": "fill_container",
                   "layout": "horizontal",
@@ -4905,14 +5022,14 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "bIURu",
+                      "id": "S9EEc",
                       "name": "Foto Ulang (Retake)",
                       "fill": "#CBD5E1",
                       "content": "Foto Ulang (Retake)",
                       "fontFamily": "$--font-mono",
                       "fontSize": 12,
                       "fontWeight": "600",
-                      "textAlign": "left"
+                      "textAlign": "center"
                     }
                   ],
                   "height": 44,
@@ -4934,7 +5051,7 @@
         },
         {
           "type": "frame",
-          "id": "YuyGc",
+          "id": "1EMDG",
           "name": "6. Hauling Active Status (Light)",
           "width": 360,
           "layout": "vertical",
@@ -4945,7 +5062,7 @@
           "children": [
             {
               "type": "frame",
-              "id": "vgBSb",
+              "id": "P90EI",
               "name": "TopArea",
               "width": "fill_container",
               "layout": "vertical",
@@ -4956,7 +5073,7 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "rAQgP",
+                  "id": "hpoAe",
                   "name": "TopBar",
                   "width": "fill_container",
                   "layout": "horizontal",
@@ -4967,18 +5084,18 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "nj4Zr",
+                      "id": "FsmpE",
                       "name": "RITASE BERJALAN",
                       "fill": "#0F172A",
                       "content": "RITASE BERJALAN",
                       "fontFamily": "$--font-heading",
                       "fontSize": 13,
                       "fontWeight": "bold",
-                      "textAlign": "left"
+                      "textAlign": "center"
                     },
                     {
                       "type": "frame",
-                      "id": "CdcKV",
+                      "id": "qABcf",
                       "name": "ActiveBadge",
                       "width": "fill_container",
                       "layout": "vertical",
@@ -4992,14 +5109,14 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "d5AqX",
+                          "id": "1rpMS",
                           "name": "SIAP HAULING",
                           "fill": "#D97706",
                           "content": "SIAP HAULING",
                           "fontFamily": "$--font-mono",
                           "fontSize": 10,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ],
                       "fill": "rgba(217, 119, 6, 0.15)",
@@ -5011,7 +5128,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "4aD8y",
+                  "id": "YG6Mx",
                   "name": "StatusCard",
                   "width": "fill_container",
                   "layout": "vertical",
@@ -5022,7 +5139,7 @@
                   "children": [
                     {
                       "type": "frame",
-                      "id": "9lgqh",
+                      "id": "vN8vL",
                       "name": "TruckIcon",
                       "width": 44,
                       "layout": "vertical",
@@ -5033,14 +5150,14 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "8TSlN",
+                          "id": "G67pA",
                           "name": "\ud83d\ude9b",
                           "fill": "#FFFFFF",
                           "content": "\ud83d\ude9b",
-                          "fontFamily": "$--font-body",
+                          "fontFamily": "$--font-mono",
                           "fontSize": 20,
-                          "fontWeight": "normal",
-                          "textAlign": "left"
+                          "fontWeight": "bold",
+                          "textAlign": "center"
                         }
                       ],
                       "height": 44,
@@ -5049,25 +5166,31 @@
                     },
                     {
                       "type": "text",
-                      "id": "ySo3O",
+                      "id": "M0kxZ",
                       "name": "PERJALANAN MENUJU TITIK ",
                       "fill": "#D97706",
                       "content": "PERJALANAN MENUJU TITIK BONGKAR",
                       "fontFamily": "$--font-heading",
                       "fontSize": 12,
                       "fontWeight": "bold",
-                      "textAlign": "left"
+                      "textAlign": "center",
+                      "textGrowth": "fixed-width",
+                      "lineHeight": 1.4,
+                      "width": "fill_container"
                     },
                     {
                       "type": "text",
-                      "id": "aBlvA",
+                      "id": "U0tn1",
                       "name": "Rute hauling otomatis te",
                       "fill": "#475569",
                       "content": "Rute hauling otomatis tercatat di latar belakang dan terpantau oleh Dispatcher di dashboard.",
                       "fontFamily": "$--font-body",
                       "fontSize": 11,
                       "fontWeight": "normal",
-                      "textAlign": "center"
+                      "textAlign": "center",
+                      "textGrowth": "fixed-width",
+                      "lineHeight": 1.4,
+                      "width": "fill_container"
                     }
                   ],
                   "fill": "#F8FAFC",
@@ -5077,7 +5200,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "gqedc",
+                  "id": "ks71w",
                   "name": "CheckpointCard",
                   "width": "fill_container",
                   "layout": "vertical",
@@ -5088,7 +5211,7 @@
                   "children": [
                     {
                       "type": "frame",
-                      "id": "k6f4h",
+                      "id": "T8bJ6",
                       "name": "A",
                       "width": "fill_container",
                       "layout": "vertical",
@@ -5099,42 +5222,45 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "qvA3Y",
+                          "id": "2qDO5",
                           "name": "TITIK MUAT (AWAL)",
                           "fill": "#475569",
                           "content": "TITIK MUAT (AWAL)",
                           "fontFamily": "$--font-mono",
                           "fontSize": 9,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         },
                         {
                           "type": "text",
-                          "id": "Rtvci",
+                          "id": "wi5hZ",
                           "name": "Loading Point Pit 3 Utar",
                           "fill": "#0F172A",
                           "content": "Loading Point Pit 3 Utara",
                           "fontFamily": "$--font-body",
                           "fontSize": 13,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "left",
+                          "textGrowth": "fixed-width",
+                          "lineHeight": 1.4,
+                          "width": "fill_container"
                         },
                         {
                           "type": "text",
-                          "id": "zKvoN",
+                          "id": "w1FOM",
                           "name": "Foto Selesai \u2022 08:05 WIT",
                           "fill": "#D97706",
                           "content": "Foto Selesai \u2022 08:05 WITA",
                           "fontFamily": "$--font-mono",
                           "fontSize": 11,
                           "fontWeight": "600",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ]
                     },
                     {
                       "type": "frame",
-                      "id": "4pRQC",
+                      "id": "9Y0Ex",
                       "name": "B",
                       "width": "fill_container",
                       "layout": "vertical",
@@ -5145,36 +5271,39 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "8p7Qp",
+                          "id": "pnM87",
                           "name": "TITIK BONGKAR (TUJUAN)",
                           "fill": "#475569",
                           "content": "TITIK BONGKAR (TUJUAN)",
                           "fontFamily": "$--font-mono",
                           "fontSize": 9,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         },
                         {
                           "type": "text",
-                          "id": "fWYvu",
+                          "id": "bb8ov",
                           "name": "ROM Stockpile 1",
                           "fill": "#0F172A",
                           "content": "ROM Stockpile 1",
                           "fontFamily": "$--font-body",
                           "fontSize": 13,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "left",
+                          "textGrowth": "fixed-width",
+                          "lineHeight": 1.4,
+                          "width": "fill_container"
                         },
                         {
                           "type": "text",
-                          "id": "SHQEg",
+                          "id": "OZUkS",
                           "name": "Ambil foto saat tiba di ",
                           "fill": "#475569",
                           "content": "Ambil foto saat tiba di radius 50m",
                           "fontFamily": "$--font-mono",
                           "fontSize": 11,
                           "fontWeight": "normal",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ]
                     }
@@ -5188,7 +5317,7 @@
             },
             {
               "type": "frame",
-              "id": "sAd47",
+              "id": "uOsrl",
               "name": "BottomArea",
               "width": "fill_container",
               "layout": "vertical",
@@ -5199,7 +5328,7 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "U939L",
+                  "id": "GAscy",
                   "name": "BtnBongkar",
                   "width": "fill_container",
                   "layout": "horizontal",
@@ -5210,14 +5339,14 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "HlHW2",
+                      "id": "PRwvG",
                       "name": "Foto Bongkar (Selesai)",
                       "fill": "#FFFFFF",
                       "content": "Foto Bongkar (Selesai)",
                       "fontFamily": "$--font-heading",
                       "fontSize": 15,
                       "fontWeight": "bold",
-                      "textAlign": "left"
+                      "textAlign": "center"
                     }
                   ],
                   "height": 58,
@@ -5226,7 +5355,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "wPW7e",
+                  "id": "Bj3WU",
                   "name": "K3Note",
                   "width": "fill_container",
                   "layout": "horizontal",
@@ -5237,14 +5366,17 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "FlYoM",
+                      "id": "5Lkyf",
                       "name": "Fokus menyetir \u2022 Utamaka",
                       "fill": "#475569",
                       "content": "Fokus menyetir \u2022 Utamakan keselamatan K3",
                       "fontFamily": "$--font-mono",
                       "fontSize": 11,
                       "fontWeight": "normal",
-                      "textAlign": "left"
+                      "textAlign": "center",
+                      "textGrowth": "fixed-width",
+                      "lineHeight": 1.4,
+                      "width": "fill_container"
                     }
                   ]
                 }
@@ -5261,7 +5393,7 @@
         },
         {
           "type": "frame",
-          "id": "fr2ec",
+          "id": "y7lRU",
           "name": "7. Sync Queue (Light)",
           "width": 360,
           "layout": "vertical",
@@ -5272,7 +5404,7 @@
           "children": [
             {
               "type": "frame",
-              "id": "ys4Ex",
+              "id": "7eVz1",
               "name": "TopArea",
               "width": "fill_container",
               "layout": "vertical",
@@ -5283,7 +5415,7 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "0EkUO",
+                  "id": "QeRKT",
                   "name": "TopBar",
                   "width": "fill_container",
                   "layout": "horizontal",
@@ -5294,18 +5426,18 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "0iRqF",
+                      "id": "aqxIz",
                       "name": "ANTREAN SINKRONISASI",
                       "fill": "#0F172A",
                       "content": "ANTREAN SINKRONISASI",
                       "fontFamily": "$--font-heading",
                       "fontSize": 13,
                       "fontWeight": "bold",
-                      "textAlign": "left"
+                      "textAlign": "center"
                     },
                     {
                       "type": "frame",
-                      "id": "Hh1HW",
+                      "id": "Gxe7l",
                       "name": "OnlinePill",
                       "width": "fill_container",
                       "layout": "vertical",
@@ -5319,14 +5451,14 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "hzG7e",
+                          "id": "DbAy8",
                           "name": "CAMP ONLINE",
                           "fill": "#D97706",
                           "content": "CAMP ONLINE",
                           "fontFamily": "$--font-mono",
                           "fontSize": 10,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ],
                       "fill": "rgba(217, 119, 6, 0.15)",
@@ -5338,7 +5470,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "w9wmp",
+                  "id": "HI7VB",
                   "name": "SummaryCard",
                   "width": "fill_container",
                   "layout": "vertical",
@@ -5349,25 +5481,28 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "ZjV9e",
+                      "id": "kWaQm",
                       "name": "STATUS PENGIRIMAN",
                       "fill": "#475569",
                       "content": "STATUS PENGIRIMAN",
                       "fontFamily": "$--font-mono",
                       "fontSize": 10,
                       "fontWeight": "bold",
-                      "textAlign": "left"
+                      "textAlign": "center"
                     },
                     {
                       "type": "text",
-                      "id": "kUuW5",
+                      "id": "K1YCQ",
                       "name": "3 Ritase Siap Dikirim ke",
                       "fill": "#0F172A",
                       "content": "3 Ritase Siap Dikirim ke Kantor",
                       "fontFamily": "$--font-body",
                       "fontSize": 15,
                       "fontWeight": "bold",
-                      "textAlign": "left"
+                      "textAlign": "left",
+                      "textGrowth": "fixed-width",
+                      "lineHeight": 1.4,
+                      "width": "fill_container"
                     }
                   ],
                   "fill": "#F8FAFC",
@@ -5377,7 +5512,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "Pw4Z9",
+                  "id": "Y7rj6",
                   "name": "TaskRow",
                   "width": "fill_container",
                   "layout": "horizontal",
@@ -5388,7 +5523,7 @@
                   "children": [
                     {
                       "type": "frame",
-                      "id": "0xD5M",
+                      "id": "WmpWs",
                       "name": "T",
                       "width": "fill_container",
                       "layout": "vertical",
@@ -5399,38 +5534,41 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "9pjR4",
+                          "id": "7kg2u",
                           "name": "Ritase 1: Pit 3 Utara \u2794 ",
                           "fill": "#0F172A",
                           "content": "Ritase 1: Pit 3 Utara \u2794 ROM 1",
                           "fontFamily": "$--font-body",
                           "fontSize": 13,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "left",
+                          "textGrowth": "fixed-width",
+                          "lineHeight": 1.4,
+                          "width": "fill_container"
                         },
                         {
                           "type": "text",
-                          "id": "ZQlzv",
+                          "id": "tYI0Z",
                           "name": "Muat 08:05 \u2022 Bongkar 08:",
                           "fill": "#475569",
                           "content": "Muat 08:05 \u2022 Bongkar 08:35",
                           "fontFamily": "$--font-mono",
                           "fontSize": 11,
                           "fontWeight": "normal",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ]
                     },
                     {
                       "type": "text",
-                      "id": "aXWy5",
+                      "id": "Bkfje",
                       "name": "Siap",
                       "fill": "#D97706",
                       "content": "Siap",
                       "fontFamily": "$--font-mono",
                       "fontSize": 12,
                       "fontWeight": "bold",
-                      "textAlign": "left"
+                      "textAlign": "center"
                     }
                   ],
                   "fill": "#F8FAFC",
@@ -5440,7 +5578,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "sDnWM",
+                  "id": "unWrp",
                   "name": "TaskRow",
                   "width": "fill_container",
                   "layout": "horizontal",
@@ -5451,7 +5589,7 @@
                   "children": [
                     {
                       "type": "frame",
-                      "id": "kGvrD",
+                      "id": "wglpJ",
                       "name": "T",
                       "width": "fill_container",
                       "layout": "vertical",
@@ -5462,38 +5600,41 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "RxgmQ",
+                          "id": "P5sB2",
                           "name": "Ritase 2: Pit 3 Utara \u2794 ",
                           "fill": "#0F172A",
                           "content": "Ritase 2: Pit 3 Utara \u2794 ROM 1",
                           "fontFamily": "$--font-body",
                           "fontSize": 13,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "left",
+                          "textGrowth": "fixed-width",
+                          "lineHeight": 1.4,
+                          "width": "fill_container"
                         },
                         {
                           "type": "text",
-                          "id": "Q0BGM",
+                          "id": "56gkr",
                           "name": "Muat 09:10 \u2022 Bongkar 09:",
                           "fill": "#475569",
                           "content": "Muat 09:10 \u2022 Bongkar 09:40",
                           "fontFamily": "$--font-mono",
                           "fontSize": 11,
                           "fontWeight": "normal",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ]
                     },
                     {
                       "type": "text",
-                      "id": "RWNmx",
+                      "id": "zpfaM",
                       "name": "Siap",
                       "fill": "#D97706",
                       "content": "Siap",
                       "fontFamily": "$--font-mono",
                       "fontSize": 12,
                       "fontWeight": "bold",
-                      "textAlign": "left"
+                      "textAlign": "center"
                     }
                   ],
                   "fill": "#F8FAFC",
@@ -5503,7 +5644,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "NdxrK",
+                  "id": "MNdCJ",
                   "name": "TaskRow",
                   "width": "fill_container",
                   "layout": "horizontal",
@@ -5514,7 +5655,7 @@
                   "children": [
                     {
                       "type": "frame",
-                      "id": "KdVKE",
+                      "id": "PgLN9",
                       "name": "T",
                       "width": "fill_container",
                       "layout": "vertical",
@@ -5525,38 +5666,41 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "vfwTe",
+                          "id": "twmCs",
                           "name": "Ritase 3: Pit 2 Barat \u2794 ",
                           "fill": "#0F172A",
                           "content": "Ritase 3: Pit 2 Barat \u2794 ROM 2",
                           "fontFamily": "$--font-body",
                           "fontSize": 13,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "left",
+                          "textGrowth": "fixed-width",
+                          "lineHeight": 1.4,
+                          "width": "fill_container"
                         },
                         {
                           "type": "text",
-                          "id": "MPh6m",
+                          "id": "Nes8p",
                           "name": "Muat 10:15 \u2022 Bongkar 10:",
                           "fill": "#475569",
                           "content": "Muat 10:15 \u2022 Bongkar 10:48",
                           "fontFamily": "$--font-mono",
                           "fontSize": 11,
                           "fontWeight": "normal",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ]
                     },
                     {
                       "type": "text",
-                      "id": "o3WJb",
+                      "id": "DV9Wl",
                       "name": "Siap",
                       "fill": "#D97706",
                       "content": "Siap",
                       "fontFamily": "$--font-mono",
                       "fontSize": 12,
                       "fontWeight": "bold",
-                      "textAlign": "left"
+                      "textAlign": "center"
                     }
                   ],
                   "fill": "#F8FAFC",
@@ -5568,7 +5712,7 @@
             },
             {
               "type": "frame",
-              "id": "x4dco",
+              "id": "zLUag",
               "name": "BottomArea",
               "width": "fill_container",
               "layout": "vertical",
@@ -5579,7 +5723,7 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "Ll8l1",
+                  "id": "YmSbj",
                   "name": "ProgRow",
                   "width": "fill_container",
                   "layout": "vertical",
@@ -5590,7 +5734,7 @@
                   "children": [
                     {
                       "type": "frame",
-                      "id": "tr4yQ",
+                      "id": "OzTV9",
                       "name": "ProgText",
                       "width": "fill_container",
                       "layout": "horizontal",
@@ -5601,31 +5745,31 @@
                       "children": [
                         {
                           "type": "text",
-                          "id": "VvIgD",
+                          "id": "5BzDX",
                           "name": "Kemajuan Pengiriman",
                           "fill": "#475569",
                           "content": "Kemajuan Pengiriman",
                           "fontFamily": "$--font-mono",
                           "fontSize": 11,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         },
                         {
                           "type": "text",
-                          "id": "Mzk8a",
+                          "id": "4bjGx",
                           "name": "66%",
                           "fill": "#D97706",
                           "content": "66%",
                           "fontFamily": "$--font-mono",
                           "fontSize": 11,
                           "fontWeight": "bold",
-                          "textAlign": "left"
+                          "textAlign": "center"
                         }
                       ]
                     },
                     {
                       "type": "frame",
-                      "id": "9rd4u",
+                      "id": "ldgI1",
                       "name": "BarBg",
                       "width": "fill_container",
                       "layout": "vertical",
@@ -5636,7 +5780,7 @@
                       "children": [
                         {
                           "type": "frame",
-                          "id": "P6azF",
+                          "id": "22iBu",
                           "name": "BarFill",
                           "width": 220,
                           "layout": "vertical",
@@ -5658,7 +5802,7 @@
                 },
                 {
                   "type": "frame",
-                  "id": "GB6tf",
+                  "id": "N4tdB",
                   "name": "BtnSync",
                   "width": "fill_container",
                   "layout": "horizontal",
@@ -5669,14 +5813,14 @@
                   "children": [
                     {
                       "type": "text",
-                      "id": "MWUAn",
+                      "id": "3vaRC",
                       "name": "Sinkronkan Sekarang",
                       "fill": "#FFFFFF",
                       "content": "Sinkronkan Sekarang",
                       "fontFamily": "$--font-heading",
                       "fontSize": 15,
                       "fontWeight": "bold",
-                      "textAlign": "left"
+                      "textAlign": "center"
                     }
                   ],
                   "height": 58,
