@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TerraPoint — Mining Safety Amber Design System (Driver Focused)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --amber-primary: #D97706;
+      --amber-hover: #B45309;
+      --amber-light: #F59E0B;
+      --amber-subtle: rgba(217, 119, 6, 0.12);
+      --amber-border: #D97706;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      transition: background-color 0.25s cubic-bezier(0.16, 1, 0.3, 1), color 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      user-select: none;
+      -webkit-font-smoothing: antialiased;
+    }
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+      font-feature-settings: "tnum";
+    }
+    
+    .phone-canvas {
+      width: 380px;
+      height: 810px;
+      border-radius: 48px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .island-bar {
+      position: absolute;
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 110px;
+      height: 24px;
+      border-radius: 12px;
+      z-index: 60;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .app-screen {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      padding: 44px 20px 22px 20px;
+      position: relative;
+    }
+    .app-screen::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Spring Physics */
+    .btn-tactile {
+      transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+    }
+    .btn-tactile:active:not(:disabled) {
+      transform: scale(0.96);
+    }
+
+    /* Dark Mode */
+    .mode-dark {
+      background-color: #06080D;
+      color: #F8FAFC;
+    }
+    .mode-dark .phone-canvas {
+      background-color: #0B0E17;
+      border: 8px solid #1C2230;
+      color: #F8FAFC;
+      box-shadow: 0 35px 80px -20px rgba(0, 0, 0, 0.95), 0 0 0 1px rgba(255, 255, 255, 0.05);
+    }
+    .mode-dark .island-bar {
+      background-color: #000000;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .mode-dark .min-card {
+      background-color: #131824;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.4);
+      color: #F8FAFC;
+    }
+    .mode-dark .min-card-highlight {
+      background-color: var(--amber-subtle);
+      border: 1.5px solid var(--amber-border);
+      box-shadow: 0 6px 16px -4px rgba(0, 0, 0, 0.5);
+      color: #F8FAFC;
+    }
+    .mode-dark .min-card-locked {
+      background-color: #1A1716;
+      border: 1.5px solid #78350F;
+      color: #F8FAFC;
+    }
+    .mode-dark .min-input {
+      background-color: #131824;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #F8FAFC;
+    }
+    .mode-dark .min-key-btn {
+      background-color: #131824;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      color: #F8FAFC;
+    }
+    .mode-dark .min-key-btn:active {
+      background-color: #1E2638;
+    }
+    .mode-dark .c-muted {
+      color: #7E8B9F;
+    }
+    .mode-dark .c-heading {
+      color: #FFFFFF;
+    }
+    .mode-dark .badge-net {
+      background-color: var(--amber-subtle);
+      border: 1px solid var(--amber-primary);
+      color: var(--amber-light);
+    }
+
+    /* Light Mode */
+    .mode-light {
+      background-color: #CBD5E1;
+      color: #0F172A;
+    }
+    .mode-light .phone-canvas {
+      background-color: #FFFFFF;
+      border: 8px solid #334155;
+      color: #0F172A;
+      box-shadow: 0 35px 80px -20px rgba(15, 23, 42, 0.3), 0 0 0 1px rgba(0, 0, 0, 0.06);
+    }
+    .mode-light .island-bar {
+      background-color: #0F172A;
+    }
+    .mode-light .min-card {
+      background-color: #F8FAFC;
+      border: 1.5px solid #E2E8F0;
+      box-shadow: 0 2px 8px -2px rgba(15, 23, 42, 0.06);
+      color: #0F172A;
+    }
+    .mode-light .min-card-highlight {
+      background-color: #FFFBEB;
+      border: 1.5px solid var(--amber-primary);
+      box-shadow: 0 4px 12px -2px rgba(217, 119, 6, 0.12);
+      color: #0F172A;
+    }
+    .mode-light .min-card-locked {
+      background-color: #FEF2F2;
+      border: 1.5px solid #FCA5A5;
+      color: #0F172A;
+    }
+    .mode-light .min-input {
+      background-color: #FFFFFF;
+      border: 1.5px solid #CBD5E1;
+      color: #0F172A;
+    }
+    .mode-light .min-key-btn {
+      background-color: #F8FAFC;
+      border: 1.5px solid #E2E8F0;
+      box-shadow: 0 2px 4px rgba(15, 23, 42, 0.05);
+      color: #0F172A;
+    }
+    .mode-light .min-key-btn:active {
+      background-color: #E2E8F0;
+    }
+    .mode-light .c-muted {
+      color: #475569;
+    }
+    .mode-light .c-heading {
+      color: #0F172A;
+    }
+    .mode-light .badge-net {
+      background-color: #FEF3C7;
+      border: 1px solid var(--amber-primary);
+      color: #92400E;
+    }
+
+    /* Swiss Watermark Card */
+    .swiss-watermark-box {
+      background-color: #FFFFFF;
+      color: #0F172A;
+      border-radius: 16px;
+      box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(0,0,0,0.08);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Shutter Flash */
+    @keyframes camera-flash {
+      0% { opacity: 0; }
+      50% { opacity: 0.85; }
+      100% { opacity: 0; }
+    }
+    .camera-flash-active {
+      animation: camera-flash 0.3s ease-out;
+    }
+  </style>
+</head>
+<body id="appBody" class="mode-dark min-h-screen py-8 px-4 flex flex-col items-center justify-center">
+
+  <!-- TOP APP TOOLBAR -->
+  <header class="w-full max-w-5xl mb-6 flex flex-col md:flex-row items-center justify-between gap-4">
+    <div>
+      <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-amber-950/60 border border-amber-600/50 text-[11px] font-bold text-amber-400 font-mono mb-1">
+        <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+        <span>CLEAN DRIVER DESIGN SYSTEM v4.3</span>
+      </div>
+      <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight text-white flex items-center gap-2">
+        TerraPoint Mobile Interface
+      </h1>
+      <p class="text-xs text-slate-400 mt-0.5">
+        Silent Background Tracking &bull; Clean Human-Friendly Sync &bull; Geotag Watermark
+      </p>
+    </div>
+
+    <!-- Simulator Controls -->
+    <div class="flex flex-wrap items-center gap-2.5">
+      <!-- Dark / Light Mode -->
+      <div class="flex items-center bg-slate-900 border border-slate-700/80 rounded-xl p-1 shadow-inner">
+        <button onclick="setTheme('dark')" id="btnDark" class="px-3 py-1.5 rounded-lg text-xs font-semibold font-mono bg-amber-600 text-white shadow-sm transition">
+          🌙 Dark
+        </button>
+        <button onclick="setTheme('light')" id="btnLight" class="px-3 py-1.5 rounded-lg text-xs font-semibold font-mono text-slate-400 hover:text-white transition">
+          ☀️ Light
+        </button>
+      </div>
+
+      <!-- Geofence State Toggle -->
+      <div class="flex items-center bg-slate-900 border border-slate-700/80 rounded-xl p-1 shadow-inner text-xs font-mono">
+        <button onclick="setGeofenceState('inside')" id="btnGeoInside" class="px-2.5 py-1.5 rounded-lg font-bold bg-amber-600/20 text-amber-400 border border-amber-500 transition">
+          🟢 &le; 50m (Aktif)
+        </button>
+        <button onclick="setGeofenceState('outside')" id="btnGeoOutside" class="px-2.5 py-1.5 rounded-lg font-semibold text-slate-400 hover:text-white transition">
+          🔴 &gt; 50m (Terkunci)
+        </button>
+      </div>
+
+      <!-- Screen Dropdown -->
+      <select id="screenSelect" onchange="goToScreen(this.value)" class="bg-slate-900 border border-slate-700 text-white text-xs font-mono font-medium rounded-xl px-3.5 py-2 outline-none shadow-sm cursor-pointer">
+        <option value="login">1. Login Akun Awal (Online)</option>
+        <option value="pin">2. Quick PIN (Offline)</option>
+        <option value="home" selected>3. Home Auto-Detect (Offline)</option>
+        <option value="camera">4. Camera Viewfinder (Offline)</option>
+        <option value="preview">5. Geotag Preview &amp; Retake (Offline)</option>
+        <option value="tracking">6. Hauling Active Status (Offline)</option>
+        <option value="sync">7. Antrean Sync di Camp (Online)</option>
+      </select>
+    </div>
+  </header>
+
+  <!-- PHONE DEVICE CONTAINER -->
+  <div class="phone-canvas" id="phoneCanvas">
+    
+    <!-- Dynamic Island Bar -->
+    <div class="island-bar">
+      <div class="w-2.5 h-2.5 rounded-full bg-slate-800"></div>
+      <div class="w-2 h-2 rounded-full bg-amber-900/60"></div>
+    </div>
+
+    <!-- Camera Flash Overlay Effect -->
+    <div id="cameraFlash" class="absolute inset-0 bg-white opacity-0 pointer-events-none z-50 transition-opacity"></div>
+
+    <!-- ===================================================================== -->
+    <!-- SCREEN 1: INITIAL LOGIN (ONLINE) -->
+    <!-- ===================================================================== -->
+    <div id="screen-login" class="app-screen justify-between hidden">
+      <div class="space-y-5">
+        <div class="flex justify-between items-center text-[11px] font-mono font-semibold pt-1">
+          <span class="text-amber-500 flex items-center gap-1.5 font-bold">
+            <span class="w-2 h-2 rounded-full bg-amber-500"></span> Online Setup
+          </span>
+          <span class="c-muted">v4.3</span>
+        </div>
+
+        <div class="pt-2">
+          <div class="w-12 h-12 rounded-2xl bg-amber-600 text-white font-mono font-black text-base flex items-center justify-center mb-3 shadow-md">
+            TP
+          </div>
+          <h2 class="text-xl font-bold text-heading tracking-tight">Masuk TerraPoint</h2>
+          <p class="text-xs c-muted mt-1 leading-relaxed">Hubungkan perangkat dengan akun pengemudi Anda saat berada di area camp.</p>
+        </div>
+
+        <div class="space-y-3 pt-1">
+          <div class="space-y-1.5">
+            <label class="text-xs font-semibold text-heading">Nomor ID Pengemudi</label>
+            <input type="text" value="DRV-001" readonly class="w-full h-12 rounded-xl min-input px-3.5 text-sm font-mono font-semibold outline-none shadow-sm">
+          </div>
+
+          <div class="space-y-1.5">
+            <label class="text-xs font-semibold text-heading">Kata Sandi Akun</label>
+            <input type="password" value="123456" readonly class="w-full h-12 rounded-xl min-input px-3.5 text-sm font-mono outline-none shadow-sm">
+          </div>
+
+          <div class="flex items-center gap-2 pt-1">
+            <input type="checkbox" checked class="rounded border-slate-700 text-amber-600 focus:ring-0">
+            <span class="text-xs c-muted">Simpan sesi login di perangkat ini</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-4 border-t border-slate-800/60">
+        <button onclick="goToScreen('home')" class="btn-tactile w-full h-13 py-3.5 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-bold text-sm tracking-wide shadow-lg flex items-center justify-center gap-2">
+          <span>Masuk ke Sistem</span>
+        </button>
+        <p class="text-center text-[11px] text-amber-500 mt-2.5 font-mono font-semibold">
+          [✓] Koneksi Camp Wi-Fi Terverifikasi
+        </p>
+      </div>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- SCREEN 2: QUICK PIN UNLOCK (OFFLINE) -->
+    <!-- ===================================================================== -->
+    <div id="screen-pin" class="app-screen justify-between hidden">
+      <div class="flex justify-between items-center text-[11px] font-mono text-slate-400 font-semibold pt-1">
+        <span>08:00</span>
+        <span class="text-amber-500 font-mono font-bold">Offline Ready</span>
+      </div>
+
+      <div class="text-center my-1">
+        <div class="w-12 h-12 rounded-full bg-slate-800/80 border border-slate-700 flex items-center justify-center text-amber-400 text-sm font-bold mx-auto mb-2.5 shadow-md">
+          AF
+        </div>
+        <h2 class="text-base font-bold text-heading">Ahmad Fauzi</h2>
+        <p class="text-xs font-mono c-muted mt-0.5">DRV-001</p>
+      </div>
+
+      <!-- PIN Indicator Dots -->
+      <div class="flex justify-center gap-3 my-2">
+        <span class="w-3.5 h-3.5 rounded-full bg-amber-500 shadow-sm"></span>
+        <span class="w-3.5 h-3.5 rounded-full bg-amber-500 shadow-sm"></span>
+        <span class="w-3.5 h-3.5 rounded-full bg-amber-500 shadow-sm"></span>
+        <span class="w-3.5 h-3.5 rounded-full bg-amber-500 shadow-sm"></span>
+        <span class="w-3.5 h-3.5 rounded-full border border-slate-500"></span>
+        <span class="w-3.5 h-3.5 rounded-full border border-slate-500"></span>
+      </div>
+
+      <!-- Keypad -->
+      <div class="grid grid-cols-3 gap-2 my-1">
+        <button class="btn-tactile h-12 rounded-xl min-key-btn text-lg font-semibold font-mono flex items-center justify-center">1</button>
+        <button class="btn-tactile h-12 rounded-xl min-key-btn text-lg font-semibold font-mono flex items-center justify-center">2</button>
+        <button class="btn-tactile h-12 rounded-xl min-key-btn text-lg font-semibold font-mono flex items-center justify-center">3</button>
+        <button class="btn-tactile h-12 rounded-xl min-key-btn text-lg font-semibold font-mono flex items-center justify-center">4</button>
+        <button class="btn-tactile h-12 rounded-xl min-key-btn text-lg font-semibold font-mono flex items-center justify-center">5</button>
+        <button class="btn-tactile h-12 rounded-xl min-key-btn text-lg font-semibold font-mono flex items-center justify-center">6</button>
+        <button class="btn-tactile h-12 rounded-xl min-key-btn text-lg font-semibold font-mono flex items-center justify-center">7</button>
+        <button class="btn-tactile h-12 rounded-xl min-key-btn text-lg font-semibold font-mono flex items-center justify-center">8</button>
+        <button class="btn-tactile h-12 rounded-xl min-key-btn text-lg font-semibold font-mono flex items-center justify-center">9</button>
+        <button class="btn-tactile h-12 rounded-xl min-key-btn text-xs font-semibold text-rose-500 flex items-center justify-center font-mono">Hapus</button>
+        <button class="btn-tactile h-12 rounded-xl min-key-btn text-lg font-semibold font-mono flex items-center justify-center">0</button>
+        <button onclick="goToScreen('home')" class="btn-tactile h-12 rounded-xl bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold font-mono flex items-center justify-center shadow-md">
+          Buka
+        </button>
+      </div>
+
+      <div class="text-center py-0.5">
+        <button onclick="goToScreen('login')" class="text-[11px] c-muted hover:text-white font-mono underline">
+          Ganti Akun / Masuk Ulang
+        </button>
+      </div>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- SCREEN 3: HOME OPERASIONAL (ZERO-CLICK AUTO-DETECT) -->
+    <!-- ===================================================================== -->
+    <div id="screen-home" class="app-screen justify-between">
+      <div class="space-y-3.5">
+        <!-- Top Status Bar -->
+        <div class="flex justify-between items-center text-xs font-mono pt-1">
+          <span class="font-bold text-heading tracking-tight">TERRAPOINT</span>
+          <span id="homeGpsBadge" class="text-amber-500 font-bold text-[11px] flex items-center gap-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span> GPS Siap
+          </span>
+        </div>
+
+        <!-- Driver Context -->
+        <div class="flex justify-between items-center py-1 border-b border-slate-800/40">
+          <div>
+            <p class="text-[10px] font-mono c-muted uppercase tracking-wider">PENGEMUDI AKTIF</p>
+            <h3 class="text-sm font-bold text-heading mt-0.5">Ahmad Fauzi (DRV-001)</h3>
+          </div>
+          <span class="text-xs font-mono px-2 py-0.5 rounded badge-net font-bold">Shift 1</span>
+        </div>
+
+        <!-- Auto-Detected Location Box -->
+        <div id="homeLocationCard" class="min-card-highlight rounded-2xl p-4 relative space-y-2">
+          <div class="flex justify-between items-center">
+            <span id="homeLocationTag" class="text-[10px] font-mono font-bold text-amber-500 tracking-wider uppercase">LOKASI TERDETEKSI (GPS)</span>
+            <span id="homeRadiusPill" class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-amber-600 text-white">Radius &le; 50m</span>
+          </div>
+          <h2 id="homeLocationTitle" class="text-base font-extrabold text-heading">Loading Point Pit 3 Utara</h2>
+          <div id="homeLocationMeta" class="flex gap-4 text-xs font-mono c-muted pt-0.5 font-semibold">
+            <span id="homeDistanceText">Jarak: 18m</span>
+            <span>Akurasi: &plusmn; 6.5m</span>
+          </div>
+        </div>
+
+        <!-- Minimalist Sync Card -->
+        <div class="min-card rounded-2xl p-3.5 flex items-center justify-between">
+          <div>
+            <p class="text-[10px] font-mono c-muted uppercase tracking-wider">ANTREAN SINKRONISASI</p>
+            <p class="text-xs font-bold text-heading mt-0.5">3 Ritase Tersimpan</p>
+          </div>
+          <button onclick="goToScreen('sync')" class="btn-tactile px-3.5 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 border border-amber-600/60 text-amber-400 text-xs font-semibold font-mono shadow-md flex items-center gap-1.5">
+            <i data-lucide="cloud-upload" class="w-3.5 h-3.5"></i> Sync
+          </button>
+        </div>
+      </div>
+
+      <!-- Primary Action Button -->
+      <div class="pt-3 border-t border-slate-800/60">
+        <button id="btnHomeCapture" onclick="triggerCapturePhoto()" class="btn-tactile w-full h-14 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-extrabold text-sm tracking-wide shadow-xl flex items-center justify-center gap-2">
+          <i data-lucide="camera" class="w-5 h-5"></i>
+          <span id="btnHomeCaptureText">Ambil Foto Muat &amp; Mulai</span>
+        </button>
+        <p id="homeHelperNote" class="text-center text-[11px] c-muted mt-2 font-mono">
+          Foto awal otomatis memulai ritase
+        </p>
+      </div>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- SCREEN 4: DIRECT-CAPTURE CAMERA VIEWFINDER (OFFLINE) -->
+    <!-- ===================================================================== -->
+    <div id="screen-camera" class="app-screen justify-between bg-black text-white p-4 hidden">
+      <div class="flex justify-between items-center pt-1 text-xs font-mono">
+        <span id="camStatusBanner" class="px-2.5 py-1 rounded-md bg-amber-500 text-black font-bold text-[11px]">
+          Posisi Sesuai (&le; 50m)
+        </span>
+        <span class="text-slate-400 text-[11px]">&plusmn; 8.2m</span>
+      </div>
+
+      <div class="flex-1 flex flex-col items-center justify-center my-3">
+        <div id="camReticleBox" class="w-full aspect-[4/3] border-2 border-dashed border-amber-500/80 rounded-2xl relative flex items-center justify-center bg-slate-900/40">
+          <span class="absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 border-amber-400"></span>
+          <span class="absolute top-2 right-2 w-4 h-4 border-t-2 border-r-2 border-amber-400"></span>
+          <span class="absolute bottom-2 left-2 w-4 h-4 border-b-2 border-l-2 border-amber-400"></span>
+          <span class="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-amber-400"></span>
+          <span id="camReticleText" class="text-[11px] font-mono text-slate-300 bg-black/60 px-3 py-1 rounded-md">
+            Bidik Bak Muatan Truk
+          </span>
+        </div>
+        <p id="camLocationSubtext" class="text-xs font-mono text-slate-400 mt-3">Loading Point Pit 3 Utara</p>
+      </div>
+
+      <div class="flex items-center justify-around py-2">
+        <button class="btn-tactile w-11 h-11 rounded-xl bg-slate-800 text-slate-300 flex items-center justify-center text-xs font-mono">
+          <i data-lucide="zap" class="w-4 h-4"></i>
+        </button>
+        <button id="btnCamShutter" onclick="triggerCapturePhoto()" class="btn-tactile w-16 h-16 rounded-full bg-amber-500 hover:bg-amber-400 border-4 border-white flex items-center justify-center text-black font-bold shadow-2xl">
+          <div class="w-12 h-12 rounded-full border-2 border-black/20"></div>
+        </button>
+        <button onclick="goToScreen('home')" class="btn-tactile w-11 h-11 rounded-xl bg-slate-800 text-slate-300 flex items-center justify-center text-xs font-mono">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- SCREEN 5: PREVIEW FOTO + PRECISION SWISS WATERMARK & RETAKE -->
+    <!-- ===================================================================== -->
+    <div id="screen-preview" class="app-screen justify-between bg-black text-white p-3.5 hidden">
+      <!-- Clean Header Preview (No technical file size) -->
+      <div class="flex justify-between items-center px-1 pt-1 text-xs font-mono">
+        <span class="text-amber-400 font-bold flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span> Preview Bukti Foto
+        </span>
+        <span class="text-slate-400 text-[11px]">Tercatat</span>
+      </div>
+
+      <!-- Photo Canvas with Clean Swiss Survey Watermark Box -->
+      <div class="w-full flex-1 my-2 rounded-2xl overflow-hidden relative bg-slate-950 flex flex-col justify-end p-2.5 border border-slate-800">
+        
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&w=800&q=80'); opacity: 0.9;"></div>
+
+        <!-- PRECISION SWISS WATERMARK STAMP CARD -->
+        <div class="swiss-watermark-box p-3 w-full relative z-10 flex gap-3 items-center">
+          
+          <!-- Left: Vector Mini Map Inset Snapshot -->
+          <div class="w-20 h-22 rounded-xl overflow-hidden border border-slate-300 shrink-0 relative bg-slate-100 flex items-center justify-center shadow-inner">
+            <svg class="absolute inset-0 w-full h-full" viewBox="0 0 100 120" fill="none">
+              <rect width="100" height="120" fill="#F8FAFC"/>
+              <path d="M0 30 C30 20, 70 45, 100 25 L100 120 L0 120 Z" fill="#E2E8F0"/>
+              <path d="M0 65 C40 55, 60 85, 100 70 L100 120 L0 120 Z" fill="#CBD5E1"/>
+              <path d="M15 0 L85 120 M0 60 L100 60" stroke="#94A3B8" stroke-width="0.75" stroke-dasharray="2,2"/>
+            </svg>
+            <div class="absolute w-11 h-11 border-2 border-amber-600 bg-amber-500/20 rounded-full flex items-center justify-center">
+              <div class="w-3.5 h-3.5 rounded-full bg-rose-600 border border-white shadow-sm"></div>
+            </div>
+            <span class="absolute bottom-0 inset-x-0 bg-slate-900/90 text-[8px] text-white text-center font-mono py-0.5 font-semibold">
+              50M RADIUS
+            </span>
+          </div>
+
+          <!-- Right: Precision Surveyor Metadata -->
+          <div class="flex-1 space-y-0.5 text-[9px] leading-tight text-slate-800">
+            <div class="flex justify-between items-center border-b border-slate-200 pb-0.5 mb-1">
+              <span class="text-[9px] font-bold text-amber-700 uppercase tracking-wider font-mono">START CHECKPOINT</span>
+              <span class="text-[8px] text-slate-400 font-mono">TERRAPOINT</span>
+            </div>
+
+            <!-- PROMINENT TIME DISPLAY -->
+            <div class="flex items-baseline gap-1.5 font-mono">
+              <span class="text-sm font-black text-rose-600 tracking-tight">08:05:22</span>
+              <span class="text-[9px] font-bold text-slate-600">WITA</span>
+              <span class="text-[8px] text-slate-400 ml-auto">18/09/2026</span>
+            </div>
+
+            <!-- Coordinates & Location -->
+            <div class="font-bold text-slate-900 text-[10px] truncate">Loading Point Pit 3 Utara</div>
+            <div class="text-slate-600 font-mono text-[9px]">-3.123456, 115.123456</div>
+            <div class="text-[8px] text-slate-500 font-mono flex justify-between">
+              <span>Akurasi: &plusmn;8.2m</span>
+              <span>Alt: 142m MSL</span>
+            </div>
+
+            <div class="text-[8px] text-slate-400 pt-0.5 border-t border-slate-200 flex justify-between font-mono">
+              <span>DRV-001 (Ahmad)</span>
+              <span>TSK-001</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Decision Actions -->
+      <div class="space-y-2 pt-1">
+        <button onclick="goToScreen('tracking')" class="btn-tactile w-full h-13 py-3 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-extrabold text-sm tracking-wide shadow-lg flex items-center justify-center gap-2">
+          <i data-lucide="check" class="w-4 h-4"></i>
+          <span>Gunakan Foto Ini (Mulai)</span>
+        </button>
+
+        <button onclick="goToScreen('camera')" class="btn-tactile w-full h-11 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold text-xs font-mono flex items-center justify-center gap-1.5">
+          <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
+          <span>Foto Ulang (Retake)</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- SCREEN 6: HAULING IN-PROGRESS (CLEAN STATUS & SILENT BACKGROUND TRACKING) -->
+    <!-- ===================================================================== -->
+    <div id="screen-tracking" class="app-screen justify-between hidden">
+      <div class="space-y-4">
+        <div class="flex justify-between items-center text-xs font-mono pt-1">
+          <span class="font-bold text-heading">RITASE BERJALAN</span>
+          <span class="text-amber-500 font-bold text-[11px] flex items-center gap-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span> Siap Hauling
+          </span>
+        </div>
+
+        <!-- Simplified Status Card (Driver Focuses on Road) -->
+        <div class="min-card rounded-2xl p-5 text-center space-y-2">
+          <div class="w-12 h-12 rounded-full bg-amber-500/15 text-amber-500 flex items-center justify-center mx-auto mb-1">
+            <i data-lucide="truck" class="w-6 h-6 text-amber-500"></i>
+          </div>
+          <h3 class="text-sm font-bold text-heading uppercase tracking-wider">Perjalanan Menuju Titik Bongkar</h3>
+          <p class="text-xs c-muted leading-relaxed">
+            Rute hauling otomatis tercatat di latar belakang dan terpantau oleh Dispatcher di dashboard.
+          </p>
+        </div>
+
+        <!-- Checkpoint Info Card -->
+        <div class="min-card rounded-2xl p-4 space-y-3 font-mono text-xs">
+          <div>
+            <p class="text-[10px] c-muted font-bold uppercase">TITIK MUAT (AWAL)</p>
+            <p class="font-bold text-heading mt-0.5">Loading Point Pit 3 Utara</p>
+            <p class="text-amber-500 text-[11px] mt-0.5 font-bold">Foto Selesai &bull; 08:05 WITA</p>
+          </div>
+          <div class="border-t border-slate-800/40 pt-2.5">
+            <p class="text-[10px] c-muted font-bold uppercase">TITIK BONGKAR (TUJUAN)</p>
+            <p class="font-bold text-heading mt-0.5">ROM Stockpile 1</p>
+            <p class="c-muted text-[11px] mt-0.5">Ambil foto saat tiba di radius 50m</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-3 border-t border-slate-800/60">
+        <button onclick="goToScreen('preview')" class="btn-tactile w-full h-14 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-bold text-sm tracking-wide shadow-lg flex items-center justify-center gap-2">
+          <i data-lucide="camera" class="w-5 h-5"></i>
+          <span>Foto Bongkar (Selesai)</span>
+        </button>
+        <p class="text-center text-[11px] c-muted mt-2 font-mono">
+          Fokus menyetir &bull; Utamakan keselamatan K3
+        </p>
+      </div>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- SCREEN 7: MANUAL SYNC QUEUE DI CAMP (CLEAN HUMAN-FRIENDLY) -->
+    <!-- ===================================================================== -->
+    <div id="screen-sync" class="app-screen justify-between hidden">
+      <div class="space-y-4">
+        <div class="flex justify-between items-center text-xs font-mono pt-1">
+          <span class="font-bold text-heading">ANTREAN SINKRONISASI</span>
+          <span class="text-amber-500 font-bold text-[11px] flex items-center gap-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span> Camp Online
+          </span>
+        </div>
+
+        <!-- Clean Summary Card (No technical byte size) -->
+        <div class="min-card rounded-2xl p-4">
+          <p class="text-[10px] font-mono c-muted uppercase tracking-wider">STATUS PENGIRIMAN</p>
+          <h3 class="text-base font-extrabold text-heading mt-0.5">3 Ritase Siap Dikirim ke Kantor</h3>
+        </div>
+
+        <!-- Clean Task List (No WebP, No Point Count Jargon) -->
+        <div class="space-y-2 font-mono text-xs">
+          <div class="min-card rounded-xl p-3.5 flex justify-between items-center">
+            <div>
+              <p class="font-bold text-heading">Ritase 1: Pit 3 Utara ➔ ROM 1</p>
+              <p class="c-muted text-[11px] mt-0.5">Muat 08:05 &bull; Bongkar 08:35</p>
+            </div>
+            <span class="text-amber-500 font-bold text-xs">Siap</span>
+          </div>
+
+          <div class="min-card rounded-xl p-3.5 flex justify-between items-center">
+            <div>
+              <p class="font-bold text-heading">Ritase 2: Pit 3 Utara ➔ ROM 1</p>
+              <p class="c-muted text-[11px] mt-0.5">Muat 09:10 &bull; Bongkar 09:40</p>
+            </div>
+            <span class="text-amber-500 font-bold text-xs">Siap</span>
+          </div>
+
+          <div class="min-card rounded-xl p-3.5 flex justify-between items-center">
+            <div>
+              <p class="font-bold text-heading">Ritase 3: Pit 2 Barat ➔ ROM 2</p>
+              <p class="c-muted text-[11px] mt-0.5">Muat 10:15 &bull; Bongkar 10:48</p>
+            </div>
+            <span class="text-amber-500 font-bold text-xs">Siap</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-3 border-t border-slate-800/60 space-y-2.5">
+        <div class="space-y-1 font-mono">
+          <div class="flex justify-between text-[11px] c-muted">
+            <span>Kemajuan Pengiriman</span>
+            <span class="text-amber-500 font-bold">66%</span>
+          </div>
+          <div class="w-full h-1.5 rounded-full bg-slate-800 overflow-hidden">
+            <div class="h-full bg-amber-600 w-2/3 rounded-full"></div>
+          </div>
+        </div>
+
+        <button onclick="alert('Sinkronisasi Berhasil: 3 Ritase terunggah ke Supabase & Cloudflare R2.'); goToScreen('home');" class="btn-tactile w-full h-14 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-extrabold text-sm tracking-wide shadow-xl flex items-center justify-center gap-2">
+          <i data-lucide="cloud-upload" class="w-4 h-4"></i>
+          <span>Sinkronkan Sekarang</span>
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    lucide.createIcons();
+
+    const screens = ['login', 'pin', 'home', 'camera', 'preview', 'tracking', 'sync'];
+    let currentGeofenceState = 'inside';
+
+    function goToScreen(screenName) {
+      screens.forEach(s => {
+        const el = document.getElementById('screen-' + s);
+        if (el) el.classList.add('hidden');
+      });
+      const target = document.getElementById('screen-' + screenName);
+      if (target) {
+        target.classList.remove('hidden');
+      }
+      document.getElementById('screenSelect').value = screenName;
+      lucide.createIcons();
+    }
+
+    function triggerCapturePhoto() {
+      if (currentGeofenceState === 'outside') {
+        alert('Tidak dapat mengambil foto: Anda berada di luar radius 50 meter dari titik muat.');
+        return;
+      }
+      const flash = document.getElementById('cameraFlash');
+      flash.classList.add('camera-flash-active');
+      setTimeout(() => {
+        flash.classList.remove('camera-flash-active');
+        goToScreen('preview');
+      }, 300);
+    }
+
+    function setTheme(mode) {
+      const body = document.getElementById('appBody');
+      const btnDark = document.getElementById('btnDark');
+      const btnLight = document.getElementById('btnLight');
+
+      if (mode === 'light') {
+        body.classList.remove('mode-dark');
+        body.classList.add('mode-light');
+        btnLight.className = "px-3.5 py-1.5 rounded-lg text-xs font-semibold font-mono bg-amber-600 text-white shadow-sm transition";
+        btnDark.className = "px-3.5 py-1.5 rounded-lg text-xs font-semibold font-mono text-slate-600 hover:text-black transition";
+      } else {
+        body.classList.remove('mode-light');
+        body.classList.add('mode-dark');
+        btnDark.className = "px-3.5 py-1.5 rounded-lg text-xs font-semibold font-mono bg-amber-600 text-white shadow-sm transition";
+        btnLight.className = "px-3.5 py-1.5 rounded-lg text-xs font-semibold font-mono text-slate-400 hover:text-white transition";
+      }
+    }
+
+    function setGeofenceState(state) {
+      currentGeofenceState = state;
+      const btnIn = document.getElementById('btnGeoInside');
+      const btnOut = document.getElementById('btnGeoOutside');
+
+      const homeLocationCard = document.getElementById('homeLocationCard');
+      const homeLocationTag = document.getElementById('homeLocationTag');
+      const homeRadiusPill = document.getElementById('homeRadiusPill');
+      const homeLocationTitle = document.getElementById('homeLocationTitle');
+      const homeDistanceText = document.getElementById('homeDistanceText');
+      const btnHomeCapture = document.getElementById('btnHomeCapture');
+      const btnHomeCaptureText = document.getElementById('btnHomeCaptureText');
+      const homeHelperNote = document.getElementById('homeHelperNote');
+
+      const camStatusBanner = document.getElementById('camStatusBanner');
+      const camReticleBox = document.getElementById('camReticleBox');
+      const camReticleText = document.getElementById('camReticleText');
+      const btnCamShutter = document.getElementById('btnCamShutter');
+
+      if (state === 'outside') {
+        btnOut.className = "px-2.5 py-1.5 rounded-lg font-bold bg-rose-600/20 text-rose-400 border border-rose-500 transition";
+        btnIn.className = "px-2.5 py-1.5 rounded-lg font-semibold text-slate-400 hover:text-white transition border-transparent border";
+
+        homeLocationCard.className = "min-card-locked rounded-2xl p-4 relative space-y-2";
+        homeLocationTag.className = "text-[10px] font-mono font-bold text-rose-500 tracking-wider uppercase";
+        homeLocationTag.textContent = "DI LUAR AREA GEOFENCE";
+        homeRadiusPill.className = "text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-rose-600 text-white";
+        homeRadiusPill.textContent = "JARAK > 50M";
+        homeLocationTitle.textContent = "Menuju Pit 3 Utara...";
+        homeDistanceText.textContent = "Jarak: 84m (Terlalu Jauh)";
+        btnHomeCapture.className = "btn-tactile w-full h-14 rounded-xl bg-slate-800 text-slate-500 font-extrabold text-sm tracking-wide flex items-center justify-center gap-2 cursor-not-allowed border border-slate-700";
+        btnHomeCaptureText.textContent = "Tombol Terkunci (Di Luar Area)";
+        homeHelperNote.textContent = "Maju mendekat ke titik muat untuk membuka tombol";
+
+        camStatusBanner.className = "px-2.5 py-1 rounded-md bg-rose-600 text-white font-bold text-[11px]";
+        camStatusBanner.textContent = "Anda Terlalu Jauh Dari Titik Awal";
+        camReticleBox.className = "w-full aspect-[4/3] border-2 border-dashed border-rose-500/80 rounded-2xl relative flex items-center justify-center bg-slate-900/40";
+        camReticleText.textContent = "Posisikan truk di area titik muat";
+        btnCamShutter.className = "btn-tactile w-16 h-16 rounded-full bg-slate-800 border-4 border-slate-600 flex items-center justify-center text-slate-500 font-bold cursor-not-allowed opacity-50";
+      } else {
+        btnIn.className = "px-2.5 py-1.5 rounded-lg font-bold bg-amber-600/20 text-amber-400 border border-amber-500 transition";
+        btnOut.className = "px-2.5 py-1.5 rounded-lg font-semibold text-slate-400 hover:text-white transition border-transparent border";
+
+        homeLocationCard.className = "min-card-highlight rounded-2xl p-4 relative space-y-2";
+        homeLocationTag.className = "text-[10px] font-mono font-bold text-amber-500 tracking-wider uppercase";
+        homeLocationTag.textContent = "LOKASI TERDETEKSI (GPS)";
+        homeRadiusPill.className = "text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-amber-600 text-white";
+        homeRadiusPill.textContent = "Radius ≤ 50m";
+        homeLocationTitle.textContent = "Loading Point Pit 3 Utara";
+        homeDistanceText.textContent = "Jarak: 18m";
+        btnHomeCapture.className = "btn-tactile w-full h-14 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-extrabold text-sm tracking-wide shadow-xl flex items-center justify-center gap-2 cursor-pointer";
+        btnHomeCaptureText.textContent = "Ambil Foto Muat & Mulai";
+        homeHelperNote.textContent = "Foto awal otomatis memulai ritase";
+
+        camStatusBanner.className = "px-2.5 py-1 rounded-md bg-amber-500 text-black font-bold text-[11px]";
+        camStatusBanner.textContent = "Posisi Sesuai (≤ 50m)";
+        camReticleBox.className = "w-full aspect-[4/3] border-2 border-dashed border-amber-500/80 rounded-2xl relative flex items-center justify-center bg-slate-900/40";
+        camReticleText.textContent = "Bidik Bak Muatan Truk";
+        btnCamShutter.className = "btn-tactile w-16 h-16 rounded-full bg-amber-500 hover:bg-amber-400 border-4 border-white flex items-center justify-center text-black font-bold shadow-2xl cursor-pointer";
+      }
+      lucide.createIcons();
+    }
+  </script>
+</body>
+</html>
