@@ -9,7 +9,7 @@ def create_text(content, font_size=14, font_weight="normal", fill="#FFFFFF", fon
     return {
         "type": "text",
         "id": gen_id(),
-        "name": name or content[:20],
+        "name": name or content[:24],
         "fill": fill,
         "content": content,
         "fontFamily": font_family,
@@ -47,83 +47,98 @@ def create_frame(name, width="fill_container", height=None, layout="vertical", g
     return frame
 
 # ==============================================================================
-# 7 SCREEN BUILDERS (100% MATCHING INDEX.HTML)
+# EXACT 7 SCREENS (100% 1:1 MATCHING DESIGNS/INDEX.HTML)
 # ==============================================================================
 
-# 1. INITIAL ACCOUNT LOGIN
-def build_screen_initial_login(x_pos, is_dark=True):
+# SCREEN 1: INITIAL LOGIN (ONLINE)
+def build_screen_1_login(x_pos, is_dark=True):
     bg = "#0B0E17" if is_dark else "#FFFFFF"
     card_bg = "#131824" if is_dark else "#F8FAFC"
     border = "#1C2230" if is_dark else "#CBD5E1"
     fg = "#F8FAFC" if is_dark else "#0F172A"
     muted = "#7E8B9F" if is_dark else "#475569"
-    btn_action = "#D97706"
+    amber = "#D97706"
     input_bg = "#131824" if is_dark else "#FFFFFF"
     theme_label = "Dark" if is_dark else "Light"
 
     return create_frame(
         name=f"1. Initial Login ({theme_label})",
-        width=340,
-        height=740,
+        width=360,
+        height=780,
         x=x_pos,
         y=0,
         fill=bg,
         stroke=border,
         stroke_width=2,
-        corner_radius=28,
+        corner_radius=32,
         padding=20,
         gap=16,
         justify="space_between",
         children=[
-            create_frame(name="TopArea", width="fill_container", gap=14, children=[
-                create_frame(name="LogoBar", width="fill_container", align="center", gap=6, children=[
-                    create_frame(name="IconBox", width=48, height=48, corner_radius=12, fill=btn_action, justify="center", align="center", children=[
-                        create_text("TP", font_size=18, font_weight="bold", fill="#FFFFFF", font_family="$--font-mono")
+            create_frame(name="TopArea", width="fill_container", gap=16, children=[
+                # Status Top
+                create_frame(name="StatusTop", width="fill_container", layout="horizontal", justify="space_between", align="center", children=[
+                    create_frame(name="OnlinePill", layout="horizontal", gap=6, align="center", children=[
+                        create_frame(name="Dot", width=8, height=8, corner_radius=4, fill=amber),
+                        create_text("Online Setup", font_size=11, font_weight="bold", fill=amber, font_family="$--font-mono")
                     ]),
-                    create_text("TERRAPOINT", font_size=18, font_weight="bold", fill=fg, font_family="$--font-heading"),
-                    create_text("Mining Logistics & Hauling Compliance", font_size=11, fill=muted)
+                    create_text("v4.3", font_size=11, font_weight="600", fill=muted, font_family="$--font-mono")
                 ]),
 
-                create_frame(name="FormCard", width="fill_container", fill=card_bg, stroke=border, stroke_width=1, corner_radius=16, padding=16, gap=12, children=[
-                    create_text("MASUK AKUN PENGEMUDI", font_size=11, font_weight="bold", fill=muted, font_family="$--font-mono"),
-                    
-                    create_frame(name="InputGroup1", width="fill_container", gap=4, children=[
-                        create_text("Nomor ID / NIK Driver", font_size=11, font_weight="bold", fill=fg),
-                        create_frame(name="Field1", width="fill_container", height=46, fill=input_bg, stroke=border, stroke_width=1, corner_radius=8, padding=[0, 12], layout="horizontal", align="center", children=[
-                            create_text("DRV-001", font_size=13, font_weight="600", fill=fg, font_family="$--font-mono")
+                # Logo & Heading
+                create_frame(name="BrandArea", width="fill_container", gap=4, children=[
+                    create_frame(name="LogoBox", width=48, height=48, corner_radius=14, fill=amber, justify="center", align="center", children=[
+                        create_text("TP", font_size=18, font_weight="bold", fill="#FFFFFF", font_family="$--font-mono")
+                    ]),
+                    create_text("Masuk TerraPoint", font_size=20, font_weight="bold", fill=fg, font_family="$--font-heading"),
+                    create_text("Hubungkan perangkat dengan akun pengemudi Anda saat berada di area camp.", font_size=12, fill=muted)
+                ]),
+
+                # Form Card
+                create_frame(name="FormCard", width="fill_container", fill=card_bg, stroke=border, stroke_width=1, corner_radius=18, padding=16, gap=14, children=[
+                    create_frame(name="InputGroup1", width="fill_container", gap=6, children=[
+                        create_text("Nomor ID Pengemudi", font_size=12, font_weight="600", fill=fg),
+                        create_frame(name="Field1", width="fill_container", height=48, fill=input_bg, stroke=border, stroke_width=1, corner_radius=12, padding=[0, 14], layout="horizontal", align="center", children=[
+                            create_text("DRV-001", font_size=14, font_weight="bold", fill=fg, font_family="$--font-mono")
                         ])
                     ]),
-
-                    create_frame(name="InputGroup2", width="fill_container", gap=4, children=[
-                        create_text("Kata Sandi Akun", font_size=11, font_weight="bold", fill=fg),
-                        create_frame(name="Field2", width="fill_container", height=46, fill=input_bg, stroke=border, stroke_width=1, corner_radius=8, padding=[0, 12], layout="horizontal", justify="space_between", align="center", children=[
+                    create_frame(name="InputGroup2", width="fill_container", gap=6, children=[
+                        create_text("Kata Sandi Akun", font_size=12, font_weight="600", fill=fg),
+                        create_frame(name="Field2", width="fill_container", height=48, fill=input_bg, stroke=border, stroke_width=1, corner_radius=12, padding=[0, 14], layout="horizontal", justify="space_between", align="center", children=[
                             create_text("••••••••", font_size=16, font_weight="bold", fill=fg),
                             create_text("LIHAT", font_size=10, font_weight="bold", fill=muted, font_family="$--font-mono")
                         ])
+                    ]),
+                    create_frame(name="RememberMe", width="fill_container", layout="horizontal", gap=8, align="center", children=[
+                        create_frame(name="Check", width=16, height=16, corner_radius=4, fill=amber, justify="center", align="center", children=[
+                            create_text("✓", font_size=11, font_weight="bold", fill="#FFFFFF")
+                        ]),
+                        create_text("Simpan sesi login di perangkat ini", font_size=12, fill=muted)
                     ])
                 ])
             ]),
 
+            # Bottom Action
             create_frame(name="BottomArea", width="fill_container", gap=10, children=[
-                create_frame(name="BtnSubmit", width="fill_container", height=54, fill=btn_action, corner_radius=12, layout="horizontal", justify="center", align="center", children=[
-                    create_text("MASUK KE SISTEM", font_size=14, font_weight="bold", fill="#FFFFFF", font_family="$--font-heading")
+                create_frame(name="BtnLogin", width="fill_container", height=54, fill=amber, corner_radius=14, layout="horizontal", justify="center", align="center", children=[
+                    create_text("Masuk ke Sistem", font_size=14, font_weight="bold", fill="#FFFFFF", font_family="$--font-heading")
                 ]),
-                create_frame(name="FootText", width="fill_container", layout="horizontal", justify="center", children=[
-                    create_text("Koneksi Camp Wi-Fi Terdeteksi", font_size=11, font_weight="600", fill=btn_action, font_family="$--font-mono")
+                create_frame(name="FootNote", width="fill_container", layout="horizontal", justify="center", children=[
+                    create_text("Koneksi Camp Wi-Fi Terverifikasi", font_size=11, font_weight="600", fill=amber, font_family="$--font-mono")
                 ])
             ])
         ]
     )
 
-# 2. QUICK PIN UNLOCK
-def build_screen_quick_pin(x_pos, is_dark=True):
+# SCREEN 2: QUICK PIN UNLOCK (OFFLINE)
+def build_screen_2_pin(x_pos, is_dark=True):
     bg = "#0B0E17" if is_dark else "#FFFFFF"
     card_bg = "#131824" if is_dark else "#F8FAFC"
     border = "#1C2230" if is_dark else "#CBD5E1"
     fg = "#F8FAFC" if is_dark else "#0F172A"
     muted = "#7E8B9F" if is_dark else "#475569"
     key_bg = "#131824" if is_dark else "#F8FAFC"
-    btn_action = "#D97706"
+    amber = "#D97706"
     theme_label = "Dark" if is_dark else "Light"
 
     keypad_rows = []
@@ -131,18 +146,18 @@ def build_screen_quick_pin(x_pos, is_dark=True):
         ["1", "2", "3"],
         ["4", "5", "6"],
         ["7", "8", "9"],
-        ["HAPUS", "0", "BUKA"]
+        ["Hapus", "0", "Buka"]
     ]
     for row in keys:
         row_btns = []
         for k in row:
             btn_fill = key_bg
             txt_fill = fg
-            if k == "HAPUS":
-                btn_fill = "#7F1D1D" if is_dark else "#FEE2E2"
-                txt_fill = "#FCA5A5" if is_dark else "#B91C1C"
-            elif k == "BUKA":
-                btn_fill = btn_action
+            if k == "Hapus":
+                btn_fill = key_bg
+                txt_fill = "#F43F5E"
+            elif k == "Buka":
+                btn_fill = amber
                 txt_fill = "#FFFFFF"
             
             btn = create_frame(
@@ -155,9 +170,9 @@ def build_screen_quick_pin(x_pos, is_dark=True):
                 fill=btn_fill,
                 stroke=border,
                 stroke_width=1,
-                corner_radius=10,
+                corner_radius=12,
                 children=[
-                    create_text(k, font_size=15 if len(k) > 1 else 19, font_weight="bold", fill=txt_fill, font_family="$--font-mono")
+                    create_text(k, font_size=15 if len(k) > 1 else 20, font_weight="bold", fill=txt_fill, font_family="$--font-mono")
                 ]
             )
             row_btns.append(btn)
@@ -174,14 +189,14 @@ def build_screen_quick_pin(x_pos, is_dark=True):
         name="PINDots",
         width="fill_container",
         layout="horizontal",
-        gap=10,
+        gap=12,
         justify="center",
         align="center",
         children=[
-            create_frame(name="D1", width=14, height=14, corner_radius=7, fill=btn_action),
-            create_frame(name="D2", width=14, height=14, corner_radius=7, fill=btn_action),
-            create_frame(name="D3", width=14, height=14, corner_radius=7, fill=btn_action),
-            create_frame(name="D4", width=14, height=14, corner_radius=7, fill=btn_action),
+            create_frame(name="D1", width=14, height=14, corner_radius=7, fill=amber),
+            create_frame(name="D2", width=14, height=14, corner_radius=7, fill=amber),
+            create_frame(name="D3", width=14, height=14, corner_radius=7, fill=amber),
+            create_frame(name="D4", width=14, height=14, corner_radius=7, fill=amber),
             create_frame(name="D5", width=14, height=14, corner_radius=7, fill=card_bg, stroke=border, stroke_width=1.5),
             create_frame(name="D6", width=14, height=14, corner_radius=7, fill=card_bg, stroke=border, stroke_width=1.5),
         ]
@@ -189,36 +204,49 @@ def build_screen_quick_pin(x_pos, is_dark=True):
 
     return create_frame(
         name=f"2. Quick PIN ({theme_label})",
-        width=340,
-        height=740,
+        width=360,
+        height=780,
         x=x_pos,
         y=0,
         fill=bg,
         stroke=border,
         stroke_width=2,
-        corner_radius=28,
-        padding=18,
-        gap=12,
+        corner_radius=32,
+        padding=20,
+        gap=14,
         justify="space_between",
         children=[
-            create_frame(name="Header", width="fill_container", gap=6, align="center", children=[
-                create_text("BUKA KUNCI CEPAT", font_size=10, font_weight="bold", fill=muted, font_family="$--font-mono"),
-                create_frame(name="DriverBadge", padding=[6, 12], corner_radius=8, fill=card_bg, stroke=border, stroke_width=1, children=[
-                    create_text("ID: DRV-001 (Ahmad Fauzi)", font_size=12, font_weight="bold", fill=fg, font_family="$--font-mono")
+            # Top Status
+            create_frame(name="StatusTop", width="fill_container", layout="horizontal", justify="space_between", align="center", children=[
+                create_text("08:00", font_size=11, font_weight="bold", fill=muted, font_family="$--font-mono"),
+                create_text("Offline Ready", font_size=11, font_weight="bold", fill=amber, font_family="$--font-mono")
+            ]),
+
+            # Driver Avatar & Name
+            create_frame(name="DriverHeader", width="fill_container", align="center", gap=4, children=[
+                create_frame(name="AvatarCircle", width=52, height=52, corner_radius=26, fill=card_bg, stroke=border, stroke_width=1.5, justify="center", align="center", children=[
+                    create_text("AF", font_size=16, font_weight="bold", fill=amber)
                 ]),
+                create_text("Ahmad Fauzi", font_size=17, font_weight="bold", fill=fg, font_family="$--font-heading"),
+                create_text("DRV-001", font_size=12, font_weight="bold", fill=muted, font_family="$--font-mono"),
                 create_text("Masukkan 6-Digit PIN Shift", font_size=12, fill=muted)
             ]),
 
+            # PIN Dots
             pin_dots,
+
+            # Keypad
             create_frame(name="KeypadArea", width="fill_container", gap=8, children=keypad_rows),
-            create_frame(name="Footer", width="fill_container", layout="horizontal", justify="center", children=[
-                create_text("Otentikasi Offline Aktif", font_size=11, font_weight="600", fill=btn_action, font_family="$--font-mono")
+
+            # Footer link
+            create_frame(name="FooterLink", width="fill_container", layout="horizontal", justify="center", children=[
+                create_text("Ganti Akun / Masuk Ulang", font_size=11, font_weight="600", fill=muted, font_family="$--font-mono")
             ])
         ]
     )
 
-# 3. HOME OPERASIONAL (AUTO-DETECT)
-def build_screen_home_autodetect(x_pos, is_dark=True):
+# SCREEN 3: HOME AUTO-DETECT (OFFLINE)
+def build_screen_3_home(x_pos, is_dark=True):
     bg = "#0B0E17" if is_dark else "#FFFFFF"
     card_bg = "#131824" if is_dark else "#F8FAFC"
     card_active = "rgba(217, 119, 6, 0.12)" if is_dark else "#FFFBEB"
@@ -226,206 +254,213 @@ def build_screen_home_autodetect(x_pos, is_dark=True):
     border_active = "#D97706"
     fg = "#F8FAFC" if is_dark else "#0F172A"
     muted = "#7E8B9F" if is_dark else "#475569"
-    btn_action = "#D97706"
+    amber = "#D97706"
     theme_label = "Dark" if is_dark else "Light"
 
-    location_detected_card = create_frame(
-        name="AutoDetectedLocationCard",
+    location_card = create_frame(
+        name="LocationCard",
         width="fill_container",
         fill=card_active,
         stroke=border_active,
         stroke_width=1.5,
-        corner_radius=14,
-        padding=14,
+        corner_radius=16,
+        padding=16,
         gap=6,
         children=[
             create_frame(name="TagRow", width="fill_container", layout="horizontal", justify="space_between", align="center", children=[
-                create_text("LOKASI TERDETEKSI (GPS)", font_size=10, font_weight="bold", fill=btn_action, font_family="$--font-mono"),
-                create_frame(name="Pill", padding=[2, 6], corner_radius=4, fill=btn_action, children=[
-                    create_text("RADIUS <= 50M", font_size=9, font_weight="bold", fill="#FFFFFF", font_family="$--font-mono")
+                create_text("LOKASI TERDETEKSI (GPS)", font_size=10, font_weight="bold", fill=amber, font_family="$--font-mono"),
+                create_frame(name="Pill", padding=[2, 8], corner_radius=6, fill=amber, children=[
+                    create_text("Radius ≤ 50m", font_size=9, font_weight="bold", fill="#FFFFFF", font_family="$--font-mono")
                 ])
             ]),
-            create_text("Loading Point Pit 3 Utara", font_size=15, font_weight="bold", fill=fg),
-            create_frame(name="LocationMeta", width="fill_container", layout="horizontal", gap=12, children=[
-                create_text("Jarak: 18m", font_size=11, font_weight="600", fill=fg, font_family="$--font-mono"),
-                create_text("Akurasi: +/- 6.5m", font_size=11, fill=muted, font_family="$--font-mono")
+            create_text("Loading Point Pit 3 Utara", font_size=16, font_weight="bold", fill=fg, font_family="$--font-heading"),
+            create_frame(name="LocationMeta", width="fill_container", layout="horizontal", gap=14, children=[
+                create_text("Jarak: 18m", font_size=12, font_weight="600", fill=fg, font_family="$--font-mono"),
+                create_text("Akurasi: ± 6.5m", font_size=12, fill=muted, font_family="$--font-mono")
             ])
         ]
     )
 
-    sync_trigger_card = create_frame(
-        name="SyncTriggerCard",
+    sync_card = create_frame(
+        name="SyncCard",
         width="fill_container",
         fill=card_bg,
         stroke=border,
         stroke_width=1,
-        corner_radius=14,
-        padding=12,
-        gap=8,
+        corner_radius=16,
+        padding=14,
+        layout="horizontal",
+        justify="space_between",
+        align="center",
         children=[
-            create_frame(name="R1", width="fill_container", layout="horizontal", justify="space_between", align="center", children=[
-                create_text("SINKRONISASI DATA", font_size=10, font_weight="bold", fill=muted, font_family="$--font-mono"),
-                create_text("3 Ritase Tersimpan", font_size=11, font_weight="bold", fill=btn_action, font_family="$--font-mono")
+            create_frame(name="SyncInfo", gap=2, children=[
+                create_text("ANTREAN SINKRONISASI", font_size=10, font_weight="bold", fill=muted, font_family="$--font-mono"),
+                create_text("3 Ritase Tersimpan", font_size=13, font_weight="bold", fill=fg)
             ]),
-            create_frame(name="BtnQuickSync", width="fill_container", height=40, fill=card_bg, stroke=btn_action, stroke_width=1, corner_radius=8, layout="horizontal", justify="center", align="center", gap=6, children=[
-                create_text("SINKRONKAN SEKARANG", font_size=12, font_weight="bold", fill=btn_action, font_family="$--font-heading")
+            create_frame(name="BtnQuickSync", padding=[8, 14], corner_radius=10, fill=card_bg, stroke=amber, stroke_width=1, children=[
+                create_text("Sync", font_size=12, font_weight="bold", fill=amber, font_family="$--font-mono")
             ])
         ]
     )
 
-    btn_start_single = create_frame(
-        name="BtnStartSingle",
+    btn_start = create_frame(
+        name="BtnStartPhoto",
         width="fill_container",
         height=58,
-        fill=btn_action,
-        corner_radius=14,
+        fill=amber,
+        corner_radius=16,
         layout="horizontal",
         justify="center",
         align="center",
+        gap=8,
         children=[
-            create_text("AMBIL FOTO MUAT & MULAI", font_size=15, font_weight="bold", fill="#FFFFFF", font_family="$--font-heading")
+            create_text("📷", font_size=18),
+            create_text("Ambil Foto Muat & Mulai", font_size=15, font_weight="bold", fill="#FFFFFF", font_family="$--font-heading")
         ]
     )
 
     return create_frame(
-        name=f"3. Home Operational ({theme_label})",
-        width=340,
-        height=740,
+        name=f"3. Home Auto-Detect ({theme_label})",
+        width=360,
+        height=780,
         x=x_pos,
         y=0,
         fill=bg,
         stroke=border,
         stroke_width=2,
-        corner_radius=28,
-        padding=18,
-        gap=12,
+        corner_radius=32,
+        padding=20,
+        gap=14,
         justify="space_between",
         children=[
-            create_frame(name="Top", width="fill_container", gap=10, children=[
-                create_frame(name="Bar", width="fill_container", layout="horizontal", justify="space_between", align="center", children=[
-                    create_text("TERRAPOINT", font_size=13, font_weight="bold", fill=fg),
-                    create_frame(name="TagNet", padding=[2, 6], corner_radius=4, fill=card_active, stroke=btn_action, stroke_width=1, children=[
-                        create_text("CAMP WI-FI", font_size=10, font_weight="bold", fill=btn_action, font_family="$--font-mono")
+            create_frame(name="Top", width="fill_container", gap=12, children=[
+                # Bar
+                create_frame(name="TopBar", width="fill_container", layout="horizontal", justify="space_between", align="center", children=[
+                    create_text("TERRAPOINT", font_size=14, font_weight="bold", fill=fg, font_family="$--font-heading"),
+                    create_frame(name="GpsBadge", layout="horizontal", gap=6, align="center", children=[
+                        create_frame(name="GpsDot", width=6, height=6, corner_radius=3, fill=amber),
+                        create_text("GPS Siap", font_size=11, font_weight="bold", fill=amber, font_family="$--font-mono")
                     ])
                 ]),
-                create_frame(name="DriverInfo", width="fill_container", fill=card_bg, stroke=border, stroke_width=1, corner_radius=10, padding=10, layout="horizontal", justify="space_between", align="center", children=[
-                    create_frame(name="T", gap=1, children=[
-                        create_text("DRIVER AKTIF", font_size=9, font_weight="bold", fill=muted, font_family="$--font-mono"),
+                # Driver Row
+                create_frame(name="DriverRow", width="fill_container", layout="horizontal", justify="space_between", align="center", padding=[6, 0], children=[
+                    create_frame(name="DrvTxt", gap=1, children=[
+                        create_text("PENGEMUDI AKTIF", font_size=9, font_weight="bold", fill=muted, font_family="$--font-mono"),
                         create_text("Ahmad Fauzi (DRV-001)", font_size=13, font_weight="bold", fill=fg)
+                    ]),
+                    create_frame(name="ShiftPill", padding=[3, 8], corner_radius=6, fill=card_active, stroke=amber, stroke_width=1, children=[
+                        create_text("Shift 1", font_size=10, font_weight="bold", fill=amber, font_family="$--font-mono")
                     ])
                 ]),
-                location_detected_card,
-                sync_trigger_card
+                location_card,
+                sync_card
             ]),
 
-            create_frame(name="Bottom", width="fill_container", gap=8, children=[
-                btn_start_single,
-                create_frame(name="Links", width="fill_container", layout="horizontal", justify="space_between", children=[
-                    create_text("Perbarui GPS", font_size=11, font_weight="600", fill=muted, font_family="$--font-mono"),
-                    create_text("Buka Antrean Detail", font_size=11, font_weight="bold", fill=btn_action, font_family="$--font-mono")
+            create_frame(name="Bottom", width="fill_container", gap=6, children=[
+                btn_start,
+                create_frame(name="Foot", width="fill_container", layout="horizontal", justify="center", children=[
+                    create_text("Foto awal otomatis memulai ritase", font_size=11, fill=muted, font_family="$--font-mono")
                 ])
             ])
         ]
     )
 
-# 4. DIRECT-CAPTURE CAMERA
-def build_screen_camera(x_pos, is_dark=True):
+# SCREEN 4: DIRECT-CAPTURE CAMERA VIEWFINDER (OFFLINE)
+def build_screen_4_camera(x_pos, is_dark=True):
     bg = "#000000" if is_dark else "#0F172A"
     card_bg = "#111827"
     border = "#374151"
-    banner_bg = "#D97706"
+    amber = "#D97706"
     theme_label = "Dark" if is_dark else "Light"
 
     banner = create_frame(
         name="BannerValid",
         width="fill_container",
-        fill=banner_bg,
+        fill=amber,
         corner_radius=10,
-        padding=10,
+        padding=[8, 12],
         layout="horizontal",
+        justify="space_between",
         align="center",
-        gap=8,
         children=[
-            create_frame(name="T", gap=2, children=[
-                create_text("POSISI SESUAI (RADIUS <= 50M)", font_size=12, font_weight="bold", fill="#FFFFFF", font_family="$--font-heading"),
-                create_text("Loading Point Pit 3 Utara", font_size=10, font_weight="600", fill="#FEF3C7")
-            ])
+            create_text("Posisi Sesuai (≤ 50m)", font_size=12, font_weight="bold", fill="#FFFFFF", font_family="$--font-heading"),
+            create_text("± 8.2m", font_size=11, font_weight="bold", fill="#FEF3C7", font_family="$--font-mono")
         ]
     )
 
     reticle = create_frame(
         name="ReticleBox",
         width="fill_container",
-        height=300,
+        height=320,
         fill="#050B14",
-        stroke=banner_bg,
+        stroke=amber,
         stroke_width=2,
-        corner_radius=16,
+        corner_radius=18,
         justify="center",
         align="center",
-        gap=6,
+        gap=8,
         children=[
             create_text("[ AREA KAMERA LANGSUNG ]", font_size=13, font_weight="bold", fill="#94A3B8", font_family="$--font-mono"),
-            create_frame(name="PillAcc", padding=[4, 8], corner_radius=6, fill="#0F172A", stroke="#334155", stroke_width=1, children=[
-                create_text("Akurasi GPS: +/- 8.2m", font_size=10, font_weight="bold", fill=banner_bg, font_family="$--font-mono")
+            create_text("Bidik Bak Muatan Truk", font_size=11, fill="#CBD5E1", font_family="$--font-mono"),
+            create_frame(name="LocLabel", padding=[4, 10], corner_radius=6, fill="#0F172A", stroke="#334155", stroke_width=1, children=[
+                create_text("Loading Point Pit 3 Utara", font_size=11, font_weight="bold", fill=amber, font_family="$--font-mono")
             ])
         ]
     )
 
-    shutter = create_frame(
+    shutter_bar = create_frame(
         name="ShutterBar",
         width="fill_container",
         layout="horizontal",
         justify="space_between",
         align="center",
-        padding=[10, 16],
+        padding=[12, 18],
         fill=card_bg,
         stroke=border,
         stroke_width=1,
-        corner_radius=16,
+        corner_radius=20,
         children=[
-            create_frame(name="BtnLamp", width=44, height=44, corner_radius=8, fill="#1F2937", justify="center", align="center", children=[
-                create_text("SENTER", font_size=9, font_weight="bold", fill="#D1D5DB", font_family="$--font-mono")
+            create_frame(name="BtnLamp", width=46, height=46, corner_radius=12, fill="#1F2937", justify="center", align="center", children=[
+                create_text("⚡", font_size=18)
             ]),
-            create_frame(name="ShutterCircle", width=68, height=68, corner_radius=34, fill=banner_bg, stroke="#FFFFFF", stroke_width=3, justify="center", align="center", children=[
+            create_frame(name="ShutterCircle", width=68, height=68, corner_radius=34, fill=amber, stroke="#FFFFFF", stroke_width=4, justify="center", align="center", children=[
                 create_text("FOTO", font_size=12, font_weight="bold", fill="#FFFFFF", font_family="$--font-heading")
             ]),
-            create_frame(name="BtnFlip", width=44, height=44, corner_radius=8, fill="#1F2937", justify="center", align="center", children=[
-                create_text("BATAL", font_size=9, font_weight="bold", fill="#D1D5DB", font_family="$--font-mono")
+            create_frame(name="BtnCancel", width=46, height=46, corner_radius=12, fill="#1F2937", justify="center", align="center", children=[
+                create_text("✕", font_size=16, font_weight="bold", fill="#D1D5DB")
             ])
         ]
     )
 
     return create_frame(
-        name=f"4. Viewfinder ({theme_label})",
-        width=340,
-        height=740,
+        name=f"4. Camera Viewfinder ({theme_label})",
+        width=360,
+        height=780,
         x=x_pos,
         y=0,
         fill=bg,
         stroke=border,
         stroke_width=2,
-        corner_radius=28,
+        corner_radius=32,
         padding=16,
         gap=12,
         justify="space_between",
         children=[
             banner,
             reticle,
-            shutter
+            shutter_bar
         ]
     )
 
-# 5. PREVIEW FOTO + SWISS WATERMARK STAMP & RETAKE
-def build_screen_preview(x_pos, is_dark=True):
+# SCREEN 5: GEOTAG PREVIEW WITH SWISS WATERMARK & RETAKE (OFFLINE)
+def build_screen_5_preview(x_pos, is_dark=True):
     bg = "#05070B"
-    card_bg = "#FFFFFF"
     border = "#1C2230"
-    btn_action = "#D97706"
+    amber = "#D97706"
     theme_label = "Dark" if is_dark else "Light"
 
-    watermark_box = create_frame(
-        name="SwissWatermarkBox",
+    swiss_watermark_box = create_frame(
+        name="SwissWatermarkStampCard",
         width="fill_container",
         fill="#FFFFFF",
         corner_radius=14,
@@ -434,110 +469,121 @@ def build_screen_preview(x_pos, is_dark=True):
         gap=10,
         align="center",
         children=[
-            # Left Mini Map
-            create_frame(name="MiniMap", width=70, height=80, corner_radius=8, fill="#F1F5F9", stroke="#CBD5E1", stroke_width=1, justify="center", align="center", children=[
-                create_frame(name="Pin", width=12, height=12, corner_radius=6, fill="#DC2626", stroke="#FFFFFF", stroke_width=2),
-                create_text("MAP 50M", font_size=8, font_weight="bold", fill="#334155", font_family="$--font-mono")
+            # Left Mini Map Inset Snapshot
+            create_frame(name="MiniMapInset", width=74, height=84, corner_radius=8, fill="#F1F5F9", stroke="#CBD5E1", stroke_width=1, justify="center", align="center", gap=2, children=[
+                create_frame(name="GpsPin", width=12, height=12, corner_radius=6, fill="#DC2626", stroke="#FFFFFF", stroke_width=2),
+                create_text("50M RADIUS", font_size=7, font_weight="bold", fill="#334155", font_family="$--font-mono")
             ]),
-            # Right Metadata
-            create_frame(name="Metadata", gap=2, children=[
-                create_frame(name="Hdr", width="fill_container", layout="horizontal", justify="space_between", children=[
-                    create_text("START CHECKPOINT", font_size=9, font_weight="bold", fill=btn_action, font_family="$--font-mono"),
+            # Right Surveyor Metadata
+            create_frame(name="SurveyorMetadata", width="fill_container", gap=2, children=[
+                create_frame(name="HdrRow", width="fill_container", layout="horizontal", justify="space_between", children=[
+                    create_text("START CHECKPOINT", font_size=9, font_weight="bold", fill=amber, font_family="$--font-mono"),
                     create_text("TERRAPOINT", font_size=8, fill="#64748B", font_family="$--font-mono")
                 ]),
                 create_text("08:05:22 WITA (18/09/2026)", font_size=11, font_weight="bold", fill="#DC2626", font_family="$--font-mono"),
                 create_text("Loading Point Pit 3 Utara", font_size=11, font_weight="bold", fill="#0F172A"),
                 create_text("Lat: -3.123456, Lng: 115.123456", font_size=9, fill="#475569", font_family="$--font-mono"),
+                create_text("Akurasi: ±8.2m | Alt: 142m MSL", font_size=8, fill="#64748B", font_family="$--font-mono"),
                 create_text("DRV-001 (Ahmad) • TSK-001", font_size=8, fill="#64748B", font_family="$--font-mono")
             ])
         ]
     )
 
-    photo_area = create_frame(
-        name="PhotoArea",
+    photo_container = create_frame(
+        name="PhotoContainerWithWatermark",
         width="fill_container",
-        height=400,
+        height=420,
         fill="#111827",
         stroke="#374151",
         stroke_width=1,
-        corner_radius=18,
+        corner_radius=20,
         padding=12,
         justify="end",
         children=[
-            watermark_box
+            swiss_watermark_box
         ]
     )
 
     return create_frame(
-        name=f"5. Preview Geotag ({theme_label})",
-        width=340,
-        height=740,
+        name=f"5. Geotag Preview & Retake ({theme_label})",
+        width=360,
+        height=780,
         x=x_pos,
         y=0,
         fill=bg,
         stroke=border,
         stroke_width=2,
-        corner_radius=28,
+        corner_radius=32,
         padding=18,
         gap=12,
         justify="space_between",
         children=[
-            create_frame(name="Hdr", width="fill_container", layout="horizontal", justify="space_between", children=[
-                create_text("Preview Bukti Foto", font_size=13, font_weight="bold", fill="#F8FAFC"),
-                create_text("Tercatat", font_size=11, fill="#94A3B8", font_family="$--font-mono")
+            # Header
+            create_frame(name="PreviewHdr", width="fill_container", layout="horizontal", justify="space_between", align="center", children=[
+                create_text("Preview Bukti Foto", font_size=13, font_weight="bold", fill="#F8FAFC", font_family="$--font-heading"),
+                create_text("Tercatat", font_size=11, font_weight="bold", fill=amber, font_family="$--font-mono")
             ]),
-            photo_area,
+
+            photo_container,
+
+            # Dual Actions: Gunakan vs Retake
             create_frame(name="Actions", width="fill_container", gap=8, children=[
-                create_frame(name="BtnUse", width="fill_container", height=54, fill=btn_action, corner_radius=12, layout="horizontal", justify="center", align="center", children=[
+                create_frame(name="BtnUsePhoto", width="fill_container", height=54, fill=amber, corner_radius=14, layout="horizontal", justify="center", align="center", children=[
                     create_text("Gunakan Foto Ini (Mulai)", font_size=14, font_weight="bold", fill="#FFFFFF", font_family="$--font-heading")
                 ]),
-                create_frame(name="BtnRetake", width="fill_container", height=44, fill="#1E293B", corner_radius=10, layout="horizontal", justify="center", align="center", children=[
+                create_frame(name="BtnRetake", width="fill_container", height=44, fill="#1E293B", stroke="#334155", stroke_width=1, corner_radius=12, layout="horizontal", justify="center", align="center", children=[
                     create_text("Foto Ulang (Retake)", font_size=12, font_weight="600", fill="#CBD5E1", font_family="$--font-mono")
                 ])
             ])
         ]
     )
 
-# 6. IN-PROGRESS HAULING (CLEAN STATUS)
-def build_screen_tracking(x_pos, is_dark=True):
+# SCREEN 6: HAULING ACTIVE STATUS (OFFLINE)
+def build_screen_6_tracking(x_pos, is_dark=True):
     bg = "#0B0E17" if is_dark else "#FFFFFF"
     card_bg = "#131824" if is_dark else "#F8FAFC"
     border = "#1C2230" if is_dark else "#CBD5E1"
     fg = "#F8FAFC" if is_dark else "#0F172A"
     muted = "#7E8B9F" if is_dark else "#475569"
-    btn_action = "#D97706"
+    amber = "#D97706"
     theme_label = "Dark" if is_dark else "Light"
 
     return create_frame(
-        name=f"6. Hauling Status ({theme_label})",
-        width=340,
-        height=740,
+        name=f"6. Hauling Active Status ({theme_label})",
+        width=360,
+        height=780,
         x=x_pos,
         y=0,
         fill=bg,
         stroke=border,
         stroke_width=2,
-        corner_radius=28,
-        padding=18,
-        gap=12,
+        corner_radius=32,
+        padding=20,
+        gap=14,
         justify="space_between",
         children=[
-            create_frame(name="TopArea", width="fill_container", gap=12, children=[
+            create_frame(name="TopArea", width="fill_container", gap=14, children=[
+                # Top status
                 create_frame(name="TopBar", width="fill_container", layout="horizontal", justify="space_between", align="center", children=[
-                    create_text("RITASE BERJALAN", font_size=12, font_weight="bold", fill=fg),
-                    create_frame(name="ActiveBadge", padding=[2, 6], corner_radius=4, fill="rgba(217, 119, 6, 0.15)", stroke=btn_action, stroke_width=1, children=[
-                        create_text("SIAP HAULING", font_size=9, font_weight="bold", fill=btn_action, font_family="$--font-mono")
+                    create_text("RITASE BERJALAN", font_size=13, font_weight="bold", fill=fg, font_family="$--font-heading"),
+                    create_frame(name="ActiveBadge", padding=[3, 8], corner_radius=6, fill="rgba(217, 119, 6, 0.15)", stroke=amber, stroke_width=1, children=[
+                        create_text("SIAP HAULING", font_size=10, font_weight="bold", fill=amber, font_family="$--font-mono")
                     ])
                 ]),
-                create_frame(name="StatusCard", width="fill_container", fill=card_bg, stroke=border, stroke_width=1, corner_radius=14, padding=16, align="center", gap=6, children=[
-                    create_text("PERJALANAN MENUJU TITIK BONGKAR", font_size=12, font_weight="bold", fill=btn_action, font_family="$--font-heading"),
-                    create_text("Rute otomatis tercatat di latar belakang", font_size=11, fill=muted)
+                # Simplified status card (K3 Driver Focus)
+                create_frame(name="StatusCard", width="fill_container", fill=card_bg, stroke=border, stroke_width=1, corner_radius=16, padding=18, align="center", gap=6, children=[
+                    create_frame(name="TruckIcon", width=44, height=44, corner_radius=22, fill="rgba(217, 119, 6, 0.15)", justify="center", align="center", children=[
+                        create_text("🚛", font_size=20)
+                    ]),
+                    create_text("PERJALANAN MENUJU TITIK BONGKAR", font_size=12, font_weight="bold", fill=amber, font_family="$--font-heading"),
+                    create_text("Rute hauling otomatis tercatat di latar belakang dan terpantau oleh Dispatcher di dashboard.", font_size=11, fill=muted, text_align="center")
                 ]),
-                create_frame(name="RouteCard", width="fill_container", fill=card_bg, stroke=border, stroke_width=1, corner_radius=14, padding=14, gap=10, children=[
+                # Checkpoint Info
+                create_frame(name="CheckpointCard", width="fill_container", fill=card_bg, stroke=border, stroke_width=1, corner_radius=16, padding=16, gap=12, children=[
                     create_frame(name="A", gap=2, children=[
                         create_text("TITIK MUAT (AWAL)", font_size=9, font_weight="bold", fill=muted, font_family="$--font-mono"),
                         create_text("Loading Point Pit 3 Utara", font_size=13, font_weight="bold", fill=fg),
-                        create_text("Foto Selesai • 08:05 WITA", font_size=11, font_weight="600", fill=btn_action, font_family="$--font-mono")
+                        create_text("Foto Selesai • 08:05 WITA", font_size=11, font_weight="600", fill=amber, font_family="$--font-mono")
                     ]),
                     create_frame(name="B", gap=2, children=[
                         create_text("TITIK BONGKAR (TUJUAN)", font_size=9, font_weight="bold", fill=muted, font_family="$--font-mono"),
@@ -547,131 +593,135 @@ def build_screen_tracking(x_pos, is_dark=True):
                 ])
             ]),
 
+            # Bottom Button: Foto Bongkar
             create_frame(name="BottomArea", width="fill_container", gap=8, children=[
-                create_frame(name="BtnBongkar", width="fill_container", height=58, fill=btn_action, corner_radius=14, layout="horizontal", justify="center", align="center", children=[
-                    create_text("FOTO BONGKAR (SELESAI)", font_size=15, font_weight="bold", fill="#FFFFFF", font_family="$--font-heading")
+                create_frame(name="BtnBongkar", width="fill_container", height=58, fill=amber, corner_radius=16, layout="horizontal", justify="center", align="center", children=[
+                    create_text("Foto Bongkar (Selesai)", font_size=15, font_weight="bold", fill="#FFFFFF", font_family="$--font-heading")
                 ]),
                 create_frame(name="K3Note", width="fill_container", layout="horizontal", justify="center", children=[
-                    create_text("Fokus menyetir & utamakan keselamatan K3", font_size=11, fill=muted, font_family="$--font-mono")
+                    create_text("Fokus menyetir • Utamakan keselamatan K3", font_size=11, fill=muted, font_family="$--font-mono")
                 ])
             ])
         ]
     )
 
-# 7. SYNC QUEUE SCREEN (CLEAN HUMAN-FRIENDLY)
-def build_screen_sync_queue(x_pos, is_dark=True):
+# SCREEN 7: CAMP SYNC QUEUE (ONLINE)
+def build_screen_7_sync(x_pos, is_dark=True):
     bg = "#0B0E17" if is_dark else "#FFFFFF"
     card_bg = "#131824" if is_dark else "#F8FAFC"
     border = "#1C2230" if is_dark else "#CBD5E1"
     fg = "#F8FAFC" if is_dark else "#0F172A"
     muted = "#7E8B9F" if is_dark else "#475569"
-    btn_action = "#D97706"
+    amber = "#D97706"
     theme_label = "Dark" if is_dark else "Light"
 
-    def make_item(t, m):
+    def make_task_row(title, time_sub):
         return create_frame(
-            name="Item",
+            name="TaskRow",
             width="fill_container",
             fill=card_bg,
             stroke=border,
             stroke_width=1,
-            corner_radius=10,
-            padding=12,
+            corner_radius=12,
+            padding=14,
             layout="horizontal",
             justify="space_between",
             align="center",
             children=[
-                create_frame(name="Tx", gap=1, children=[
-                    create_text(t, font_size=12, font_weight="bold", fill=fg),
-                    create_text(m, font_size=10, fill=muted, font_family="$--font-mono")
+                create_frame(name="T", gap=2, children=[
+                    create_text(title, font_size=13, font_weight="bold", fill=fg),
+                    create_text(time_sub, font_size=11, fill=muted, font_family="$--font-mono")
                 ]),
-                create_text("Siap", font_size=11, font_weight="bold", fill=btn_action, font_family="$--font-mono")
+                create_text("Siap", font_size=12, font_weight="bold", fill=amber, font_family="$--font-mono")
             ]
         )
 
     return create_frame(
         name=f"7. Sync Queue ({theme_label})",
-        width=340,
-        height=740,
+        width=360,
+        height=780,
         x=x_pos,
         y=0,
         fill=bg,
         stroke=border,
         stroke_width=2,
-        corner_radius=28,
-        padding=18,
-        gap=12,
+        corner_radius=32,
+        padding=20,
+        gap=14,
         justify="space_between",
         children=[
-            create_frame(name="TopArea", width="fill_container", gap=10, children=[
+            create_frame(name="TopArea", width="fill_container", gap=12, children=[
+                # Top Bar
                 create_frame(name="TopBar", width="fill_container", layout="horizontal", justify="space_between", align="center", children=[
-                    create_text("ANTREAN SINKRONISASI", font_size=12, font_weight="bold", fill=fg),
-                    create_frame(name="TagNet", padding=[2, 6], corner_radius=4, fill="rgba(217, 119, 6, 0.15)", stroke=btn_action, stroke_width=1, children=[
-                        create_text("CAMP ONLINE", font_size=10, font_weight="bold", fill=btn_action, font_family="$--font-mono")
+                    create_text("ANTREAN SINKRONISASI", font_size=13, font_weight="bold", fill=fg, font_family="$--font-heading"),
+                    create_frame(name="OnlinePill", padding=[3, 8], corner_radius=6, fill="rgba(217, 119, 6, 0.15)", stroke=amber, stroke_width=1, children=[
+                        create_text("CAMP ONLINE", font_size=10, font_weight="bold", fill=amber, font_family="$--font-mono")
                     ])
                 ]),
-                create_frame(name="SumCard", width="fill_container", fill=card_bg, stroke=border, stroke_width=1, corner_radius=14, padding=12, gap=2, children=[
+                # Clean summary card (no technical jargon)
+                create_frame(name="SummaryCard", width="fill_container", fill=card_bg, stroke=border, stroke_width=1, corner_radius=16, padding=16, gap=2, children=[
                     create_text("STATUS PENGIRIMAN", font_size=10, font_weight="bold", fill=muted, font_family="$--font-mono"),
-                    create_text("3 Ritase Siap Dikirim ke Kantor", font_size=14, font_weight="bold", fill=fg)
+                    create_text("3 Ritase Siap Dikirim ke Kantor", font_size=15, font_weight="bold", fill=fg)
                 ]),
-                make_item("Ritase 1: Pit 3 Utara ➔ ROM 1", "Muat 08:05 • Bongkar 08:35"),
-                make_item("Ritase 2: Pit 3 Utara ➔ ROM 1", "Muat 09:10 • Bongkar 09:40"),
-                make_item("Ritase 3: Pit 2 Barat ➔ ROM 2", "Muat 10:15 • Bongkar 10:48")
+                make_task_row("Ritase 1: Pit 3 Utara ➔ ROM 1", "Muat 08:05 • Bongkar 08:35"),
+                make_task_row("Ritase 2: Pit 3 Utara ➔ ROM 1", "Muat 09:10 • Bongkar 09:40"),
+                make_task_row("Ritase 3: Pit 2 Barat ➔ ROM 2", "Muat 10:15 • Bongkar 10:48")
             ]),
 
-            create_frame(name="BottomArea", width="fill_container", gap=8, children=[
-                create_frame(name="Prog", width="fill_container", gap=4, children=[
-                    create_frame(name="PText", width="fill_container", layout="horizontal", justify="space_between", children=[
-                        create_text("Kemajuan Pengiriman", font_size=10, font_weight="bold", fill=muted, font_family="$--font-mono"),
-                        create_text("66%", font_size=10, font_weight="bold", fill=btn_action, font_family="$--font-mono")
+            # Bottom Upload Button
+            create_frame(name="BottomArea", width="fill_container", gap=10, children=[
+                create_frame(name="ProgRow", width="fill_container", gap=4, children=[
+                    create_frame(name="ProgText", width="fill_container", layout="horizontal", justify="space_between", children=[
+                        create_text("Kemajuan Pengiriman", font_size=11, font_weight="bold", fill=muted, font_family="$--font-mono"),
+                        create_text("66%", font_size=11, font_weight="bold", fill=amber, font_family="$--font-mono")
                     ]),
                     create_frame(name="BarBg", width="fill_container", height=6, corner_radius=3, fill=border, children=[
-                        create_frame(name="BarFill", width=200, height=6, corner_radius=3, fill=btn_action)
+                        create_frame(name="BarFill", width=220, height=6, corner_radius=3, fill=amber)
                     ])
                 ]),
-                create_frame(name="BtnSyncAll", width="fill_container", height=58, fill=btn_action, corner_radius=14, layout="horizontal", justify="center", align="center", children=[
-                    create_text("SINKRONKAN SEKARANG", font_size=14, font_weight="bold", fill="#FFFFFF", font_family="$--font-heading")
+                create_frame(name="BtnSync", width="fill_container", height=58, fill=amber, corner_radius=16, layout="horizontal", justify="center", align="center", children=[
+                    create_text("Sinkronkan Sekarang", font_size=15, font_weight="bold", fill="#FFFFFF", font_family="$--font-heading")
                 ])
             ])
         ]
     )
 
 # ==============================================================================
-# MASTER CANVAS ASSEMBLY (7 SCREENS DARK + 7 SCREENS LIGHT)
+# MASTER CANVAS ASSEMBLY (7 SCREENS DARK + 7 SCREENS LIGHT = 14 FRAMES)
 # ==============================================================================
 def main():
-    spacing = 380
+    spacing = 400
 
-    # Dark Mode Set (7 Screens)
-    d1 = build_screen_initial_login(0, is_dark=True)
-    d2 = build_screen_quick_pin(spacing, is_dark=True)
-    d3 = build_screen_home_autodetect(spacing * 2, is_dark=True)
-    d4 = build_screen_camera(spacing * 3, is_dark=True)
-    d5 = build_screen_preview(spacing * 4, is_dark=True)
-    d6 = build_screen_tracking(spacing * 5, is_dark=True)
-    d7 = build_screen_sync_queue(spacing * 6, is_dark=True)
+    # Dark Mode Set (7 Complete Screens)
+    d1 = build_screen_1_login(0, is_dark=True)
+    d2 = build_screen_2_pin(spacing, is_dark=True)
+    d3 = build_screen_3_home(spacing * 2, is_dark=True)
+    d4 = build_screen_4_camera(spacing * 3, is_dark=True)
+    d5 = build_screen_5_preview(spacing * 4, is_dark=True)
+    d6 = build_screen_6_tracking(spacing * 5, is_dark=True)
+    d7 = build_screen_7_sync(spacing * 6, is_dark=True)
 
-    # Light Mode Set (7 Screens)
-    l1 = build_screen_initial_login(spacing * 7, is_dark=False)
-    l2 = build_screen_quick_pin(spacing * 8, is_dark=False)
-    l3 = build_screen_home_autodetect(spacing * 9, is_dark=False)
-    l4 = build_screen_camera(spacing * 10, is_dark=False)
-    l5 = build_screen_preview(spacing * 11, is_dark=False)
-    l6 = build_screen_tracking(spacing * 12, is_dark=False)
-    l7 = build_screen_sync_queue(spacing * 13, is_dark=False)
+    # Light Mode Set (7 Complete Screens)
+    l1 = build_screen_1_login(spacing * 7, is_dark=False)
+    l2 = build_screen_2_pin(spacing * 8, is_dark=False)
+    l3 = build_screen_3_home(spacing * 9, is_dark=False)
+    l4 = build_screen_4_camera(spacing * 10, is_dark=False)
+    l5 = build_screen_5_preview(spacing * 11, is_dark=False)
+    l6 = build_screen_6_tracking(spacing * 12, is_dark=False)
+    l7 = build_screen_7_sync(spacing * 13, is_dark=False)
 
     master_pen = {
         "version": "2.17",
         "children": [
             create_frame(
-                name="TerraPoint Mining Safety Amber System (7 Complete Screens)",
-                width=5600,
-                height=840,
+                name="TerraPoint Mining Safety Amber System (14 Complete Frames)",
+                width=5800,
+                height=880,
                 x=0,
                 y=0,
                 fill="#06080D",
                 padding=40,
-                gap=30,
+                gap=40,
                 layout="horizontal",
                 children=[
                     d1, d2, d3, d4, d5, d6, d7,
@@ -692,13 +742,13 @@ def main():
             "--font-body": {"type": "string", "value": "Plus Jakarta Sans"},
             "--font-mono": {"type": "string", "value": "JetBrains Mono"}
         },
-        "fileToken": "terrapoint-mobile-7screens-complete-v7"
+        "fileToken": "terrapoint-mobile-14frames-exact-v8"
     }
 
     with open("designs/terrapoint_mobile_ui.pen", "w") as f:
         json.dump(master_pen, f, indent=2)
     
-    print("Successfully generated complete 7-screen designs/terrapoint_mobile_ui.pen")
+    print("Successfully regenerated 1:1 exact designs/terrapoint_mobile_ui.pen")
 
 if __name__ == "__main__":
     main()
