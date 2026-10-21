@@ -25,8 +25,8 @@ Operasional logistik dan transportasi hauling tambang mineral/nikel (*Pit to ROM
    - Pembayaran antara pemilik tambang (klien) dan kontraktor armada dihitung menggunakan **Tarif Flat Per-Trip Berdasarkan Kategori Roda Kendaraan**:
      - Kategori 1: `4 Roda (Pick-up / Engkel)` &rarr; Tarif Ritase Ringan
      - Kategori 2: `6 Roda (Dump Truck Standar)` &rarr; Tarif Ritase Sedang
-     - Kategori 3: `10 Roda (Tronton Heavy)` &rarr; Tarif Ritase Berat
-     - Kategori 4: `12 Roda (Trailer Heavy / Gandeng)` &rarr; Tarif Ritase Kapasitas Maksimal
+     - Kategori 3: `6 Roda Jumbo` &rarr; Tarif Ritase Kapasitas Menengah-Tinggi
+     - Kategori 4: `10 Roda (Tronton Heavy)` &rarr; Tarif Ritase Berat Maksimal
    - Setiap trip yang sah diverifikasi oleh 3 dokumen foto (Muat Pit, Curah ROM, dan Nota Timbang) sebagai bukti pembayaran invoice bulanan yang sah (*proof of delivery*).
 2. **Arsitektur Multi-Tenant Kontraktor:**
    - Platform mendukung banyak vendor kontraktor hauling berbeda dalam satu sistem. Setiap vendor/kontraktor memiliki isolasi data melalui `tenant_id` dan pengelompokan armada.
@@ -80,12 +80,13 @@ Aplikasi mobile dirancang menggunakan **4 Cards Mandiri Tanpa Nomor** dengan mek
    - Mengingat kondisi lapangan tambang yang dinamis (antrean panjang, *blasting* tambang, cuaca hujan lebat, atau jalan licin), trip dibiarkan aktif dalam perjalanan tanpa auto-timeout yang kaku sampai driver tiba di ROM dan menyelesaikan pembongkaran.
 2. **Kunci Logout saat Membawa Muatan (Anti-Fraud Lock):**
    - Pengemudi yang sedang dalam status membawa muatan (`LOADED_NEED_DUMP` atau `DUMPED_NEED_INVOICE`) **dilarang logout dari aplikasi**. Driver awal wajib menyelesaikan pembongkaran dan foto nota sebelum sesi dapat dialihkan ke supir lain demi mencegah kecurangan dan hilangnya material di jalan hauling.
-3. **Otoritas Pembatalan Trip (Void / Cancel Authority):**
+3. **Strict Runtime Permission Gate (Sensor Lokasi Satelit GPS & Kamera Wajib):**
+   - Aplikasi secara keras (*hard gate*) memblokir akses ke layar Login dan Beranda jika pengemudi belum memberikan izin Kamera dan Lokasi Satelit GPS. Tidak ada bypass bagi perangkat tanpa izin sensor aktif.
+4. **Otoritas Pembatalan Trip (Void / Cancel Authority):**
    - Pengemudi di smartphone **tidak memiliki hak** untuk membatalkan trip yang sudah terlanjur difoto muat di Pit.
    - Hanya Dispatcher / Supervisor operasional di Web Command Center yang memiliki kewenangan membatalkan trip melalui tombol `Batalkan Tugas` disertai input alasan resmi (misal: truk breakdown di pit atau material salah muat).
-4. **Counter Akumulasi Trip Harian Murni:**
+5. **Counter Akumulasi Trip Harian Murni:**
    - Counter pada beranda mobile dan KPI dashboard menampilkan akumulasi murni (`X TRIP SELESAI`) per driver per shift tanpa kuota kaku, memberikan gambaran produktivitas riil di lapangan.
-
 ---
 
 ## 3. Arsitektur Teknologi & Infrastruktur (Tech Stack & Scaling)
