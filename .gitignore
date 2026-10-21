@@ -25,6 +25,8 @@ Thumbs.db
 *.bak
 *.pid
 *.seed
+*.pyc
+__pycache__/
 
 # Node & Web
 node_modules/
@@ -48,12 +50,14 @@ frontend/mobile/.flutter-plugins
 frontend/mobile/.flutter-plugins-dependencies
 frontend/mobile/.packages
 frontend/mobile/build/
+ephemeral/
+
+# Legacy paths cleanup
 frontend_mobile/
 dashboard_pwa/
 server_vps/
-ephemeral/
 
-# Environment & Secrets
+# Environment & Secrets (Never commit production credentials)
 .env
 .env.*
 !.env.example
@@ -67,5 +71,6 @@ ephemeral/
 .agents/
 skills-lock.json
 
+# Artifacts & Local Builds
 *.apk
 frontend/web/terrapoint.apk
