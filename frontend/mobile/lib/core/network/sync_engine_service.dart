@@ -21,7 +21,7 @@ class SyncEngineService {
   SyncEngineService._();
 
   /// Public Cloudflare Tunnel URL (No VPN / Tailscale required on driver phone)
-  static String serverBaseUrl = 'https://alot-lane-blackberry-herb.trycloudflare.com';
+  static String serverBaseUrl = 'https://affect-gary-begins-systematic.trycloudflare.com';
   static String authToken = '';
 
   /// 1. Manual Batch Sync (Driver-Facing at Camp / Wi-Fi)
