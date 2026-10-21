@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TerraPoint Mobile App — Galeri Antarmuka Lengkap (8 Layar)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #07090E;
+      --card: #10141F;
+      --card-hover: #161C2C;
+      --border: #1E273A;
+      --text: #F8FAFC;
+      --muted: #94A3B8;
+      --accent: #F59E0B;
+      --success: #10B981;
+      --info: #3B82F6;
+      --purple: #A855F7;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', -apple-system, sans-serif;
+      padding: 36px 24px 80px;
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 1360px;
+      margin: 0 auto;
+    }
+    .top-bar {
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .back-btn {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      transition: all 0.2s;
+    }
+    .back-btn:hover {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.1);
+    }
+    .header {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(16, 185, 129, 0.08) 50%, rgba(59, 130, 246, 0.08) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 18px;
+      padding: 26px 28px;
+      margin-bottom: 36px;
+    }
+    h1 {
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: -0.4px;
+      margin-bottom: 8px;
+      color: #FFFFFF;
+    }
+    p {
+      color: var(--muted);
+      font-size: 13.5px;
+      max-width: 980px;
+    }
+    .flow-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .flow-step-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      flex-wrap: wrap;
+    }
+    .step-chip {
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      background: var(--card-hover);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+    .img-box {
+      background: #04060A;
+      padding: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .img-box img {
+      width: 100%;
+      height: auto;
+      max-width: 275px;
+      border-radius: 22px;
+      border: 1px solid #1E2535;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.75);
+    }
+    .content {
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex: 1;
+    }
+    .step-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+    .title {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text);
+    }
+    .desc {
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+    .highlight-box {
+      margin-top: 8px;
+      padding: 8px 10px;
+      border-radius: 8px;
+      font-size: 11.5px;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      border: 1px solid;
+    }
+    .link {
+      margin-top: 10px;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .link:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="top-bar">
+      <a href="/" class="back-btn">← Kembali ke Command Center</a>
+      <div style="display: flex; gap: 8px; align-items: center;">
+        <span class="flow-badge" style="background: rgba(16, 185, 129, 0.15); color: #34D399; border: 1px solid rgba(16, 185, 129, 0.3);">
+          ● 8 Layar Lengkap
+        </span>
+        <span class="flow-badge" style="background: rgba(245, 158, 11, 0.15); color: #FBBF24; border: 1px solid rgba(245, 158, 11, 0.3);">
+          Tanpa Nomor di Card
+        </span>
+        <span class="flow-badge" style="background: rgba(59, 130, 246, 0.15); color: #60A5FA; border: 1px solid rgba(59, 130, 246, 0.3);">
+          Strict Sequential Lock Active
+        </span>
+      </div>
+    </div>
+
+    <!-- Header Explanation -->
+    <div class="header">
+      <h1>Galeri Lengkap Antarmuka Mobile: Alur Kepatuhan Hauling Tambang (8 Layar)</h1>
+      <p>
+        Dokumentasi visual komprehensif seluruh tahapan aplikasi pengemudi: dari autentikasi login, pemilihan jenis armada (jumlah roda) fleksibel, 
+        Card Titik Muat (Pit), Card Titik Bongkar (Curah ROM), Card Foto Nota Timbang (Weighbridge), hingga Card Riwayat Foto Lengkap tanpa nomor di kartu.
+      </p>
+      
+      <div class="flow-step-bar">
+        <div class="step-chip" style="background: rgba(245, 158, 11, 0.2); color: #FBBF24; border: 1px solid rgba(245, 158, 11, 0.4);">
+          <span>TITIK MUAT (PIT)</span>
+        </div>
+        <span style="color: var(--muted); font-size: 13px;">➔</span>
+        <div class="step-chip" style="background: rgba(16, 185, 129, 0.2); color: #34D399; border: 1px solid rgba(16, 185, 129, 0.4);">
+          <span>TITIK BONGKAR (CURAH ROM)</span>
+        </div>
+        <span style="color: var(--muted); font-size: 13px;">➔</span>
+        <div class="step-chip" style="background: rgba(59, 130, 246, 0.2); color: #60A5FA; border: 1px solid rgba(59, 130, 246, 0.4);">
+          <span>FOTO NOTA TIMBANG (SLIP)</span>
+        </div>
+        <span style="color: var(--muted); font-size: 13px;">➔</span>
+        <div class="step-chip" style="background: rgba(168, 85, 247, 0.2); color: #C084FC; border: 1px solid rgba(168, 85, 247, 0.4);">
+          <span>RIWAYAT 3 BUKTI FOTO</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8 SCREENS GRID -->
+    <div class="grid">
+
+      <!-- SCREEN 01 -->
+      <div class="card">
+        <div class="img-box"><img src="mob-full-01-login.png" alt="01 · Masuk Driver"></div>
+        <div class="content">
+          <span class="step-tag" style="color: var(--muted);">01 · LOGIN</span>
+          <div class="title">Masuk Akun Pengemudi</div>
+          <div class="desc">Autentikasi pengemudi tambang berbasis ID/NIK dan PIN shift harian 6 digit dengan verifikasi token JWT ke server private cloud.</div>
+          <div class="highlight-box" style="background: rgba(255, 255, 255, 0.05); color: #FFFFFF; border-color: rgba(255, 255, 255, 0.15);">
+            Autentikasi Shift Harian
+          </div>
+          <a href="mob-full-01-login.png" target="_blank" class="link" style="color: var(--muted);">Buka Resolusi Penuh ↗</a>
+        </div>
+      </div>
+
+      <!-- SCREEN 02 -->
+      <div class="card">
+        <div class="img-box"><img src="mob-full-02-beranda-muat.png" alt="02 · Beranda Siap Muat"></div>
+        <div class="content">
+          <span class="step-tag" style="color: var(--accent);">02 · BERANDA</span>
+          <div class="title">Beranda: Siap Muat di Pit</div>
+          <div class="desc">Truk atas dihapus, GPS kanan atas presisi (±3.8m), counter trip harian, Card Titik Muat aktif tanpa nomor, dan Card lainnya terkunci rapi.</div>
+          <div class="highlight-box" style="background: rgba(245, 158, 11, 0.1); color: #FBBF24; border-color: rgba(245, 158, 11, 0.25);">
+            Status: SIAP AMBIL FOTO MUAT
+          </div>
+          <a href="mob-full-02-beranda-muat.png" target="_blank" class="link" style="color: var(--accent);">Buka Resolusi Penuh ↗</a>
+        </div>
+      </div>
+
+      <!-- SCREEN 03 -->
+      <div class="card">
+        <div class="img-box"><img src="mob-full-03-selector-roda.png" alt="03 · Selector Armada Roda"></div>
+        <div class="content">
+          <span class="step-tag" style="color: var(--accent);">03 · SELECTOR FLEKSIBEL</span>
+          <div class="title">Pilihan Armada Truk (Jumlah Roda)</div>
+          <div class="desc">Pengemudi dapat mengganti jenis kendaraan kapan saja (4 Roda, 6 Roda, 10 Roda, 12 Roda) langsung sebelum muat maupun via header.</div>
+          <div class="highlight-box" style="background: rgba(245, 158, 11, 0.1); color: #FBBF24; border-color: rgba(245, 158, 11, 0.25);">
+            Bottom Sheet: Fleksibel Ganti
+          </div>
+          <a href="mob-full-03-selector-roda.png" target="_blank" class="link" style="color: var(--accent);">Buka Resolusi Penuh ↗</a>
+        </div>
+      </div>
+
+      <!-- SCREEN 04 -->
+      <div class="card">
+        <div class="img-box"><img src="mob-full-04-kamera-muat.png" alt="04 · Foto Muatan Pit"></div>
+        <div class="content">
+          <span class="step-tag" style="color: var(--accent);">04 · WATERMARK KAMERA</span>
+          <div class="title">Foto Muatan di Pit Tambang</div>
+          <div class="desc">Kamera membidik muatan ore aktual dengan stempel permanen: nama loading point, waktu WITA, koordinat GPS, dan toleransi radius luas 250m.</div>
+          <div class="highlight-box" style="background: rgba(245, 158, 11, 0.1); color: #FBBF24; border-color: rgba(245, 158, 11, 0.25);">
+            Watermark: Titik Muat (Pit)
+          </div>
+          <a href="mob-full-04-kamera-muat.png" target="_blank" class="link" style="color: var(--accent);">Buka Resolusi Penuh ↗</a>
+        </div>
+      </div>
+
+      <!-- SCREEN 05 -->
+      <div class="card">
+        <div class="img-box"><img src="mob-full-05-beranda-bongkar.png" alt="05 · Beranda Siap Bongkar"></div>
+        <div class="content">
+          <span class="step-tag" style="color: var(--success);">05 · BERANDA</span>
+          <div class="title">Beranda: Siap Bongkar Curah ROM</div>
+          <div class="desc">Setelah muatan dicatat, Card Titik Bongkar terbuka. Card Foto Nota Timbang tetap terkunci gembok sampai foto curah diambil.</div>
+          <div class="highlight-box" style="background: rgba(16, 185, 129, 0.1); color: #34D399; border-color: rgba(16, 185, 129, 0.25);">
+            Card Bongkar Aktif • Nota Terkunci
+          </div>
+          <a href="mob-full-05-beranda-bongkar.png" target="_blank" class="link" style="color: var(--success);">Buka Resolusi Penuh ↗</a>
+        </div>
+      </div>
+
+      <!-- SCREEN 06 -->
+      <div class="card">
+        <div class="img-box"><img src="mob-full-06-kamera-bongkar.png" alt="06 · Foto Dumping ROM"></div>
+        <div class="content">
+          <span class="step-tag" style="color: var(--success);">06 · WATERMARK KAMERA</span>
+          <div class="title">Foto Fisik Curah di ROM Stockpile</div>
+          <div class="desc">Pengambilan bukti fisik dump truck yang selesai mencurahkan muatan di ROM Stockpile dengan verifikasi geofence radius ketat &le; 40 meter.</div>
+          <div class="highlight-box" style="background: rgba(16, 185, 129, 0.1); color: #34D399; border-color: rgba(16, 185, 129, 0.25);">
+            Wajib Sebelum Foto Nota
+          </div>
+          <a href="mob-full-06-kamera-bongkar.png" target="_blank" class="link" style="color: var(--success);">Buka Resolusi Penuh ↗</a>
+        </div>
+      </div>
+
+      <!-- SCREEN 07 -->
+      <div class="card">
+        <div class="img-box"><img src="mob-full-07-kamera-nota.png" alt="07 · Foto Nota Timbang"></div>
+        <div class="content">
+          <span class="step-tag" style="color: var(--info);">07 · WATERMARK KAMERA</span>
+          <div class="title">Foto Dokumen Nota / Surat Jalan</div>
+          <div class="desc">Kamera dokumen membidik lembar fisik slip jembatan timbang (Weighbridge) agar nomor seri tiket &amp; tonase resmi terekam sebelum trip disahkan.</div>
+          <div class="highlight-box" style="background: rgba(59, 130, 246, 0.1); color: #60A5FA; border-color: rgba(59, 130, 246, 0.25);">
+            Slip Jembatan Timbang Sah
+          </div>
+          <a href="mob-full-07-kamera-nota.png" target="_blank" class="link" style="color: var(--info);">Buka Resolusi Penuh ↗</a>
+        </div>
+      </div>
+
+      <!-- SCREEN 08 -->
+      <div class="card">
+        <div class="img-box"><img src="mob-full-08-beranda-selesai.png" alt="08 · Beranda Selesai"></div>
+        <div class="content">
+          <span class="step-tag" style="color: var(--purple);">08 · BERANDA SELESAI</span>
+          <div class="title">Trip Selesai &amp; Riwayat 3 Foto</div>
+          <div class="desc">Counter bertambah (+1 Trip Selesai), Card Muat siap memuat kembali, dan Card Riwayat merangkum 3 foto lengkap (Muat, Bongkar, Nota).</div>
+          <div class="highlight-box" style="background: rgba(168, 85, 247, 0.1); color: #C084FC; border-color: rgba(168, 85, 247, 0.25);">
+            3 Bukti: Muat + Bongkar + Nota
+          </div>
+          <a href="mob-full-08-beranda-selesai.png" target="_blank" class="link" style="color: var(--purple);">Buka Resolusi Penuh ↗</a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

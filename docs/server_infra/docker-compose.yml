@@ -1,0 +1,59 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: terrapoint_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-terrapoint}
+      POSTGRES_USER: ${POSTGRES_USER:-terrapoint_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-terrapoint_secure_pass_2026}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ../migrations/000001_init_schema.up.sql:/docker-entrypoint-initdb.d/01_init.sql:ro
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-terrapoint_user} -d ${POSTGRES_DB:-terrapoint}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: terrapoint_api
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      DATABASE_URL: postgres://${POSTGRES_USER:-terrapoint_user}:${POSTGRES_PASSWORD:-terrapoint_secure_pass_2026}@postgres:5432/${POSTGRES_DB:-terrapoint}
+      JWT_SECRET: ${JWT_SECRET:-tp_secret_jwt_key_morowali_2026}
+      UPLOAD_DIR: /app/uploads
+      BASE_URL: ${BASE_URL:-http://localhost}
+    volumes:
+      - evidence_storage:/app/uploads
+    ports:
+      - "3000:3000"
+
+  nginx:
+    image: nginx:alpine
+    container_name: terrapoint_gateway
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ../dashboard_pwa:/usr/share/nginx/html:ro
+      - evidence_storage:/var/www/uploads:ro
+      - ./ssl:/etc/nginx/ssl:ro
+
+volumes:
+  pgdata:
+  evidence_storage:

@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>TerraPoint Mobile — Enterprise Industrial Edition (Samsara & Linear Inspired)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <style>
+    :root {
+      --bg-canvas: #090B0E;
+      --bg-screen: #F3F4F6;
+      --bg-card: #FFFFFF;
+      --border: #E5E7EB;
+      --text-main: #111827;
+      --text-sub: #4B5563;
+      --text-muted: #6B7280;
+      --accent: #EA580C;
+    }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background-color: var(--bg-canvas);
+      color: #F3F4F6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .material-symbols-rounded {
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+      line-height: 1;
+    }
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+      font-feature-settings: "tnum";
+    }
+    .phone-screen {
+      width: 360px;
+      height: 780px;
+      border-radius: 36px;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+      border: 1px solid #1F242E;
+      flex-shrink: 0;
+      background-color: var(--bg-screen);
+      color: var(--text-main);
+    }
+  </style>
+</head>
+<body class="p-10 flex flex-col gap-10 w-fit">
+
+  <!-- Header Banner -->
+  <div class="border-b border-slate-800 pb-5 max-w-6xl">
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 rounded-lg bg-orange-600 flex items-center justify-center text-white font-bold font-mono text-sm">TP</div>
+      <div class="text-white font-bold text-xl tracking-tight">TERRAPOINT MOBILE — ENTERPRISE INDUSTRIAL SYSTEM</div>
+    </div>
+    <div class="text-slate-400 text-xs mt-1">Desain berfokus pada kejelasan informasi operasional, tipografi berjarak lega, dan palet netral berstandar industri telematika modern.</div>
+  </div>
+
+  <!-- ROW 1: PART A — SIKLUS OPERASIONAL UTAMA (5 LAYAR) -->
+  <div class="flex flex-col gap-3">
+    <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">
+      Bagian A: Siklus Ritase Utama (5 Layar)
+    </div>
+    <div class="flex gap-6">
+
+      <!-- Screen 1: Login -->
+      <div class="flex flex-col gap-2">
+        <span class="text-xs font-mono text-slate-400">01 · Masuk Driver</span>
+        <div class="phone-screen bg-white p-6 justify-between border-slate-200">
+          <div class="flex justify-between items-center text-xs text-slate-500 font-medium">
+            <span class="font-mono font-bold text-slate-800">08:00</span>
+            <div class="flex gap-1.5 items-center">
+              <span class="material-symbols-rounded text-sm">wifi</span>
+              <span class="material-symbols-rounded text-sm">battery_full</span>
+            </div>
+          </div>
+
+          <div class="my-auto">
+            <div class="mb-8">
+              <div class="w-10 h-10 bg-slate-900 rounded-xl flex items-center justify-center text-white font-bold font-mono text-base mb-3">TP</div>
+              <h1 class="text-2xl font-bold tracking-tight text-slate-900">TerraPoint</h1>
+              <p class="text-xs text-slate-500 mt-0.5">Sistem Logistik Tambang Morowali</p>
+            </div>
+
+            <div class="space-y-4">
+              <div>
+                <label class="text-xs text-slate-600 font-semibold">ID Pengemudi</label>
+                <div class="bg-slate-50 border border-slate-200 px-3.5 py-3 rounded-xl font-mono text-sm font-bold text-slate-900 mt-1 flex justify-between items-center">
+                  <span>DRV-001</span>
+                  <span class="text-xs font-sans font-normal text-slate-500">Ahmad Fauzi</span>
+                </div>
+              </div>
+              <div>
+                <label class="text-xs text-slate-600 font-semibold">PIN Shift (6 Digit)</label>
+                <div class="bg-slate-50 border border-slate-200 px-3.5 py-3 rounded-xl font-mono text-base text-slate-900 mt-1 tracking-widest">
+                  ••••••
+                </div>
+              </div>
+              <button class="w-full bg-slate-900 hover:bg-slate-800 text-white font-semibold py-3.5 rounded-xl text-sm transition mt-2 flex items-center justify-center gap-2">
+                <span>Masuk ke Dashboard</span>
+                <span class="material-symbols-rounded text-base">arrow_forward</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="text-center text-[11px] text-slate-400">
+            Sektor Morowali • Sulawesi Tengah
+          </div>
+        </div>
+      </div>
+
+      <!-- Screen 2: Dashboard -->
+      <div class="flex flex-col gap-2">
+        <span class="text-xs font-mono text-slate-400">02 · Beranda</span>
+        <div class="phone-screen bg-slate-50 p-5 justify-between">
+          <div>
+            <!-- Status Bar -->
+            <div class="flex justify-between items-center text-xs text-slate-500 mb-3">
+              <span class="font-mono font-bold text-slate-700">08:00</span>
+              <div class="flex items-center gap-2">
+                <span class="inline-flex items-center gap-1.5 text-[11px] text-emerald-700 font-medium">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> GPS ±4.2m
+                </span>
+                <span class="material-symbols-rounded text-sm text-slate-400">battery_full</span>
+              </div>
+            </div>
+
+            <!-- Unit Card -->
+            <div class="bg-white p-3.5 rounded-xl border border-slate-200 mb-3 flex items-center justify-between">
+              <div>
+                <div class="text-[11px] text-slate-500 uppercase tracking-wide">Armada & Driver</div>
+                <div class="font-bold text-sm text-slate-900 mt-0.5">TRUK DT-045 (B 9234 KZ)</div>
+                <div class="text-xs text-slate-500">Ahmad Fauzi • Shift 1 Pagi</div>
+              </div>
+              <span class="inline-flex items-center gap-1 text-xs font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200">
+                Siap
+              </span>
+            </div>
+
+            <!-- Focal Card: Mulai Hauling -->
+            <div class="bg-slate-900 text-white p-5 rounded-2xl mb-3 border border-slate-800">
+              <div class="flex justify-between items-center mb-1 text-[11px] text-slate-400">
+                <span class="font-mono uppercase">Titik Muat Terdeteksi</span>
+                <span class="text-emerald-400 font-medium">Radius ≤ 50m</span>
+              </div>
+              <div class="text-lg font-bold text-white tracking-tight">Pit Bahodopi North (+185 RL)</div>
+              <div class="text-xs text-slate-300 mt-0.5">Saprolite High Grade (Ni 1.85%)</div>
+
+              <div class="mt-4 pt-3 border-t border-slate-800 flex justify-between items-center">
+                <div>
+                  <div class="text-[10px] text-slate-400 uppercase">Target Bongkar</div>
+                  <div class="text-xs font-semibold text-slate-200">ROM Smelter Stockpile 1</div>
+                </div>
+                <div class="w-10 h-10 bg-orange-600 hover:bg-orange-500 rounded-xl flex items-center justify-center text-white font-bold text-sm shadow">
+                  ▶
+                </div>
+              </div>
+            </div>
+
+            <!-- Utility 2x2 Clean Grid -->
+            <div class="text-xs font-semibold text-slate-600 mb-2">Aksi Operasional</div>
+            <div class="grid grid-cols-2 gap-2">
+              <div class="bg-white p-3 rounded-xl border border-slate-200 flex flex-col justify-between">
+                <span class="material-symbols-rounded text-slate-700 text-xl mb-2">history</span>
+                <div>
+                  <div class="font-bold text-xs text-slate-900">Riwayat Shift</div>
+                  <div class="text-[11px] text-slate-500 font-mono">2 Rit • 89.8T</div>
+                </div>
+              </div>
+              <div class="bg-white p-3 rounded-xl border border-slate-200 flex flex-col justify-between">
+                <span class="material-symbols-rounded text-slate-700 text-xl mb-2">radar</span>
+                <div>
+                  <div class="font-bold text-xs text-slate-900">Radar GPS</div>
+                  <div class="text-[11px] text-slate-500">Live Telemetri</div>
+                </div>
+              </div>
+              <div class="bg-white p-3 rounded-xl border border-slate-200 flex flex-col justify-between">
+                <span class="material-symbols-rounded text-slate-700 text-xl mb-2">warning</span>
+                <div>
+                  <div class="font-bold text-xs text-slate-900">Lapor Kendala</div>
+                  <div class="text-[11px] text-slate-500">Jalan / Ban / Mesin</div>
+                </div>
+              </div>
+              <div class="bg-white p-3 rounded-xl border border-slate-200 flex flex-col justify-between">
+                <span class="material-symbols-rounded text-slate-700 text-xl mb-2">support_agent</span>
+                <div>
+                  <div class="font-bold text-xs text-slate-900">Bantuan K3</div>
+                  <div class="text-[11px] text-slate-500 font-mono">Radio Ch-04</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Metric -->
+          <div class="bg-white p-3 rounded-xl border border-slate-200 flex justify-between items-center text-xs">
+            <span class="text-slate-600 font-medium">Akumulasi Shift Hari Ini:</span>
+            <span class="font-mono font-bold text-slate-900 text-sm">89.8 Ton Ore</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Screen 3: Hauling -->
+      <div class="flex flex-col gap-2">
+        <span class="text-xs font-mono text-slate-400">03 · Hauling</span>
+        <div class="phone-screen bg-slate-50 p-5 justify-between">
+          <div>
+            <div class="flex justify-between items-center text-xs text-slate-600 mb-3">
+              <span class="font-bold text-slate-900">Perjalanan Aktif</span>
+              <span class="inline-flex items-center gap-1.5 text-emerald-700 font-medium text-xs">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> Pelacakan Rute
+              </span>
+            </div>
+
+            <!-- Route Map Mockup -->
+            <div class="h-44 bg-slate-900 rounded-xl mb-3 relative overflow-hidden flex items-center justify-center border border-slate-800">
+              <div class="text-xs font-mono text-slate-400">[PETA RUTE HAULING MOROWALI]</div>
+              <span class="absolute bottom-2.5 left-2.5 bg-slate-950/80 text-slate-300 px-2.5 py-1 rounded text-[10px] font-mono border border-slate-800">
+                33.8 km/jam • +85m RL
+              </span>
+            </div>
+
+            <!-- Clean Stepper -->
+            <div class="bg-white p-3 rounded-xl border border-slate-200 mb-3 flex items-center justify-between text-xs font-medium">
+              <span class="text-emerald-700 flex items-center gap-1"><span class="material-symbols-rounded text-sm">check</span> Muat</span>
+              <span class="text-slate-300">→</span>
+              <span class="text-slate-900 font-bold flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-orange-600"></span> Hauling</span>
+              <span class="text-slate-300">→</span>
+              <span class="text-slate-400">Bongkar</span>
+            </div>
+
+            <!-- Metric Breakdown -->
+            <div class="bg-white p-4 rounded-xl border border-slate-200 space-y-2.5 text-xs">
+              <div class="flex justify-between">
+                <span class="text-slate-500">Muatan Ore</span>
+                <span class="font-bold text-slate-900 font-mono">45.2 Ton (Saprolite)</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-slate-500">Tujuan Bongkar</span>
+                <span class="font-bold text-slate-900">ROM Smelter Stockpile 1</span>
+              </div>
+              <div class="flex justify-between pt-2 border-t border-slate-100">
+                <span class="text-slate-500">Estimasi Sisa Rute</span>
+                <span class="font-mono font-bold text-slate-900 text-sm">1.4 km (±5 menit)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex gap-2">
+            <button class="flex-1 bg-slate-900 hover:bg-slate-800 text-white py-3 rounded-xl font-semibold text-xs flex items-center justify-center gap-1.5">
+              <span class="material-symbols-rounded text-sm">photo_camera</span>
+              <span>Ambil Foto Bongkar</span>
+            </button>
+            <button class="px-4 bg-white text-slate-700 py-3 rounded-xl font-medium text-xs border border-slate-200">
+              Batal
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Screen 4: Foto Muatan -->
+      <div class="flex flex-col gap-2">
+        <span class="text-xs font-mono text-slate-400">04 · Foto Muatan</span>
+        <div class="phone-screen bg-slate-950 text-white p-5 justify-between border-slate-800">
+          <div class="flex justify-between items-center text-xs text-slate-400">
+            <span class="font-medium text-slate-200">Verifikasi Muatan Pit</span>
+            <span class="text-emerald-400 font-mono text-[11px]">GPS ±4.2m</span>
+          </div>
+
+          <!-- Viewfinder Frame with Precise Corner Marks -->
+          <div class="border border-slate-700 h-80 rounded-2xl relative overflow-hidden flex flex-col justify-end p-3.5 bg-slate-900">
+            <div class="absolute inset-0 flex items-center justify-center text-slate-600 font-mono text-xs">
+              [BIDIK BAK MUATAN ORE]
+            </div>
+
+            <!-- Authoritative White Stamp Box -->
+            <div class="bg-white text-slate-900 p-3 rounded-xl relative z-10 text-[11px] flex justify-between items-center shadow-lg">
+              <div>
+                <div class="font-bold text-xs text-slate-900">Pit Bahodopi North (+185 RL)</div>
+                <div class="font-mono text-red-600 font-bold mt-0.5 text-xs">08:05:22 WITA (UTC+8)</div>
+                <div class="text-slate-500 font-mono text-[10px] mt-0.5">-2.812456, 122.143456 • Dev: ±6.2m</div>
+              </div>
+              <span class="bg-slate-100 text-slate-800 border border-slate-300 px-2 py-0.5 rounded text-[10px] font-mono font-semibold">
+                START VALID
+              </span>
+            </div>
+          </div>
+
+          <button class="w-full bg-white hover:bg-slate-100 text-slate-900 py-3.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2">
+            <span class="material-symbols-rounded text-base">photo_camera</span>
+            <span>Konfirmasi Foto Muatan</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Screen 5: Foto Dumping -->
+      <div class="flex flex-col gap-2">
+        <span class="text-xs font-mono text-slate-400">05 · Foto Bongkar</span>
+        <div class="phone-screen bg-slate-950 text-white p-5 justify-between border-slate-800">
+          <div class="flex justify-between items-center text-xs text-slate-400">
+            <span class="font-medium text-slate-200">Verifikasi Pembongkaran ROM</span>
+            <span class="text-emerald-400 font-mono text-[11px]">GPS ±4.5m</span>
+          </div>
+
+          <!-- Viewfinder Frame -->
+          <div class="border border-slate-700 h-80 rounded-2xl relative overflow-hidden flex flex-col justify-end p-3.5 bg-slate-900">
+            <div class="absolute inset-0 flex items-center justify-center text-slate-600 font-mono text-xs">
+              [BIDIK AREA STOCKPILE ROM]
+            </div>
+
+            <!-- Authoritative White Stamp Box -->
+            <div class="bg-white text-slate-900 p-3 rounded-xl relative z-10 text-[11px] flex justify-between items-center shadow-lg">
+              <div>
+                <div class="font-bold text-xs text-slate-900">ROM Smelter Stockpile 1 (Port)</div>
+                <div class="font-mono text-red-600 font-bold mt-0.5 text-xs">08:27:45 WITA (UTC+8)</div>
+                <div class="text-slate-500 font-mono text-[10px] mt-0.5">-2.845000, 122.168000 • Dev: ±7.8m</div>
+              </div>
+              <span class="bg-slate-100 text-slate-800 border border-slate-300 px-2 py-0.5 rounded text-[10px] font-mono font-semibold">
+                END VALID
+              </span>
+            </div>
+          </div>
+
+          <button class="w-full bg-emerald-600 hover:bg-emerald-500 text-white py-3.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2">
+            <span class="material-symbols-rounded text-base">check</span>
+            <span>Selesai Bongkar</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ROW 2: PART B — MANAJEMEN, RIWAYAT & BANTUAN (5 LAYAR) -->
+  <div class="flex flex-col gap-3">
+    <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">
+      Bagian B: Riwayat & Bantuan (5 Layar)
+    </div>
+    <div class="flex gap-6">
+
+      <!-- Screen 6: Summary Selesai -->
+      <div class="flex flex-col gap-2">
+        <span class="text-xs font-mono text-slate-400">06 · Ringkasan Ritase</span>
+        <div class="phone-screen bg-slate-50 p-5 justify-between">
+          <div>
+            <div class="text-center my-5">
+              <div class="w-12 h-12 bg-emerald-100 text-emerald-800 rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-2">
+                ✓
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 tracking-tight">Ritase Selesai</h3>
+              <p class="text-xs text-slate-500 mt-0.5">Data rute dan bukti visual tersimpan</p>
+            </div>
+
+            <!-- Receipt Card -->
+            <div class="bg-white p-4 rounded-xl border border-slate-200 space-y-3 text-xs mb-4">
+              <div class="flex justify-between items-center pb-2 border-b border-slate-100">
+                <span class="font-mono font-bold text-slate-900">#TSK-MRO-001</span>
+                <span class="text-emerald-700 font-mono text-[11px] font-bold">TERVERIFIKASI</span>
+              </div>
+              <div class="flex justify-between text-slate-600">
+                <span>Rute</span>
+                <span class="font-semibold text-slate-900">Pit Bahodopi → ROM Smelter 1</span>
+              </div>
+              <div class="flex justify-between text-slate-600">
+                <span>Muatan</span>
+                <span class="font-bold text-slate-900 font-mono">45.2 Ton Ore</span>
+              </div>
+              <div class="flex justify-between text-slate-600">
+                <span>Jarak Tempuh</span>
+                <span class="font-bold text-slate-900 font-mono">5.24 km</span>
+              </div>
+              <div class="flex justify-between text-slate-600 pt-2 border-t border-slate-100">
+                <span>Durasi</span>
+                <span class="font-mono text-slate-900">22 menit (08:05 - 08:27)</span>
+              </div>
+            </div>
+          </div>
+
+          <button class="w-full bg-slate-900 text-white py-3.5 rounded-xl font-semibold text-xs">
+            Kembali ke Beranda
+          </button>
+        </div>
+      </div>
+
+      <!-- Screen 7: Shift History -->
+      <div class="flex flex-col gap-2">
+        <span class="text-xs font-mono text-slate-400">07 · Riwayat Shift</span>
+        <div class="phone-screen bg-slate-50 p-5 justify-between">
+          <div>
+            <div class="flex justify-between items-center mb-3">
+              <h3 class="font-bold text-sm text-slate-900">Riwayat Ritase Shift</h3>
+              <span class="text-xs text-slate-500 font-mono">Shift 1 Pagi</span>
+            </div>
+
+            <!-- Task List -->
+            <div class="space-y-2 text-xs mb-4">
+              <div class="bg-white p-3 rounded-xl border border-slate-200">
+                <div class="flex justify-between">
+                  <span class="font-mono font-bold text-slate-900">TSK-MRO-001</span>
+                  <span class="text-emerald-700 font-mono text-[11px] font-medium">Selesai</span>
+                </div>
+                <div class="text-slate-700 text-xs mt-1">Pit Bahodopi → ROM Smelter 1</div>
+                <div class="text-slate-400 text-[11px] font-mono mt-0.5">45.2 Ton • 22 mnt</div>
+              </div>
+              <div class="bg-white p-3 rounded-xl border border-slate-200">
+                <div class="flex justify-between">
+                  <span class="font-mono font-bold text-slate-900">TSK-MRO-002</span>
+                  <span class="text-emerald-700 font-mono text-[11px] font-medium">Selesai</span>
+                </div>
+                <div class="text-slate-700 text-xs mt-1">Pit Keuno → ROM Plant 2</div>
+                <div class="text-slate-400 text-[11px] font-mono mt-0.5">44.6 Ton • 25 mnt</div>
+              </div>
+            </div>
+
+            <!-- Summary KPI -->
+            <div class="bg-slate-900 text-white p-4 rounded-xl text-center">
+              <div class="text-[11px] text-slate-400 uppercase tracking-wide">Total Muatan Shift Hari Ini</div>
+              <div class="text-xl font-bold font-mono mt-1 text-white">2 Ritase • 89.8 Ton</div>
+            </div>
+          </div>
+
+          <div class="flex justify-around text-xs border-t border-slate-200 pt-3 text-slate-500 font-semibold">
+            <span class="text-slate-900 font-bold flex items-center gap-1.5">
+              <span class="material-symbols-rounded text-base">history</span> Riwayat
+            </span>
+            <span class="flex items-center gap-1.5">
+              <span class="material-symbols-rounded text-base">person</span> Profil
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Screen 8: Radar GPS -->
+      <div class="flex flex-col gap-2">
+        <span class="text-xs font-mono text-slate-400">08 · Telemetri Radar</span>
+        <div class="phone-screen bg-slate-50 p-5 justify-between">
+          <div>
+            <div class="flex justify-between items-center text-xs font-bold mb-3">
+              <span class="text-slate-900">Telemetri Real-Time</span>
+              <span class="inline-flex items-center gap-1 text-emerald-700 font-medium text-[11px]">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> Aktif
+              </span>
+            </div>
+
+            <!-- Radar Preview -->
+            <div class="h-44 bg-slate-900 rounded-xl mb-3 flex items-center justify-center text-slate-400 text-xs font-mono border border-slate-800">
+              [PETA KOORDINAT & ELEVASI]
+            </div>
+
+            <!-- Stats -->
+            <div class="bg-white p-3.5 rounded-xl border border-slate-200 space-y-2 text-xs">
+              <div class="flex justify-between">
+                <span class="text-slate-500">Unit DT</span>
+                <span class="font-bold text-slate-900 font-mono">DT-045 (B 9234 KZ)</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-slate-500">Kecepatan Aktual</span>
+                <span class="font-bold text-slate-900 font-mono">33.8 km/jam</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-slate-500">Elevasi Tambang</span>
+                <span class="font-bold text-slate-900 font-mono">+85m RL (Pit Ramp)</span>
+              </div>
+              <div class="flex justify-between pt-2 border-t border-slate-100">
+                <span class="text-slate-500">Akurasi GPS</span>
+                <span class="font-mono text-slate-700">±4.2 meter</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center text-[11px] text-slate-400 font-mono">Sinkronisasi: 08:28 WITA</div>
+        </div>
+      </div>
+
+      <!-- Screen 9: Lapor Kendala -->
+      <div class="flex flex-col gap-2">
+        <span class="text-xs font-mono text-slate-400">09 · Lapor Kendala</span>
+        <div class="phone-screen bg-slate-50 p-5 justify-between">
+          <div>
+            <h3 class="font-bold text-sm text-slate-900 mb-0.5">Lapor Kendala Lapangan</h3>
+            <p class="text-xs text-slate-500 mb-3">Pilih kategori insiden di jalur hauling</p>
+
+            <div class="grid grid-cols-2 gap-2 mb-3">
+              <div class="bg-white border-2 border-slate-900 p-2.5 rounded-xl text-center font-bold text-xs text-slate-900">
+                Mesin / Engine
+              </div>
+              <div class="bg-white border border-slate-200 p-2.5 rounded-xl text-center text-xs text-slate-700">
+                Ban / Tire
+              </div>
+              <div class="bg-white border border-slate-200 p-2.5 rounded-xl text-center text-xs text-slate-700">
+                Jalan Amblas
+              </div>
+              <div class="bg-white border border-slate-200 p-2.5 rounded-xl text-center text-xs text-slate-700">
+                Lainnya
+              </div>
+            </div>
+
+            <!-- Photo preview -->
+            <div class="border border-slate-300 p-3 rounded-xl bg-white text-center">
+              <div class="text-xs font-semibold text-slate-900 mb-1.5 flex items-center justify-center gap-1">
+                <span class="material-symbols-rounded text-sm">photo_camera</span>
+                <span>Foto Kendala Terlampir</span>
+              </div>
+              <div class="bg-slate-50 p-2 rounded text-[10px] text-left text-slate-700 font-mono border border-slate-200">
+                <div class="font-bold text-red-600">08:30:12 WITA • KM 3.8 Haul Road</div>
+                <div class="text-slate-500 mt-0.5">-2.8295, 122.1534 • DRV-001</div>
+              </div>
+            </div>
+          </div>
+
+          <button class="w-full bg-slate-900 hover:bg-slate-800 text-white py-3.5 rounded-xl font-semibold text-xs">
+            Kirim Laporan ke Control Room
+          </button>
+        </div>
+      </div>
+
+      <!-- Screen 10: Bantuan K3 -->
+      <div class="flex flex-col gap-2">
+        <span class="text-xs font-mono text-slate-400">10 · Bantuan K3</span>
+        <div class="phone-screen bg-slate-50 p-5 justify-between">
+          <div>
+            <h3 class="font-bold text-sm text-slate-900 mb-0.5">Bantuan & Keselamatan K3</h3>
+            <p class="text-xs text-slate-500 mb-3">Kontak darurat Mine Dispatcher Morowali</p>
+
+            <div class="space-y-2.5">
+              <div class="bg-white p-3.5 rounded-xl border border-slate-200 flex justify-between items-center text-xs">
+                <div>
+                  <div class="text-slate-500 text-[11px]">Radio Dispatcher Utama</div>
+                  <div class="font-bold text-slate-900 font-mono text-sm">Ch-04 / 0812 3456 7890</div>
+                </div>
+                <span class="bg-slate-900 text-white px-3 py-1.5 rounded-lg font-medium text-xs">Panggil</span>
+              </div>
+
+              <div class="bg-white p-3.5 rounded-xl border border-slate-200 flex justify-between items-center text-xs">
+                <div>
+                  <div class="text-slate-500 text-[11px]">WhatsApp Control Room</div>
+                  <div class="font-bold text-slate-900 text-sm">Chat Pengawas Sektor</div>
+                </div>
+                <span class="bg-slate-900 text-white px-3 py-1.5 rounded-lg font-medium text-xs">Chat WA</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex justify-around text-xs border-t border-slate-200 pt-3 text-slate-500 font-semibold">
+            <span class="flex items-center gap-1.5">
+              <span class="material-symbols-rounded text-base">home</span> Beranda
+            </span>
+            <span class="text-slate-900 font-bold flex items-center gap-1.5">
+              <span class="material-symbols-rounded text-base">support</span> Bantuan K3
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

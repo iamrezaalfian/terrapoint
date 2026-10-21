@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>TerraPoint Mobile App — Revisi 3 Cards & Dual Foto Nota</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <style>
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background-color: #07090D;
+      color: #F8FAFC;
+      -webkit-font-smoothing: antialiased;
+      padding: 30px;
+    }
+    .material-symbols-rounded {
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+      line-height: 1;
+    }
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+      font-feature-settings: "tnum";
+    }
+    .phone-screen {
+      width: 375px;
+      height: 760px;
+      border-radius: 36px;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.85);
+      border: 2px solid #1E293B;
+      flex-shrink: 0;
+      background-color: #F8FAFC;
+      color: #0F172A;
+    }
+  </style>
+</head>
+<body class="flex flex-col gap-10 w-fit">
+
+  <!-- Header Banner -->
+  <div class="border-b border-slate-800 pb-5 max-w-6xl">
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-700 flex items-center justify-center text-white font-bold font-mono text-sm">TP</div>
+      <div class="text-white font-extrabold text-xl tracking-tight">TERRAPOINT MOBILE — REVISI TOTAL (3 CARDS & DUAL FOTO NOTA)</div>
+    </div>
+    <div class="text-slate-400 text-xs mt-1.5 flex gap-4">
+      <span>✓ Truk Atas Dihapus</span>
+      <span>✓ GPS Presisi Kanan Atas Diperbaiki</span>
+      <span>✓ Lapor Kendala & Bantuan Dihapus</span>
+      <span>✓ Akumulasi Shift Ganti Total Trip Harian</span>
+      <span>✓ State Machine 3-Cards Sederhana</span>
+      <span>✓ Dual Foto Titik Bongkar + Nota Timbang</span>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-3 gap-8" id="screens-container">
+
+    <!-- SCREEN 1: LOGIN -->
+    <div class="flex flex-col gap-2.5" id="screen-01">
+      <div class="flex justify-between items-center text-xs font-mono text-slate-400 px-1">
+        <span>01 · Masuk Driver</span>
+        <span class="text-emerald-400">Autentikasi</span>
+      </div>
+      <div class="phone-screen bg-white p-6 justify-between border-slate-200">
+        <div>
+          <!-- Top bar -->
+          <div class="flex justify-between items-center text-xs font-mono text-slate-500 pt-1 pb-4">
+            <span class="font-bold text-slate-900">08:00</span>
+            <div class="flex items-center gap-1.5">
+              <span class="text-[10px] bg-slate-100 text-slate-700 px-2 py-0.5 rounded font-mono font-bold">4G LTE</span>
+              <span>100%</span>
+            </div>
+          </div>
+          <!-- Logo Brand -->
+          <div class="mt-8 flex flex-col items-center text-center">
+            <div class="w-14 h-14 rounded-2xl bg-slate-900 flex items-center justify-center text-white font-extrabold text-2xl shadow-lg shadow-slate-900/20">TP</div>
+            <h2 class="text-xl font-extrabold text-slate-900 mt-4 tracking-tight">TerraPoint Mobile</h2>
+            <p class="text-xs text-slate-500 mt-1">Sistem Telematika Hauling Tambang • v2.5</p>
+          </div>
+
+          <!-- Form Login -->
+          <div class="mt-8 flex flex-col gap-4">
+            <div>
+              <label class="text-xs font-bold text-slate-700 block mb-1">ID Pengemudi (NIK Tambang)</label>
+              <div class="relative">
+                <input type="text" value="DRV-001" readonly class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-3 text-sm font-bold text-slate-900 font-mono">
+              </div>
+            </div>
+            <div>
+              <label class="text-xs font-bold text-slate-700 block mb-1">PIN Shift Harian</label>
+              <input type="password" value="123456" readonly class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-3 text-sm font-bold text-slate-900 font-mono tracking-widest">
+            </div>
+
+            <div class="flex items-center justify-between text-xs text-slate-500 pt-1">
+              <span>Shift 1 (Pagi - Sore)</span>
+              <span class="text-emerald-600 font-bold">● Server Online</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <button class="w-full bg-slate-900 text-white rounded-xl py-3.5 text-sm font-bold shadow-lg shadow-slate-900/15 flex items-center justify-center gap-2">
+            <span>Masuk ke Sistem</span>
+            <span class="material-symbols-rounded text-base">arrow_forward</span>
+          </button>
+          <div class="text-[11px] text-center text-slate-400 mt-3 font-mono">Keamanan Enkripsi Proxmox Private Cloud</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCREEN 2: BERANDA (STATUS AWAL: SIAP MUAT, BONGKAR TERKUNCI) -->
+    <div class="flex flex-col gap-2.5" id="screen-02">
+      <div class="flex justify-between items-center text-xs font-mono text-slate-400 px-1">
+        <span>02 · Beranda (Siap Muat)</span>
+        <span class="text-amber-400">Card 1 Aktif</span>
+      </div>
+      <div class="phone-screen bg-slate-50 p-4 justify-between border-slate-200 overflow-y-auto">
+        <div class="flex flex-col gap-3">
+          <!-- AppBar -->
+          <div class="flex justify-between items-center pb-2 border-b border-slate-200">
+            <div class="flex items-center gap-2">
+              <div class="w-7 h-7 rounded-lg bg-slate-900 flex items-center justify-center text-white font-extrabold text-xs">TP</div>
+              <div>
+                <div class="text-xs font-bold text-slate-900 leading-none">TerraPoint</div>
+                <div class="text-[9.5px] text-slate-500">Hauling Compliance</div>
+              </div>
+            </div>
+            <!-- GPS Presisi Kanan Atas yang Diperbaiki -->
+            <div class="flex items-center gap-1.5 bg-slate-900 text-emerald-400 px-2.5 py-1 rounded-full border border-emerald-500/30 text-[10.5px] font-mono font-bold">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span class="material-symbols-rounded text-xs">satellite_alt</span>
+              <span>GPS ±3.8m</span>
+            </div>
+          </div>
+
+          <!-- Banner Driver & Total Trip Harian (Pengganti Akumulasi Shift) -->
+          <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white p-3.5 rounded-2xl shadow-md">
+            <div class="flex justify-between items-start">
+              <div>
+                <div class="text-sm font-extrabold">Ahmad Fauzi</div>
+                <div class="text-[11px] text-slate-300">DRV-001 • Proyek Pit 2 ke ROM 1</div>
+              </div>
+              <span class="text-[10px] font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40 px-2 py-0.5 rounded-md">6 Roda (Dump Truck)</span>
+            </div>
+            <div class="border-t border-slate-700/60 my-2.5"></div>
+            <div class="flex justify-between items-center">
+              <span class="text-[11px] text-slate-300 font-semibold tracking-wider">TOTAL TRIP HARI INI:</span>
+              <span class="text-xs font-mono font-extrabold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 px-2.5 py-0.5 rounded-md">0 TRIP SELESAI</span>
+            </div>
+          </div>
+
+          <!-- CARD 1: TITIK MUAT (PIT) - SIAP MUAT -->
+          <div class="bg-white border-2 border-amber-500 rounded-2xl p-3.5 shadow-sm">
+            <div class="flex justify-between items-center mb-2">
+              <div class="flex items-center gap-2">
+                <div class="w-7 h-7 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center">
+                  <span class="material-symbols-rounded text-base">upload_file</span>
+                </div>
+                <span class="text-xs font-extrabold text-slate-900">1. Titik Muat (Pit)</span>
+              </div>
+              <span class="text-[9.5px] font-mono font-bold bg-amber-100 text-amber-800 px-2 py-0.5 rounded">SIAP AMBIL FOTO</span>
+            </div>
+            <div class="text-xs font-bold text-slate-900">Loading Point Pit 2 Barat</div>
+            <div class="text-[11px] text-slate-500 mt-0.5">Radius Luas Toleransi: 250 meter (Bebas Manuver)</div>
+            <button class="w-full mt-3 bg-slate-900 text-white rounded-xl py-2.5 text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm">
+              <span class="material-symbols-rounded text-sm">photo_camera</span>
+              <span>Ambil Foto Muatan di Pit</span>
+            </button>
+          </div>
+
+          <!-- CARD 2: TITIK BONGKAR & NOTA (TERKUNCI) -->
+          <div class="bg-white border border-slate-200 opacity-60 rounded-2xl p-3.5">
+            <div class="flex justify-between items-center mb-2">
+              <div class="flex items-center gap-2">
+                <div class="w-7 h-7 rounded-full bg-slate-100 text-slate-500 flex items-center justify-center">
+                  <span class="material-symbols-rounded text-base">lock</span>
+                </div>
+                <span class="text-xs font-bold text-slate-500">2. Titik Bongkar & Nota</span>
+              </div>
+              <span class="text-[9.5px] font-mono font-bold bg-slate-100 text-slate-500 px-2 py-0.5 rounded">TERKUNCI</span>
+            </div>
+            <div class="text-xs font-bold text-slate-600">ROM Stockpile 1</div>
+            <div class="text-[11px] text-slate-400 mt-0.5">1 Titik Bongkar Spesifik • Radius Ketat: 40 meter</div>
+            <div class="mt-2.5 bg-slate-50 border border-slate-200 text-slate-500 text-[10.5px] rounded-lg p-2 flex items-center gap-1.5">
+              <span class="material-symbols-rounded text-xs">lock_clock</span>
+              <span>Ambil foto muatan di Titik Muat terlebih dahulu.</span>
+            </div>
+          </div>
+
+          <!-- CARD 3: FOTO RIWAYAT HARI INI -->
+          <div class="bg-white border border-slate-200 rounded-2xl p-3.5">
+            <div class="flex justify-between items-center mb-2">
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-rounded text-slate-700 text-base">photo_library</span>
+                <span class="text-xs font-bold text-slate-900">3. Riwayat Foto Hari Ini</span>
+              </div>
+              <span class="text-[10px] font-mono text-slate-400">0 Pengantaran</span>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-4 text-center text-slate-400 text-xs">
+              Belum ada riwayat pengantaran hari ini.<br>Selesaikan foto muat dan bongkar pertama.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCREEN 3: KAMERA WATERMARK FOTO MUATAN (CARD 1) -->
+    <div class="flex flex-col gap-2.5" id="screen-03">
+      <div class="flex justify-between items-center text-xs font-mono text-slate-400 px-1">
+        <span>03 · Foto Muatan (Pit)</span>
+        <span class="text-amber-400">Watermark Geotag</span>
+      </div>
+      <div class="phone-screen bg-slate-950 p-4 justify-between border-slate-800 text-white">
+        <!-- Top bar camera -->
+        <div class="flex justify-between items-center">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-rounded text-white text-base">arrow_back</span>
+            <span class="text-xs font-bold">1. Foto Muatan di Pit</span>
+          </div>
+          <span class="text-[10px] font-mono bg-emerald-900/60 text-emerald-300 border border-emerald-500/40 px-2 py-0.5 rounded">GPS ±3.8m (Akurat)</span>
+        </div>
+
+        <!-- Viewfinder Mock -->
+        <div class="relative flex-1 my-3 rounded-2xl overflow-hidden border-2 border-amber-500 bg-slate-900 flex flex-col justify-between p-3" style="background-image: radial-gradient(#334155 1px, transparent 1px); background-size: 16px 16px;">
+          <!-- Corner reticles -->
+          <div class="flex justify-between text-amber-400 text-xs font-mono">
+            <span>[ + ]</span>
+            <span>BENCH PIT 2 RL +120m</span>
+          </div>
+
+          <!-- Center Crosshair & Reticle -->
+          <div class="flex flex-col items-center justify-center my-auto">
+            <div class="w-16 h-16 rounded-full border border-amber-400/50 flex items-center justify-center">
+              <div class="w-2 h-2 rounded-full bg-amber-400"></div>
+            </div>
+            <span class="text-[10px] font-mono bg-black/60 text-amber-300 px-2 py-0.5 rounded mt-2">BIDIK BAK TRUK MUATAN</span>
+          </div>
+
+          <!-- Watermark Surveyor Box -->
+          <div class="bg-white/95 text-slate-900 p-3 rounded-xl border border-slate-300 shadow-xl">
+            <div class="flex justify-between items-start">
+              <div>
+                <div class="text-xs font-extrabold">Loading Point Pit 2 Barat</div>
+                <div class="text-[10.5px] font-mono text-red-600 font-bold mt-0.5">08:15:22 WITA (UTC+8) • 2026-10-19</div>
+                <div class="text-[9px] font-mono text-slate-600">Lat: -3.131050, Lng: 115.119040 • Radius: 250m</div>
+              </div>
+              <span class="text-[8.5px] font-mono font-extrabold bg-amber-100 text-amber-900 border border-amber-300 px-2 py-0.5 rounded">TITIK MUAT (PIT)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shutter Button -->
+        <div class="flex justify-center items-center py-1">
+          <div class="w-16 h-16 rounded-full border-4 border-white flex items-center justify-center cursor-pointer">
+            <div class="w-12 h-12 rounded-full bg-amber-500"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCREEN 4: BERANDA (MUATAN SELESAI, CARD 2 BONGKAR TERBUKA) -->
+    <div class="flex flex-col gap-2.5" id="screen-04">
+      <div class="flex justify-between items-center text-xs font-mono text-slate-400 px-1">
+        <span>04 · Beranda (Siap Bongkar)</span>
+        <span class="text-emerald-400">Card 2 Terbuka</span>
+      </div>
+      <div class="phone-screen bg-slate-50 p-4 justify-between border-slate-200 overflow-y-auto">
+        <div class="flex flex-col gap-3">
+          <!-- AppBar -->
+          <div class="flex justify-between items-center pb-2 border-b border-slate-200">
+            <div class="flex items-center gap-2">
+              <div class="w-7 h-7 rounded-lg bg-slate-900 flex items-center justify-center text-white font-extrabold text-xs">TP</div>
+              <div>
+                <div class="text-xs font-bold text-slate-900 leading-none">TerraPoint</div>
+                <div class="text-[9.5px] text-slate-500">Hauling Compliance</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-1.5 bg-slate-900 text-emerald-400 px-2.5 py-1 rounded-full border border-emerald-500/30 text-[10.5px] font-mono font-bold">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+              <span class="material-symbols-rounded text-xs">satellite_alt</span>
+              <span>GPS ±3.8m</span>
+            </div>
+          </div>
+
+          <!-- Banner Driver -->
+          <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white p-3.5 rounded-2xl shadow-md">
+            <div class="flex justify-between items-start">
+              <div>
+                <div class="text-sm font-extrabold">Ahmad Fauzi</div>
+                <div class="text-[11px] text-slate-300">DRV-001 • Proyek Pit 2 ke ROM 1</div>
+              </div>
+              <span class="text-[10px] font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40 px-2 py-0.5 rounded-md">6 Roda (Dump Truck)</span>
+            </div>
+            <div class="border-t border-slate-700/60 my-2.5"></div>
+            <div class="flex justify-between items-center">
+              <span class="text-[11px] text-slate-300 font-semibold tracking-wider">TOTAL TRIP HARI INI:</span>
+              <span class="text-xs font-mono font-extrabold bg-amber-500/20 text-amber-300 border border-amber-500/40 px-2.5 py-0.5 rounded-md">TRIP #1 DALAM PERJALANAN</span>
+            </div>
+          </div>
+
+          <!-- CARD 1: TITIK MUAT (PIT) - SELESAI & LOCKED -->
+          <div class="bg-white border border-emerald-200 rounded-2xl p-3.5">
+            <div class="flex justify-between items-center mb-1.5">
+              <div class="flex items-center gap-2">
+                <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center">
+                  <span class="material-symbols-rounded text-sm">check</span>
+                </div>
+                <span class="text-xs font-bold text-slate-900">1. Titik Muat (Pit)</span>
+              </div>
+              <span class="text-[9.5px] font-mono font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">✓ MUATAN TERCATAT</span>
+            </div>
+            <div class="text-[11px] text-slate-600 font-semibold">Truk sedang membawa muatan menuju ROM Stockpile 1.</div>
+            <div class="mt-2 bg-emerald-50 border border-emerald-200 text-emerald-800 text-[10.5px] rounded-lg p-2">
+              Foto muat tersimpan pukul 08:15 WITA. Selesaikan pembongkaran di Card 2 untuk memuat kembali.
+            </div>
+          </div>
+
+          <!-- CARD 2: TITIK BONGKAR & NOTA (TERBUKA & AKTIF) -->
+          <div class="bg-white border-2 border-emerald-500 rounded-2xl p-3.5 shadow-sm">
+            <div class="flex justify-between items-center mb-2">
+              <div class="flex items-center gap-2">
+                <div class="w-7 h-7 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center">
+                  <span class="material-symbols-rounded text-base">inventory_2</span>
+                </div>
+                <span class="text-xs font-extrabold text-slate-900">2. Titik Bongkar & Nota</span>
+              </div>
+              <span class="text-[9.5px] font-mono font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">SIAP BONGKAR & NOTA</span>
+            </div>
+            <div class="text-xs font-bold text-slate-900">ROM Stockpile 1</div>
+            <div class="text-[11px] text-slate-500 mt-0.5">1 Titik Bongkar Spesifik • Radius Ketat: 40 meter</div>
+            <button class="w-full mt-3 bg-emerald-700 text-white rounded-xl py-2.5 text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm">
+              <span class="material-symbols-rounded text-sm">photo_camera</span>
+              <span>Foto Bongkar & Foto Nota Timbang</span>
+            </button>
+          </div>
+
+          <!-- CARD 3: FOTO RIWAYAT HARI INI -->
+          <div class="bg-white border border-slate-200 rounded-2xl p-3.5">
+            <div class="flex justify-between items-center mb-2">
+              <span class="text-xs font-bold text-slate-900">3. Riwayat Foto Hari Ini</span>
+              <span class="text-[10px] font-mono text-slate-400">0 Pengantaran</span>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-3 text-center text-slate-400 text-xs">
+              Pengantaran Trip #1 sedang berlangsung.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCREEN 5: KAMERA WATERMARK FOTO NOTA / INVOICE (CARD 2 STEP 2) -->
+    <div class="flex flex-col gap-2.5" id="screen-05">
+      <div class="flex justify-between items-center text-xs font-mono text-slate-400 px-1">
+        <span>05 · Foto Nota / Invoice</span>
+        <span class="text-blue-400">Slip Timbangan Resmi</span>
+      </div>
+      <div class="phone-screen bg-slate-950 p-4 justify-between border-slate-800 text-white">
+        <!-- Top bar camera -->
+        <div class="flex justify-between items-center">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-rounded text-white text-base">arrow_back</span>
+            <span class="text-xs font-bold">2. Foto Nota Timbang / Invoice</span>
+          </div>
+          <span class="text-[10px] font-mono bg-blue-900/60 text-blue-300 border border-blue-500/40 px-2 py-0.5 rounded">DOKUMEN FISIK</span>
+        </div>
+
+        <!-- Viewfinder Mock (Document frame) -->
+        <div class="relative flex-1 my-3 rounded-2xl overflow-hidden border-2 border-blue-500 bg-slate-900 flex flex-col justify-between p-3">
+          <div class="flex justify-between text-blue-400 text-xs font-mono">
+            <span>[ NOTA TIMBANG ]</span>
+            <span>SERI: TP-WB-20261019-01</span>
+          </div>
+
+          <!-- Doc Outline -->
+          <div class="border-2 border-dashed border-blue-400/60 rounded-xl p-4 my-auto bg-slate-800/40">
+            <div class="flex flex-col items-center justify-center text-center">
+              <span class="material-symbols-rounded text-blue-400 text-3xl">receipt_long</span>
+              <div class="text-xs font-bold text-white mt-1">LETAKKAN SLIP NOTA / INVOICE</div>
+              <div class="text-[10px] text-slate-400 mt-0.5">Pastikan nomor tiket timbangan terbaca jelas</div>
+            </div>
+          </div>
+
+          <!-- Watermark Surveyor Box -->
+          <div class="bg-white/95 text-slate-900 p-3 rounded-xl border border-slate-300 shadow-xl">
+            <div class="flex justify-between items-start">
+              <div>
+                <div class="text-xs font-extrabold">ROM Stockpile 1 (Timbangan Ore)</div>
+                <div class="text-[10.5px] font-mono text-red-600 font-bold mt-0.5">08:42:15 WITA (UTC+8) • 2026-10-19</div>
+                <div class="text-[9px] font-mono text-slate-600">Driver: Ahmad Fauzi (DRV-001) • 6 Roda (Dump Truck)</div>
+              </div>
+              <span class="text-[8.5px] font-mono font-extrabold bg-blue-100 text-blue-900 border border-blue-300 px-2 py-0.5 rounded">NOTA / INVOICE</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shutter Button -->
+        <div class="flex justify-center items-center py-1">
+          <div class="w-16 h-16 rounded-full border-4 border-white flex items-center justify-center cursor-pointer">
+            <div class="w-12 h-12 rounded-full bg-blue-600"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCREEN 6: BERANDA DENGAN RIWAYAT LENGKAP 3 FOTO (TRIP SELESAI) -->
+    <div class="flex flex-col gap-2.5" id="screen-06">
+      <div class="flex justify-between items-center text-xs font-mono text-slate-400 px-1">
+        <span>06 · Beranda (1 Trip Selesai)</span>
+        <span class="text-emerald-400">Riwayat 3 Bukti</span>
+      </div>
+      <div class="phone-screen bg-slate-50 p-4 justify-between border-slate-200 overflow-y-auto">
+        <div class="flex flex-col gap-3">
+          <!-- AppBar -->
+          <div class="flex justify-between items-center pb-2 border-b border-slate-200">
+            <div class="flex items-center gap-2">
+              <div class="w-7 h-7 rounded-lg bg-slate-900 flex items-center justify-center text-white font-extrabold text-xs">TP</div>
+              <div>
+                <div class="text-xs font-bold text-slate-900 leading-none">TerraPoint</div>
+                <div class="text-[9.5px] text-slate-500">Hauling Compliance</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-1.5 bg-slate-900 text-emerald-400 px-2.5 py-1 rounded-full border border-emerald-500/30 text-[10.5px] font-mono font-bold">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+              <span class="material-symbols-rounded text-xs">satellite_alt</span>
+              <span>GPS ±3.8m</span>
+            </div>
+          </div>
+
+          <!-- Banner Driver & Total Trip Harian (1 Trip Selesai) -->
+          <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white p-3.5 rounded-2xl shadow-md">
+            <div class="flex justify-between items-start">
+              <div>
+                <div class="text-sm font-extrabold">Ahmad Fauzi</div>
+                <div class="text-[11px] text-slate-300">DRV-001 • Proyek Pit 2 ke ROM 1</div>
+              </div>
+              <span class="text-[10px] font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40 px-2 py-0.5 rounded-md">6 Roda (Dump Truck)</span>
+            </div>
+            <div class="border-t border-slate-700/60 my-2.5"></div>
+            <div class="flex justify-between items-center">
+              <span class="text-[11px] text-slate-300 font-semibold tracking-wider">TOTAL TRIP HARI INI:</span>
+              <span class="text-xs font-mono font-extrabold bg-emerald-500/25 text-emerald-300 border border-emerald-500 px-2.5 py-0.5 rounded-md">1 TRIP SELESAI</span>
+            </div>
+          </div>
+
+          <!-- CARD 1: TITIK MUAT (PIT) - SIAP MEMULAI TRIP #2 -->
+          <div class="bg-white border-2 border-amber-500 rounded-2xl p-3 shadow-sm">
+            <div class="flex justify-between items-center mb-1">
+              <div class="flex items-center gap-1.5">
+                <span class="material-symbols-rounded text-amber-600 text-base">upload_file</span>
+                <span class="text-xs font-extrabold text-slate-900">1. Titik Muat (Pit)</span>
+              </div>
+              <span class="text-[9px] font-mono font-bold bg-amber-100 text-amber-800 px-1.5 py-0.5 rounded">SIAP TRIP #2</span>
+            </div>
+            <div class="text-[11.5px] font-bold text-slate-900">Loading Point Pit 2 Barat</div>
+            <button class="w-full mt-2 bg-slate-900 text-white rounded-xl py-2 text-xs font-bold flex items-center justify-center gap-1">
+              <span class="material-symbols-rounded text-sm">photo_camera</span>
+              <span>Ambil Foto Muatan di Pit</span>
+            </button>
+          </div>
+
+          <!-- CARD 2: TITIK BONGKAR & NOTA (TERKUNCI KEMBALI) -->
+          <div class="bg-white border border-slate-200 opacity-60 rounded-2xl p-3">
+            <div class="flex justify-between items-center mb-1">
+              <div class="flex items-center gap-1.5">
+                <span class="material-symbols-rounded text-slate-500 text-base">lock</span>
+                <span class="text-xs font-bold text-slate-500">2. Titik Bongkar & Nota</span>
+              </div>
+              <span class="text-[9px] font-mono font-bold bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded">TERKUNCI</span>
+            </div>
+            <div class="text-[11.5px] font-bold text-slate-500">ROM Stockpile 1</div>
+          </div>
+
+          <!-- CARD 3: FOTO RIWAYAT HARI INI (MENAMPILKAN 3 FOTO BUKTI TRIP #1) -->
+          <div class="bg-white border border-slate-200 rounded-2xl p-3">
+            <div class="flex justify-between items-center mb-2">
+              <div class="flex items-center gap-1.5">
+                <span class="material-symbols-rounded text-slate-800 text-base">photo_library</span>
+                <span class="text-xs font-extrabold text-slate-900">3. Riwayat Foto Hari Ini</span>
+              </div>
+              <span class="text-[10px] font-mono font-bold text-emerald-600">1 Selesai</span>
+            </div>
+
+            <!-- Item Trip #1 dengan 3 Foto -->
+            <div class="bg-slate-50 border border-slate-200 rounded-xl p-2.5">
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-xs font-bold text-slate-900">Trip #1 • 08:42 WITA</span>
+                <span class="text-[9px] font-mono font-bold bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded">VERIFIED</span>
+              </div>
+
+              <!-- 3 Thumbnails -->
+              <div class="grid grid-cols-3 gap-1.5">
+                <div class="flex flex-col">
+                  <div class="h-12 bg-amber-900/10 border border-amber-300 rounded-lg flex items-center justify-center text-amber-700">
+                    <span class="material-symbols-rounded text-base">photo_camera</span>
+                  </div>
+                  <span class="text-[9px] font-semibold text-slate-600 mt-1 truncate">1. Muat Pit</span>
+                </div>
+                <div class="flex flex-col">
+                  <div class="h-12 bg-emerald-900/10 border border-emerald-300 rounded-lg flex items-center justify-center text-emerald-700">
+                    <span class="material-symbols-rounded text-base">dump_truck</span>
+                  </div>
+                  <span class="text-[9px] font-semibold text-slate-600 mt-1 truncate">2. Bongkar</span>
+                </div>
+                <div class="flex flex-col">
+                  <div class="h-12 bg-blue-900/10 border border-blue-400 rounded-lg flex items-center justify-center text-blue-700">
+                    <span class="material-symbols-rounded text-base">receipt_long</span>
+                  </div>
+                  <span class="text-[9px] font-semibold text-blue-700 font-bold mt-1 truncate">3. Nota Slip</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

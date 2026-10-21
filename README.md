@@ -1,47 +1,58 @@
-# TerraPoint — Mining Logistics & Visual Verification Platform
+# TerraPoint — Mining Fleet Telematics & Compliance
 
-Sistem audit kepatuhan rute hauling dan bukti visual operasional tambang berbasis *offline-first* dengan verifikasi geospasial presisi tinggi (*50m geofence*), kamera *direct-capture* (tanpa galeri), *canvas burn-in watermark geotag*, pelacakan rute latar belakang, dan sinkronisasi awan terkelola.
-
----
-
-## 🏗️ Tech Stack & Arsitektur
-
-- **Mobile Client:** Flutter 3.24+ (Drift SQLite + SQLCipher, CameraX, Supabase SDK)
-- **Cloud Backend:** Supabase (Managed PostgreSQL 16, Supabase Auth, Edge Functions Deno)
-- **Media Storage:** Cloudflare R2 (10 GB Free Storage, $0 Egress Bandwidth)
-- **Web Dashboard:** Cloudflare Pages (Progressive Web App / PWA + Leaflet.js Mapping Engine)
-- **Visual Design:** Mining Safety Amber Industrial Design (Swiss Tough-Tech & High-Contrast)
+Platform kepatuhan dan telematika operasional hauling pertambangan nikel berbasis verifikasi geofence, kamera geotag watermark, dan jembatan timbang (*Weighbridge*).
 
 ---
 
-## 📁 Struktur Dokumentasi & Spesifikasi
+## 📂 Struktur Utama Monorepo
 
-| Berkas | Deskripsi |
-| :--- | :--- |
-| **`prd.md`** | Product Requirement Document (v4.1 — Zero-Click Routing & Serverless Cloud) |
-| **`tech_design.md`** | Technical Design Document (Blueprint Arsitektur Teknis) |
-| **`ui_ux_spec.md`** | Spesifikasi UI/UX (Mining Safety Amber, K3 Silent Tracking, Jargon-Free Sync) |
-| **`api_spec.md`** | Kontrak RESTful API Supabase, Edge Functions & Cloudflare R2 S3 SDK |
-| **`coding_guidelines.md`** | Standar Rekayasa & Aturan Koding (Flutter & Edge Functions) |
-| **`development_roadmap.md`** | Roadmap Eksekusi (Mobile-First ➔ Supabase ➔ PWA Dashboard) |
-| **`designs/index.html`** | Simulator Interaktif Mobile (7 Layar Lengkap, Dark & Light Mode) |
-| **`designs/terrapoint_mobile_ui.pen`** | Master File pen.dev (Pencil v2.17 Schema) |
-| **`migrations/`** | DDL Skema Basis Data PostgreSQL (Supabase) & Drift SQLite Lokal |
+Struktur proyek telah disederhanakan murni menjadi komponen inti di depan:
 
----
-
-## 📱 7 Alur Layar Mobile App
-
-1. **Layar 1 — Login Akun Awal (Online Wajib):** Input ID / NIK Driver & Kata Sandi.
-2. **Layar 2 — Quick PIN Unlock (Offline):** Keypad angka 6-digit cepat untuk shift harian.
-3. **Layar 3 — Beranda Operasional (Offline):** Deteksi lokasi GPS otomatis (Loading Point Pit 3 &le; 50m) + Tombol Cepat Manual Sync.
-4. **Layar 4 — Kamera Viewfinder 50m (Offline):** Direct-capture only tanpa galeri, reticle bidik bak truk, dan shutter button besar.
-5. **Layar 5 — Preview Bukti Foto + Watermark Surveyor (Offline):** Foto bak truk dengan kotak putih stamp watermark (Peta mini 50m + Jam merah presisi) dan tombol **"Gunakan Foto"** vs **"Foto Ulang (Retake)"**.
-6. **Layar 6 — Status Hauling Aktif (Offline):** Perekaman rute 100% senyap di latar belakang (bebas distraksi mengemudi), tombol **"Foto Bongkar (Selesai)"**.
-7. **Layar 7 — Antrean Sinkronisasi (Online Wajib):** Daftar ritase selesai (human-friendly) dan tombol **"Sinkronkan Sekarang"**.
+```
+terrapoint/
+├── 📱 frontend/            --> [SEMUA APLIKASI KLIEN / ANTARMUKA]
+│   ├── mobile/             --> Aplikasi Android Flutter (Pengemudi Truk)
+│   └── web/                --> Web Command Center PWA Leaflet (Dispatcher & Admin NOC)
+│
+├── ⚙️ backend/             --> [REST API SERVICE & DATABASE MIGRATIONS]
+│   ├── src/                --> Source code Express API (Node.js / Bun Runtime)
+│   └── migrations/         --> SQL Schema Migrations PostgreSQL 17
+│
+├── 📑 docs/                --> [ARSIP & SPECS] Seluruh file pendukung disimpan di belakang:
+│   ├── designs/            --> Artboard visual & script renderer
+│   ├── specs/              --> PRD, Desain Teknis, API Spec, Guidelines, Roadmap
+│   ├── server_infra/       --> Nginx config, Docker compose, SSL template
+│   └── flow-assets/        --> Dokumentasi PDF & diagram alur
+│
+└── 📄 README.md            --> Panduan ringkas operasional & arsitektur proyek
+```
 
 ---
 
-## 🚀 Membuka Desain & Simulator
+## 1. Rincian Komponen Utama
 
-Buka file **`designs/index.html`** di browser untuk mencoba simulator interaktif mobile lengkap dengan state geofence aktif/terkunci dan mode gelap/terang.
+### A. Frontend: `frontend/`
+- **`frontend/web/` (Dispatcher Command Center):**
+  - **Akses:** `http://terrapoint-backend:8000/` atau `http://100.89.207.92:8000/`
+  - **Fitur:** Peta Leaflet dengan warna unik per driver, manajemen proyek hauling (radius muat luas & bongkar ketat), kontrol akun driver & armada roda, audit bukti 3 foto, download APK (`/terrapoint.apk`), dan galeri antarmuka (`/screenshots/`).
+- **`frontend/mobile/` (Aplikasi Driver Android):**
+  - **Framework:** Flutter 3 (`Dart`) dengan CameraX hardware integration.
+  - **Download APK:** `http://terrapoint-backend:8000/terrapoint.apk`
+  - **Fitur:** Login driver, selector armada roda fleksibel, dan sistem 4 cards berurutan tanpa nomor (Titik Muat, Titik Bongkar, Foto Nota Timbang, Riwayat Foto).
+
+### B. Backend API & Migrations: `backend/`
+- **Runtime:** Bun 1.4.3 / Node.js
+- **Port:** Bind ke `0.0.0.0:8000`
+- **Database:** PostgreSQL 17 di `10.10.10.2:5432/terrapoint`
+- **Media Storage:** MinIO S3 di `http://10.10.10.2:9000`
+- **Migrations:** `backend/migrations/`
+- **Systemd Service (VPS):** `terrapoint.service`
+
+---
+
+## 2. Perintah Cepat Pengelolaan Server (Cheatsheet)
+
+- **Cek Status Service:** `sudo systemctl status terrapoint`
+- **Restart Backend:** `sudo systemctl restart terrapoint`
+- **Lihat Log Live:** `sudo journalctl -u terrapoint -f`
+- **Tes Health API:** `curl http://100.89.207.92:8000/health`

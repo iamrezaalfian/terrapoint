@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TerraPoint — Fleet Telematics & Operations Command Center</title>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#E58B04">
+  
+  <!-- Typography: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Leaflet.js CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  
+  <!-- Custom Industrial Stylesheet -->
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+  <!-- Left Sidebar Navigation (Collapsible) -->
+  <aside class="sidebar" id="main-sidebar">
+    <div class="brand-header">
+      <div class="brand-left">
+        <div class="brand-icon" id="brand-logo-icon"></div>
+        <div class="brand-text">
+          <div class="brand-title">TERRAPOINT</div>
+          <div class="brand-subtitle">Fleet Command</div>
+        </div>
+      </div>
+      <button class="btn-sidebar-toggle" id="btn-toggle-sidebar" title="Sembunyikan / Buka Sidebar">
+        <span id="icon-sidebar-toggle"></span>
+      </button>
+    </div>
+
+    <ul class="nav-links">
+      <li>
+        <a class="nav-item active" data-page="page-live-map" title="Peta Operasional Tambang">
+          <span class="nav-icon" id="icon-nav-map"></span>
+          <span class="nav-label">Peta Operasional</span>
+        </a>
+      </li>
+      <li>
+        <a class="nav-item" data-page="page-tasks" title="Manajemen Proyek Hauling (Task)">
+          <span class="nav-icon" id="icon-nav-tasks"></span>
+          <span class="nav-label">Proyek Hauling</span>
+        </a>
+      </li>
+      <li>
+        <a class="nav-item" data-page="page-drivers" title="Daftar Driver & Jenis Roda Truk">
+          <span class="nav-icon" id="icon-nav-drivers"></span>
+          <span class="nav-label">Driver & Roda Truk</span>
+        </a>
+      </li>
+      <li>
+        <a class="nav-item" data-page="page-trip-logs" title="Log Pengantaran Harian & Master Geofence">
+          <span class="nav-icon" id="icon-nav-logs"></span>
+          <span class="nav-label">Log Trip & Geofence</span>
+        </a>
+      </li>
+      <li id="nav-li-fleet" style="display: none;">
+        <a class="nav-item" data-page="page-fleet" title="Status Armada Truk">
+          <span class="nav-icon" id="icon-nav-fleet"></span>
+          <span class="nav-label">Status Armada</span>
+        </a>
+      </li>
+      <li id="nav-li-settings" style="display: none;">
+        <a class="nav-item" data-page="page-settings" title="Pengaturan Sistem">
+          <span class="nav-icon" id="icon-nav-settings"></span>
+          <span class="nav-label">Pengaturan Sistem</span>
+        </a>
+      </li>
+      <li id="nav-li-screenshots" style="display: none;">
+        <a class="nav-item" href="/screenshots/" target="_blank" title="Galeri Screenshots Mobile App">
+          <span class="nav-icon" id="icon-nav-mobile"></span>
+          <span class="nav-label">Screenshots Mobile ↗</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <div class="footer-status-row">
+        <div class="status-live-indicator" title="Server Terhubung Real-Time">
+          <span class="pulse-dot"></span>
+          <span class="status-live-text">Server Online</span>
+        </div>
+        <button class="btn-theme-toggle" id="btn-theme-toggle" title="Ganti Mode Terang / Gelap">
+          <span id="icon-theme-toggle"></span>
+        </button>
+      </div>
+      <div class="wita-clock-text" id="sidebar-wita-clock">--:--:-- WITA (UTC+8)</div>
+    </div>
+  </aside>
+  <!-- Main Content Area -->
+  <main class="main-content">
+    
+    <!-- Top Navbar (Clean, Decluttered) -->
+    <header class="top-navbar">
+      <div class="top-left">
+        <div class="top-title">
+          <h1 id="top-page-title">Monitoring Logistik & Kepatuhan Rute Hauling</h1>
+        </div>
+      </div>
+
+      <div class="top-right">
+
+        <!-- User Profile Dropdown Button -->
+        <button class="user-profile-btn" id="btn-user-profile" title="Profil Pengguna">
+          <span id="icon-user-avatar"></span>
+          <span id="label-user-name">Ahmad Fauzi</span>
+          <span style="font-size: 9px; color: var(--text-muted);">▼</span>
+        </button>
+
+        <!-- User Dropdown Popover (Logout Only) -->
+        <div class="user-dropdown-menu" id="user-dropdown-menu">
+          <div class="dropdown-user-info">
+            <div class="dropdown-user-name" id="dropdown-user-name">Ahmad Fauzi</div>
+            <div class="dropdown-user-role" id="dropdown-user-role">Head Mine Dispatcher</div>
+            <div class="dropdown-user-shift" id="dropdown-user-shift">Shift 1 Operasional</div>
+          <button class="btn-logout-dropdown" id="btn-dropdown-logout">
+            <span id="icon-dropdown-logout"></span>
+            <span>Keluar Sesi (Logout)</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- PAGE 1: PETA ARMADA (LIVE SURVEILLANCE) -->
+    <div class="dashboard-view active" id="page-live-map">
+      <!-- KPI Summary Cards -->
+      <!-- KPI Summary Cards: Wheel Types & Trip Counts (No More Tonnage) -->
+      <section class="kpi-row">
+        <div class="kpi-card">
+          <div class="kpi-header">
+            <span class="kpi-label">Total Pengantaran Hari Ini</span>
+            <span class="kpi-dot" style="background: var(--status-success);"></span>
+          </div>
+          <span class="kpi-value" id="kpi-total-trips">0 Trip</span>
+          <span class="kpi-sub">Akumulasi Seluruh Proyek</span>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-header">
+            <span class="kpi-label">Truk 6 Roda (Dump Truck)</span>
+            <span class="kpi-dot" style="background: var(--accent-primary);"></span>
+          </div>
+          <span class="kpi-value" id="kpi-wheel-6">0 Trip</span>
+          <span class="kpi-sub" id="kpi-wheel-6-sub">Armada Dump Standar</span>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-header">
+            <span class="kpi-label">Truk 10 Roda (Tronton)</span>
+            <span class="kpi-dot" style="background: var(--status-info);"></span>
+          </div>
+          <span class="kpi-value" id="kpi-wheel-10">0 Trip</span>
+          <span class="kpi-sub" id="kpi-wheel-10-sub">Armada Tronton Heavy</span>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-header">
+            <span class="kpi-label">Truk 12 Roda (Trailer Heavy)</span>
+            <span class="kpi-dot" style="background: var(--status-warning);"></span>
+          </div>
+          <span class="kpi-value" id="kpi-wheel-12">0 Trip</span>
+          <span class="kpi-sub" id="kpi-wheel-12-sub">Armada Trailer / Gandeng</span>
+        </div>
+      </section>
+      <!-- Split View: Map with Floating Controls & Live Telemetry Panel -->
+      <section class="split-section">
+        <div class="map-container-wrapper">
+          <!-- Floating Map Toolbar (Icon-Only Anti-Slop Vector Standard) -->
+          <div class="map-floating-toolbar">
+            <button class="btn-map-layer active" id="btn-layer-sat" title="Citra Satelit Topografi Tambang">
+              <span id="icon-map-sat"></span>
+            </button>
+            <button class="btn-map-layer" id="btn-layer-gis" title="Peta Vektor Modern (Google/Apple Maps Style)">
+              <span id="icon-map-gis"></span>
+            </button>
+            <button class="btn-map-layer" id="btn-map-fit" title="Fokuskan ke Area Tambang">
+              <span id="icon-map-crosshair"></span>
+            </button>
+          </div>
+          <!-- Leaflet Map Canvas -->
+          <div id="map"></div>
+
+          <!-- Live Vehicle Telemetry HUD Drawer (Inspector) -->
+          <div class="telemetry-hud-drawer" id="telemetry-hud-drawer">
+            <div class="hud-header">
+              <div class="hud-title" id="hud-unit-title">INSPEKTOR TELEMETRI UNIT DT-104</div>
+              <button class="hud-close-btn" id="hud-close-btn">&times;</button>
+            </div>
+            <div class="hud-grid">
+              <div class="hud-stat">
+                <span class="hud-label">PENGEMUDI (NIK)</span>
+                <span class="hud-val" id="hud-driver-name">Ahmad Fauzi</span>
+              </div>
+              <div class="hud-stat">
+                <span class="hud-label">STATUS MUATAN</span>
+                <span class="hud-val" id="hud-payload-val" style="color: var(--status-success);">45.0 Ton (Muatan Utama)</span>
+              </div>
+              <div class="hud-stat">
+                <span class="hud-label">KECEPATAN GPS</span>
+                <span class="hud-val" id="hud-speed-val" style="color: var(--accent-amber-light);">33.8 km/h</span>
+              </div>
+              <div class="hud-stat">
+                <span class="hud-label">BBM & KONSUMSI</span>
+                <span class="hud-val" id="hud-fuel-val">81% (19.2 L/h)</span>
+              </div>
+              <div class="hud-stat">
+                <span class="hud-label">SUHU MESIN / TEKANAN</span>
+                <span class="hud-val" id="hud-health-val">89°C • 114 PSI</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Live Recent Trips Table Preview -->
+      <section class="table-section">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <div>
+            <h2 style="font-size: 14px; font-weight: 700;">Daftar Ritase & Penugasan Aktif</h2>
+            <p style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">Klik baris untuk menampilkan rute perjalanan pada peta di atas.</p>
+          </div>
+          <button class="btn-action" id="btn-top-assign-task">
+            <span id="icon-top-assign"></span>
+            <span>+ Buat Proyek Hauling</span>
+          </button>
+        </div>
+        <div style="overflow-x: auto;">
+          <table>
+            <thead>
+              <tr>
+                <th>TRIP ID</th>
+                <th>DRIVER & JENIS RODA</th>
+                <th>PROYEK HAULING</th>
+                <th>TITIK MUAT (RADIUS LUAS)</th>
+                <th>TITIK BONGKAR (1 TITIK)</th>
+                <th>STATUS</th>
+                <th style="text-align: right;">BUKTI FOTO & NOTA</th>
+              </tr>
+            </thead>
+            <tbody id="live-map-table-body">
+              <!-- Rendered by app.js -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <!-- PAGE 2: LOG RITASE & MASTER GEOFENCE (UNIFIED) -->
+    <div class="dashboard-view" id="page-trip-logs">
+      <!-- Smooth Segmented Sub-Tab Switcher -->
+      <div class="subtab-bar">
+        <button class="subtab-btn active" id="subtab-btn-logs" data-subtab="subview-logs">
+          <span>Log Pengantaran & Bukti Nota</span>
+        </button>
+        <button class="subtab-btn" id="subtab-btn-geofence" data-subtab="subview-geofence">
+          <span>Master Geofence (Titik Muat & Titik Bongkar)</span>
+        </button>
+      </div>
+
+      <!-- SUBVIEW A: LOG RITASE -->
+      <div id="subview-logs" class="subview-panel active">
+        <div class="control-bar" style="margin-bottom: 14px;">
+          <div class="control-group-left">
+            <div class="search-input-wrapper">
+              <span class="search-icon" id="icon-search-logs"></span>
+              <input type="text" id="input-search-logs" placeholder="Cari Task ID, Driver, Unit, Grade...">
+            </div>
+            <select class="filter-select" id="filter-status-logs">
+              <option value="ALL">Semua Status</option>
+              <option value="COMPLETED">Selesai (Terverifikasi)</option>
+              <option value="IN_PROGRESS">Dalam Perjalanan</option>
+              <option value="ASSIGNED">Ditugaskan (Assigned)</option>
+            </select>
+            <select class="filter-select" id="filter-location-logs">
+              <option value="ALL">Semua Titik Muat</option>
+              <option value="Pit 2">Loading Point Pit 2 Barat</option>
+              <option value="Pit 3">Loading Point Pit 3 Utara</option>
+            </select>
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <button class="btn-action" id="btn-export-csv">
+              <span id="icon-export-csv"></span>
+              <span>Ekspor CSV</span>
+            </button>
+          </div>
+        </div>
+
+        <section class="table-section">
+          <div style="overflow-x: auto;">
+            <table>
+              <thead>
+                <tr>
+                  <th>TRIP ID & WAKTU</th>
+                  <th>DRIVER & JENIS RODA</th>
+                  <th>PROYEK HAULING</th>
+                  <th>FOTO MUAT (PIT)</th>
+                  <th>FOTO BONGKAR (ROM)</th>
+                  <th>FOTO NOTA / SURAT JALAN</th>
+                  <th>STATUS</th>
+                  <th style="text-align: right;">BUKTI</th>
+                </tr>
+              </thead>
+              <tbody id="trip-logs-table-body">
+                <!-- Rendered by app.js -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+      <!-- SUBVIEW B: MASTER GEOFENCE PIT & ROM -->
+      <div id="subview-geofence" class="subview-panel" style="display: none;">
+        <div class="control-bar" style="margin-bottom: 14px;">
+          <div class="control-group-left">
+            <div class="search-input-wrapper">
+              <span class="search-icon" id="icon-search-geofence"></span>
+              <input type="text" id="input-search-geofence" placeholder="Cari nama titik checkpoint...">
+            </div>
+          </div>
+          <button class="btn-action" id="btn-add-checkpoint">
+            <span id="icon-add-checkpoint"></span>
+            <span>Tambah Checkpoint</span>
+          </button>
+        </div>
+        <section class="table-section">
+          <div style="overflow-x: auto;">
+            <table>
+              <thead>
+                <tr>
+                  <th>KODE</th>
+                  <th>NAMA CHECKPOINT & MATERIAL</th>
+                  <th>TIPE LOKASI</th>
+                  <th>KOORDINAT & ELEVASI</th>
+                  <th>RADIUS GEOFENCE</th>
+                  <th>STATUS</th>
+                  <th style="text-align: right;">AKSI</th>
+                </tr>
+              </thead>
+              <tbody id="geofence-table-body">
+                <!-- Rendered by app.js -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- PAGE 3: MANAJEMEN PROYEK HAULING (TASK PER PROYEK) -->
+    <div class="dashboard-view" id="page-tasks">
+      <div class="control-bar">
+        <div class="control-group-left">
+          <div class="search-input-wrapper">
+            <span class="search-icon" id="icon-search-tasks"></span>
+            <input type="text" id="input-search-tasks" placeholder="Cari nama proyek, klien, lokasi...">
+          </div>
+          <select class="filter-select" id="filter-status-tasks">
+            <option value="ALL">Semua Proyek</option>
+            <option value="ACTIVE">Proyek Aktif</option>
+            <option value="INACTIVE">Proyek Selesai</option>
+          </select>
+        </div>
+        <button class="btn-action" id="btn-assign-task-open">
+          <span id="icon-assign-task-action"></span>
+          <span>+ Buat Proyek Hauling Baru</span>
+        </button>
+      </div>
+
+      <section class="table-section">
+        <div style="overflow-x: auto;">
+          <table>
+            <thead>
+              <tr>
+                <th>ID PROYEK</th>
+                <th>NAMA PROYEK & KLIEN</th>
+                <th>TITIK MUAT (RADIUS LUAS)</th>
+                <th>TITIK BONGKAR (1 TITIK KECIL)</th>
+                <th>DRIVER BERTUGAS (RODA TRUK)</th>
+                <th>TRIP HARI INI</th>
+                <th style="text-align: right;">AKSI PROYEK</th>
+              </tr>
+            </thead>
+            <tbody id="tasks-table-body">
+              <!-- Rendered by app.js -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <!-- PAGE 4: DAFTAR DRIVER (MANAJEMEN AKUN & ENABLE/DISABLE) -->
+    <div class="dashboard-view" id="page-drivers">
+      <div class="control-bar">
+        <div class="control-group-left">
+          <div class="search-input-wrapper">
+            <span class="search-icon" id="icon-search-drivers"></span>
+            <input type="text" id="input-search-drivers" placeholder="Cari nama driver atau ID...">
+          </div>
+          <select class="filter-select" id="filter-driver-status">
+            <option value="ALL">Semua Driver</option>
+            <option value="ACTIVE">Akun Aktif (Bisa Login)</option>
+            <option value="INACTIVE">Akun Nonaktif (Diblokir)</option>
+          </select>
+        </div>
+        <button class="btn-action" id="btn-add-driver-modal-open">
+          <span id="icon-add-driver-btn"></span>
+          <span>Daftarkan Driver Baru</span>
+        </button>
+      </div>
+
+      <section class="table-section">
+        <div style="overflow-x: auto;">
+          <table>
+            <thead>
+              <tr>
+                <th>ID DRIVER</th>
+                <th>NAMA LENGKAP</th>
+                <th>NO. TELEPON / WA</th>
+                <th>JENIS MOBIL (RODA TRUK)</th>
+                <th>PROYEK DITUGASKAN</th>
+                <th>STATUS AKUN</th>
+                <th>KONTROL LOGIN</th>
+                <th>TRIP HARI INI</th>
+                <th style="text-align: right;">AKSI</th>
+              </tr>
+            </thead>
+            <tbody id="drivers-table-body">
+              <!-- Rendered by app.js -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+    <div class="dashboard-view" id="page-fleet">
+      <div class="control-bar">
+        <div class="control-group-left">
+          <div class="search-input-wrapper">
+            <span class="search-icon" id="icon-search-fleet"></span>
+            <input type="text" id="input-search-fleet" placeholder="Cari unit atau nama pengemudi...">
+          </div>
+          <select class="filter-select" id="filter-fleet-status">
+            <option value="ALL">Semua Status Armada</option>
+            <option value="HAULING">Hauling (Berjalan)</option>
+            <option value="LOADING">Loading (Muat)</option>
+            <option value="DUMPING">Dumping (Bongkar)</option>
+            <option value="STANDBY">Standby / Workshop</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="fleet-grid" id="fleet-grid-cards">
+        <!-- Rendered by app.js -->
+      </div>
+    </div>
+
+    <!-- PAGE 5: PENGATURAN SISTEM (ADMIN CONTROLS) -->
+    <div class="dashboard-view" id="page-settings">
+      <div class="settings-container">
+        
+        <!-- Live Server, Redis Cache & Infrastructure Monitoring -->
+        <div class="settings-card">
+          <div class="settings-card-title">
+            <span id="icon-cloud-settings"></span>
+            <span>Monitoring Server, Redis Cache & Infrastruktur Live</span>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 10px;">
+            <div style="background: var(--bg-inset); padding: 12px 14px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+              <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 4px;">REDIS CACHE ENGINE</div>
+              <div style="display: flex; align-items: center; gap: 6px;">
+                <span style="width: 7px; height: 7px; border-radius: 50%; background: var(--status-success);" id="mon-redis-dot"></span>
+                <span style="font-size: 12px; font-weight: 700; color: var(--status-success);" id="mon-redis-status">ACTIVE (In-Memory & Redis)</span>
+              </div>
+              <div style="font-size: 11px; color: var(--text-muted); margin-top: 3px;" id="mon-redis-meta">Latency: 0.2ms • Cache Ready</div>
+            </div>
+
+            <div style="background: var(--bg-inset); padding: 12px 14px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+              <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 4px;">DATABASE POSTGRESQL 17</div>
+              <div style="display: flex; align-items: center; gap: 6px;">
+                <span style="width: 7px; height: 7px; border-radius: 50%; background: var(--status-success);"></span>
+                <span style="font-size: 12px; font-weight: 700; color: var(--text-primary);" id="mon-pg-status">10.10.10.2:5432 (ONLINE)</span>
+              </div>
+              <div style="font-size: 11px; color: var(--text-muted); margin-top: 3px;" id="mon-pg-meta">Pool Active • Dedicated Node</div>
+            </div>
+
+            <div style="background: var(--bg-inset); padding: 12px 14px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+              <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 4px;">CPU & RAM SERVER (DEBIAN 13)</div>
+              <div style="font-size: 12px; font-weight: 700; color: var(--text-primary);" id="mon-sys-ram">RAM: 412 MB / 4096 MB (10%)</div>
+              <div style="font-size: 11px; color: var(--text-muted); margin-top: 3px;" id="mon-sys-cpu">2 vCPU • Load Avg: 0.08 • Bun v1.4.3</div>
+            </div>
+
+            <div style="background: var(--bg-inset); padding: 12px 14px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+              <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 4px;">OBJECT STORAGE S3 & GATEWAY</div>
+              <div style="font-size: 12px; font-weight: 700; color: var(--text-primary);" id="mon-s3-status">MinIO S3 (10.10.10.2:9000)</div>
+              <div style="font-size: 11px; color: var(--text-muted); margin-top: 3px;" id="live-backend-badge">Traefik Edge Proxy • ONLINE</div>
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px; padding-top: 6px;">
+            <div style="display: flex; gap: 8px;">
+              <button class="btn-action" id="btn-test-live-connection">
+                <span id="icon-refresh-live"></span>
+                <span>Refresh Metrik & Latensi</span>
+              </button>
+              <button class="btn-action secondary" id="btn-flush-redis-cache">
+                <span>Flush Cache</span>
+              </button>
+            </div>
+            <span id="live-api-status-feedback" style="font-size: 12px; color: var(--text-secondary);">Metrik terhubung real-time</span>
+          </div>
+        </div>
+        <!-- Mining Safety & Geofence Rules -->
+        <div class="settings-card">
+          <div class="settings-card-title">
+            <span id="icon-shield-settings"></span>
+            <span>Parameter Kepatuhan Geofence & Sensor</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Radius Geofence Checkpoint Default (Toleransi)</label>
+            <div class="slider-container">
+              <input type="range" id="slider-geofence-radius" min="20" max="100" value="50" step="5">
+              <span class="slider-value-badge" id="badge-geofence-radius">50 meter</span>
+            </div>
+            <span style="font-size: 10.5px; color: var(--text-muted);">Batas toleransi penolakan bukti foto jika melebihi radius ini.</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Batas Akurasi GPS Rana Kamera (Shutter Lock)</label>
+            <div class="slider-container">
+              <input type="range" id="slider-gps-accuracy" min="10" max="50" value="25" step="5">
+              <span class="slider-value-badge" id="badge-gps-accuracy">±25 meter</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Interval Polling Telemetri Live (detik)</label>
+            <div class="slider-container">
+              <input type="range" id="slider-telemetry-interval" min="2" max="30" value="5" step="1">
+              <span class="slider-value-badge" id="badge-telemetry-interval">5 Detik</span>
+            </div>
+          </div>
+
+          <div style="margin-top: 10px; padding-top: 12px; border-top: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center;">
+            <button class="btn-action secondary" id="btn-reset-simulation">
+              <span>Muat Ulang Data Server</span>
+            </button>
+            <button class="btn-action" id="btn-save-param-settings">
+              <span>Terapkan Parameter</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- DEDICATED FULLSCREEN LOGIN PAGE -->
+  <div id="page-login" style="display: none;">
+    <div class="login-card">
+      <div class="login-header">
+        <div class="login-brand-icon" id="login-brand-logo"></div>
+        <h2 class="login-title">TerraPoint</h2>
+        <p class="login-subtitle">Fleet Telematics & Compliance Command Center</p>
+      </div>
+
+      <!-- Quick Role Selection -->
+      <div class="login-quick-chips">
+        <span class="quick-chip-label">Pilih Akun Demo:</span>
+        <div class="chips-row">
+          <button type="button" class="btn-chip active" id="chip-dispatcher">
+            <span>Dispatcher</span>
+          </button>
+          <button type="button" class="btn-chip" id="chip-noc">
+            <span>Superadmin</span>
+          </button>
+        </div>
+      </div>
+
+      <form id="dedicated-login-form" class="login-form-body" onsubmit="return false;">
+        <div class="form-group">
+          <label class="form-label">Username atau Email</label>
+          <div class="input-icon-wrapper">
+            <span class="field-icon" id="icon-login-user"></span>
+            <input type="text" class="form-input" id="input-login-username" value="ahmad.fauzi@terrapoint.id" required autocomplete="username" placeholder="nama@terrapoint.id">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Kata Sandi</label>
+          <div class="input-icon-wrapper">
+            <span class="field-icon" id="icon-login-pass"></span>
+            <input type="password" class="form-input" id="input-login-password" value="admin123456" required autocomplete="current-password" placeholder="••••••••" style="padding-right: 42px;">
+            <button type="button" class="btn-field-icon" id="btn-toggle-login-password" title="Lihat Kata Sandi" style="position: absolute; right: 10px; background: none; border: none; color: var(--text-muted); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; padding: 4px;">
+              <span id="icon-eye-toggle"></span>
+            </button>
+          </div>
+        </div>
+        <button type="submit" class="btn-action btn-login-submit" id="btn-dedicated-login-submit">
+          <span>Masuk ke Sistem</span>
+        </button>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- Evidence Verification Modal -->
+  <div class="modal-overlay" id="evidence-modal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div>
+          <h2 style="font-size: 15px; font-weight: 700;" id="modal-task-title">Verifikasi Bukti Visual Ritase</h2>
+          <p style="font-size: 11.5px; color: var(--text-muted);" id="modal-driver-info">Driver info</p>
+        </div>
+        <button class="modal-close" id="modal-close-btn">&times;</button>
+      </div>
+
+      <div class="evidence-grid" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="evidence-card">
+          <div class="evidence-img-container">
+            <img id="modal-start-photo" src="" alt="Bukti Foto Muat">
+            <span class="evidence-tag">1. FOTO MUAT (PIT)</span>
+          </div>
+          <div class="evidence-details">
+            <b style="font-size: 13px;" id="modal-start-location">Loading Point Pit</b>
+            <span style="font-size: 11px; color: var(--status-success); font-family: var(--font-mono); font-weight: 700;" id="modal-start-dev">Deviasi: Valid dalam Radius Luas</span>
+            <span style="font-size: 10px; color: var(--text-muted);">Foto Muatan Aktual di Pit</span>
+          </div>
+        </div>
+
+        <div class="evidence-card" id="modal-end-card">
+          <div class="evidence-img-container">
+            <img id="modal-end-photo" src="" alt="Bukti Foto Bongkar">
+            <span class="evidence-tag end">2. FOTO BONGKAR (ROM)</span>
+          </div>
+          <div class="evidence-details">
+            <b style="font-size: 13px;" id="modal-end-location">ROM Stockpile</b>
+            <span style="font-size: 11px; color: var(--status-success); font-family: var(--font-mono); font-weight: 700;" id="modal-end-dev">Deviasi: Valid dalam Radius Bongkar</span>
+            <span style="font-size: 10px; color: var(--text-muted);">Foto Dump Truk Selesai Curah</span>
+          </div>
+        </div>
+
+        <div class="evidence-card" id="modal-invoice-card">
+          <div class="evidence-img-container">
+            <img id="modal-invoice-photo" src="" alt="Bukti Foto Nota / Invoice">
+            <span class="evidence-tag" style="background: var(--status-info); color: #fff;">3. NOTA / SURAT JALAN</span>
+          </div>
+          <div class="evidence-details">
+            <b style="font-size: 13px;">Nota Timbang / Invoice</b>
+            <span style="font-size: 11px; color: var(--status-info); font-family: var(--font-mono); font-weight: 700;">Dokumen Fisik Terverifikasi</span>
+            <span style="font-size: 10px; color: var(--text-muted);">Surat Jalan Resmi Tambang</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="background: var(--status-success-subtle); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: var(--radius-sm); padding: 10px 12px; display: flex; align-items: center; gap: 10px;">
+        <span class="nav-icon" id="modal-shield-icon" style="color: var(--status-success);"></span>
+        <div style="font-size: 11px; color: var(--status-success);">
+          <b>INTEGRITAS DATA VALID:</b> Foto diambil langsung via kamera perangkat disertai stempel watermark waktu, koordinat GPS, dan verifikasi radius geofence.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add/Edit Checkpoint Modal -->
+  <div class="modal-overlay" id="checkpoint-modal">
+    <div class="modal-box" style="width: 500px;">
+      <div class="modal-header">
+        <h2 style="font-size: 15px; font-weight: 700;">Tambah Lokasi Checkpoint Baru</h2>
+        <button class="modal-close" id="checkpoint-modal-close">&times;</button>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div class="form-group">
+          <label class="form-label">Nama Titik Lokasi Checkpoint</label>
+          <input type="text" class="form-input" id="input-checkpoint-name" placeholder="Misal: Loading Point Pit 4 Timur">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Tipe Lokasi</label>
+          <select class="filter-select" id="select-checkpoint-type">
+            <option value="LOADING_POINT">LOADING POINT (Titik Muat Pit)</option>
+            <option value="DUMPING_POINT">DUMPING POINT (Titik Bongkar ROM / Smelter)</option>
+          </select>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+          <div class="form-group">
+            <label class="form-label">Latitude</label>
+            <input type="number" step="0.000001" class="form-input" id="input-checkpoint-lat" value="-3.135000">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Longitude</label>
+            <input type="number" step="0.000001" class="form-input" id="input-checkpoint-lng" value="115.135000">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Radius Toleransi Geofence (meter)</label>
+          <div class="slider-container">
+            <input type="range" id="input-checkpoint-radius" min="20" max="100" value="50" step="5">
+            <span class="slider-value-badge" id="badge-checkpoint-modal-radius">50m</span>
+          </div>
+        </div>
+        <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 8px;">
+          <button class="btn-action secondary" id="btn-cancel-checkpoint">Batal</button>
+          <button class="btn-action" id="btn-save-new-checkpoint">Simpan Checkpoint</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Assign Task (Tugaskan Ritase Baru) -->
+  <!-- Modal Buat Proyek Hauling Baru -->
+  <div class="modal-overlay" id="assign-task-modal">
+    <div class="modal-box" style="width: 540px;">
+      <div class="modal-header">
+        <div>
+          <h2 style="font-size: 15px; font-weight: 700;">Buat Proyek Hauling Baru (Penugasan)</h2>
+          <p style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">1 Proyek = 1 Titik Muat (Radius Luas) & 1 Titik Bongkar (Radius Kecil)</p>
+        </div>
+        <button class="modal-close" id="modal-assign-task-close">&times;</button>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div class="form-group">
+          <label class="form-label">Nama Proyek Hauling</label>
+          <input type="text" class="form-input" id="project-input-name" placeholder="Misal: Proyek Hauling Pit 2 ke ROM Stockpile 1" value="Proyek Hauling Pit 2 ke ROM Stockpile 1">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Nama Klien / Perusahaan</label>
+          <input type="text" class="form-input" id="project-input-client" placeholder="Misal: PT Mitra Tambang Sejahtera" value="PT Mitra Tambang Sejahtera">
+        </div>
+        
+        <div style="background: var(--bg-surface); padding: 10px 12px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+          <div class="form-group">
+            <label class="form-label" style="color: var(--accent-primary);">1. Titik Muat (Pit) - Radius Luas Bebas</label>
+            <select class="filter-select" id="assign-select-start-loc" style="width: 100%;">
+              <!-- Populated by app.js -->
+            </select>
+          </div>
+          <div class="form-group" style="margin-top: 8px;">
+            <div style="display: flex; justify-content: space-between; font-size: 11px;">
+              <span class="form-label" style="margin: 0;">Radius Toleransi Muat:</span>
+              <span id="badge-start-radius" style="font-family: var(--font-mono); font-weight: bold; color: var(--accent-primary);">250 meter</span>
+            </div>
+            <input type="range" id="input-start-radius" min="100" max="600" value="250" step="25" style="width: 100%; margin-top: 4px;">
+          </div>
+        </div>
+
+        <div style="background: var(--bg-surface); padding: 10px 12px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+          <div class="form-group">
+            <label class="form-label" style="color: var(--status-success);">2. Titik Bongkar (ROM Stockpile) - Radius Kecil/Ketat</label>
+            <select class="filter-select" id="assign-select-end-loc" style="width: 100%;">
+              <!-- Populated by app.js -->
+            </select>
+          </div>
+          <div class="form-group" style="margin-top: 8px;">
+            <div style="display: flex; justify-content: space-between; font-size: 11px;">
+              <span class="form-label" style="margin: 0;">Radius Toleransi Bongkar:</span>
+              <span id="badge-end-radius" style="font-family: var(--font-mono); font-weight: bold; color: var(--status-success);">40 meter</span>
+            </div>
+            <input type="range" id="input-end-radius" min="20" max="100" value="40" step="5" style="width: 100%; margin-top: 4px;">
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 8px; margin-top: 8px;">
+          <button class="btn-action secondary" id="btn-cancel-assign-task">Batal</button>
+          <button class="btn-action" id="btn-submit-assign-task">Simpan & Terbitkan Proyek</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Tambah Driver Baru -->
+  <div class="modal-overlay" id="add-driver-modal">
+    <div class="modal-box" style="width: 460px;">
+      <div class="modal-header">
+        <div>
+          <h2 style="font-size: 15px; font-weight: 700;">Daftarkan Driver Baru</h2>
+          <p style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">Registrasi akun pengemudi hauling & tipe armada roda</p>
+        </div>
+        <button class="modal-close" id="modal-add-driver-close">&times;</button>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div class="form-group">
+          <label class="form-label">ID Driver (NIK Tambang)</label>
+          <input type="text" class="form-input" id="driver-input-id" placeholder="Misal: DRV-004">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Nama Lengkap Driver</label>
+          <input type="text" class="form-input" id="driver-input-name" placeholder="Misal: Hendra Saputra">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Nomor Telepon / WhatsApp</label>
+          <input type="text" class="form-input" id="driver-input-phone" placeholder="Misal: 081234567899">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Jenis Mobil / Jumlah Roda</label>
+          <select class="filter-select" id="driver-select-wheel" style="width: 100%;">
+            <option value="6 Roda (Dump Truck)" selected>6 Roda (Dump Truck Standar)</option>
+            <option value="10 Roda (Tronton)">10 Roda (Tronton Heavy)</option>
+            <option value="12 Roda (Trailer Heavy)">12 Roda (Trailer Heavy)</option>
+            <option value="4 Roda (Pick-up / Engkel)">4 Roda (Pick-up / Engkel)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Tugaskan ke Proyek</label>
+          <select class="filter-select" id="driver-select-project" style="width: 100%;">
+            <!-- Populated by app.js -->
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">PIN Shift Default (6 Digit)</label>
+          <input type="password" class="form-input" id="driver-input-pin" value="123456">
+        </div>
+        <div style="display: flex; justify-content: flex-end; gap: 8px; margin-top: 8px;">
+          <button class="btn-action secondary" id="btn-cancel-add-driver">Batal</button>
+          <button class="btn-action" id="btn-submit-add-driver">Simpan Driver</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  
+  <!-- Dashboard App Module -->
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>
