@@ -515,9 +515,9 @@ class DispatcherApp {
       return match ? parseInt(match.trip_count, 10) : 0;
     };
 
-    const count6 = getCount('6 roda') || getCount('dump');
+    const count6 = getCount('6 roda (dump');
+    const countJumbo = getCount('jumbo');
     const count10 = getCount('10 roda') || getCount('tronton');
-    const count12 = getCount('12 roda') || getCount('trailer');
 
     const el6 = document.getElementById('kpi-wheel-6');
     if (el6) el6.textContent = `${count6} Trip`;
@@ -526,7 +526,7 @@ class DispatcherApp {
     if (el10) el10.textContent = `${count10} Trip`;
 
     const el12 = document.getElementById('kpi-wheel-12');
-    if (el12) el12.textContent = `${count12} Trip`;
+    if (el12) el12.textContent = `${countJumbo} Trip`;
   }
 
   renderLiveFleetPanel() {
@@ -1085,16 +1085,15 @@ class DispatcherApp {
   }
 
   async promptEditDriverWheel(driverId, currentWheel) {
-    const wheelOptions = ['4 Roda (Pick-up / Engkel)', '6 Roda (Dump Truck)', '10 Roda (Tronton)', '12 Roda (Trailer Heavy)'];
-    const choice = prompt(`Pilih jenis roda mobil untuk driver ${driverId}:\n1. 4 Roda (Pick-up)\n2. 6 Roda (Dump Truck)\n3. 10 Roda (Tronton)\n4. 12 Roda (Trailer Heavy)\n\nKetik angka 1, 2, 3, atau 4:`, '2');
+    const wheelOptions = ['4 Roda (Pick-up / Engkel)', '6 Roda (Dump Truck)', '6 Roda Jumbo', '10 Roda (Tronton)'];
+    const choice = prompt(`Pilih jenis roda mobil untuk driver ${driverId}:\n1. 4 Roda (Pick-up / Engkel)\n2. 6 Roda (Dump Truck)\n3. 6 Roda Jumbo\n4. 10 Roda (Tronton)\n\nKetik angka 1, 2, 3, atau 4:`, '2');
     if (!choice) return;
 
     let selectedWheel = currentWheel;
     if (choice === '1') selectedWheel = '4 Roda (Pick-up / Engkel)';
     else if (choice === '2') selectedWheel = '6 Roda (Dump Truck)';
-    else if (choice === '3') selectedWheel = '10 Roda (Tronton)';
-    else if (choice === '4') selectedWheel = '12 Roda (Trailer Heavy)';
-
+    else if (choice === '3') selectedWheel = '6 Roda Jumbo';
+    else if (choice === '4') selectedWheel = '10 Roda (Tronton)';
     try {
       const res = await fetch(`/api/dashboard/drivers/${driverId}/assign-project`, {
         method: 'PUT',

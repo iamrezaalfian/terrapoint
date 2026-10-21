@@ -226,15 +226,28 @@ class HomeScreen extends StatelessWidget {
                             ],
                           ),
                         ),
-                        // Badge Jenis Roda Truk (Dapat diganti kapan saja)
+                        // Badge Jenis Roda Truk (Hanya bisa diganti sebelum mulai muat / terkunci di tengah proyek)
                         GestureDetector(
-                          onTap: () => _showWheelTypeDialog(context, vault),
+                          onTap: canLoad
+                              ? () => _showWheelTypeDialog(context, vault)
+                              : () {
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                      backgroundColor: AppColors.navyDeep,
+                                      content: Text(
+                                        'Jenis armada dikunci selama hauling proyek berjalan. Selesaikan siklus trip terlebih dahulu untuk mengganti armada.',
+                                        style: GoogleFonts.inter(color: Colors.white, fontSize: 12),
+                                      ),
+                                      duration: const Duration(seconds: 3),
+                                    ),
+                                  );
+                                },
                           child: Container(
                             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                             decoration: BoxDecoration(
-                              color: const Color(0xFFF59E0B).withValues(alpha: 0.2),
+                              color: canLoad ? const Color(0xFFF59E0B).withValues(alpha: 0.2) : Colors.white12,
                               borderRadius: BorderRadius.circular(8),
-                              border: Border.all(color: const Color(0xFFF59E0B)),
+                              border: Border.all(color: canLoad ? const Color(0xFFF59E0B) : Colors.white24),
                             ),
                             child: Row(
                               mainAxisSize: MainAxisSize.min,
@@ -244,11 +257,15 @@ class HomeScreen extends StatelessWidget {
                                   style: GoogleFonts.jetBrainsMono(
                                     fontSize: 11,
                                     fontWeight: FontWeight.w700,
-                                    color: const Color(0xFFFBBF24),
+                                    color: canLoad ? const Color(0xFFFBBF24) : Colors.white70,
                                   ),
                                 ),
                                 const SizedBox(width: 4),
-                                const Icon(Icons.edit_rounded, size: 12, color: Color(0xFFFBBF24)),
+                                Icon(
+                                  canLoad ? Icons.edit_rounded : Icons.lock_rounded,
+                                  size: 12,
+                                  color: canLoad ? const Color(0xFFFBBF24) : Colors.white54,
+                                ),
                               ],
                             ),
                           ),
@@ -479,7 +496,7 @@ class HomeScreen extends StatelessWidget {
             ),
             SizedBox(
               width: double.infinity,
-              height: 42,
+              height: 44,
               child: ElevatedButton.icon(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: AppColors.navyDeep,
@@ -489,10 +506,13 @@ class HomeScreen extends StatelessWidget {
                 ),
                 icon: const Icon(Icons.camera_alt_rounded, size: 17),
                 label: Text(
-                  'Ambil Foto Muatan di Pit',
+                  'Konfirmasi Armada & Ambil Foto Muatan',
                   style: GoogleFonts.inter(fontSize: 12.5, fontWeight: FontWeight.w700),
                 ),
-                onPressed: onTap,
+                onPressed: () {
+                  // Munculkan dialog konfirmasi roda terlebih dahulu jika supir ingin ganti sebelum ambil foto
+                  _showPreLoadConfirmationDialog(context, LocalStorageVault.instance, onTap);
+                },
               ),
             ),
           ] else
@@ -1050,10 +1070,9 @@ class HomeScreen extends StatelessWidget {
     final options = [
       '4 Roda (Pick-up / Engkel)',
       '6 Roda (Dump Truck)',
+      '6 Roda Jumbo',
       '10 Roda (Tronton)',
-      '12 Roda (Trailer Heavy)',
     ];
-
     showModalBottomSheet(
       context: context,
       backgroundColor: Colors.white,
@@ -1157,6 +1176,123 @@ class HomeScreen extends StatelessWidget {
           ),
         );
       },
+    );
+  }
+
+  void _showPreLoadConfirmationDialog(BuildContext context, LocalStorageVault vault, VoidCallback? onProceed) {
+    showDialog(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        backgroundColor: Colors.white,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+        title: Row(
+          children: [
+            const Icon(Icons.verified_user_rounded, color: AppColors.accentAmberDark, size: 24),
+            const SizedBox(width: 8),
+            Text(
+              'Konfirmasi Sesi Armada',
+              style: GoogleFonts.inter(fontWeight: FontWeight.w800, fontSize: 16),
+            ),
+          ],
+        ),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Sebelum mengambil foto muatan Pit, pastikan jenis armada kendaraan yang Anda gunakan sudah benar:',
+              style: GoogleFonts.inter(fontSize: 13, color: AppColors.textSub, height: 1.4),
+            ),
+            const SizedBox(height: 14),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+              decoration: BoxDecoration(
+                color: AppColors.amberContainer,
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(color: AppColors.accentAmber),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Armada Sesi Ini:',
+                        style: GoogleFonts.inter(fontSize: 11, color: AppColors.onAmberContainer, fontWeight: FontWeight.w500),
+                      ),
+                      const SizedBox(height: 2),
+                      Text(
+                        vault.currentTruckWheelType,
+                        style: GoogleFonts.jetBrainsMono(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w800,
+                          color: AppColors.onAmberContainer,
+                        ),
+                      ),
+                    ],
+                  ),
+                  TextButton.icon(
+                    style: TextButton.styleFrom(
+                      foregroundColor: AppColors.accentAmberDark,
+                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                    ),
+                    icon: const Icon(Icons.swap_horiz_rounded, size: 16),
+                    label: const Text('Ganti Roda', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12)),
+                    onPressed: () {
+                      Navigator.pop(ctx);
+                      _showWheelTypeDialog(context, vault);
+                    },
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 12),
+            Container(
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                color: const Color(0xFFFEF2F2),
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(color: const Color(0xFFFCA5A5)),
+              ),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Icon(Icons.info_outline, color: Color(0xFFDC2626), size: 16),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
+                      'PENTING: Jenis armada akan DIKUNCI selama proyek berlangsung dan TIDAK DAPAT DIGANTI di tengah perjalanan.',
+                      style: GoogleFonts.inter(fontSize: 11, color: const Color(0xFF991B1B), height: 1.35, fontWeight: FontWeight.w600),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: Text('Batal', style: GoogleFonts.inter(color: AppColors.textMuted)),
+          ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: AppColors.navyDeep,
+              foregroundColor: Colors.white,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+            ),
+            onPressed: () {
+              Navigator.pop(ctx);
+              if (onProceed != null) {
+                onProceed();
+              }
+            },
+            child: Text('Lanjut Ambil Foto', style: GoogleFonts.inter(fontWeight: FontWeight.w700)),
+          ),
+        ],
+      ),
     );
   }
 }

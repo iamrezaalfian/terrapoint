@@ -72,8 +72,8 @@ router.get('/summary', async (req, res) => {
     if (wheels.length === 0) {
       wheels = [
         { wheel_type: '6 Roda (Dump Truck)', trip_count: parseInt(sum.completed_trips || 0, 10) },
-        { wheel_type: '10 Roda (Tronton)', trip_count: 0 },
-        { wheel_type: '12 Roda (Trailer Heavy)', trip_count: 0 }
+        { wheel_type: '6 Roda Jumbo', trip_count: 0 },
+        { wheel_type: '10 Roda (Tronton)', trip_count: 0 }
       ];
     }
 
