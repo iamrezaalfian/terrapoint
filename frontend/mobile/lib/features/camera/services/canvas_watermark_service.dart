@@ -202,15 +202,17 @@ class CanvasWatermarkService {
       maxWidth: textWidth,
     );
 
-    // 7. Render Picture to PNG/WebP bytes
+    // 7. Render Picture dengan optimasi dimensi (Max width: 1280px untuk kompresi mobile offline)
     final picture = recorder.endRecording();
-    final stampedImage = await picture.toImage(width.toInt(), height.toInt());
+    final targetW = width > 1280 ? 1280 : width.toInt();
+    final targetH = width > 1280 ? ((height * 1280) / width).toInt() : height.toInt();
+    final stampedImage = await picture.toImage(targetW, targetH);
     final byteData = await stampedImage.toByteData(format: ui.ImageByteFormat.png);
     final stampedBytes = byteData!.buffer.asUint8List();
 
     // 8. Save to app documents directory
     final dir = await getApplicationDocumentsDirectory();
-    final filename = 'EVD_${metadata.taskId}_${metadata.checkpointType}_${DateTime.now().millisecondsSinceEpoch}.png';
+    final filename = 'EVD_${metadata.taskId}_${metadata.checkpointType}_${DateTime.now().millisecondsSinceEpoch}.jpg';
     final file = File('${dir.path}/$filename');
     await file.writeAsBytes(stampedBytes);
 

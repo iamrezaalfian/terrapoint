@@ -1,8 +1,11 @@
 import 'dart:async';
+import 'dart:io';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:permission_handler/permission_handler.dart';
 import '../../core/theme/app_colors.dart';
-
 class SplashScreen extends StatefulWidget {
   final VoidCallback onSplashFinished;
 
@@ -36,12 +39,33 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
 
     _animController.forward();
 
-    // Navigate to Login after 1.8s
-    Timer(const Duration(milliseconds: 1800), () {
+    // Minta izin Kamera & GPS Satelit sedini mungkin saat aplikasi dibuka
+    _requestAppPermissionsEarly();
+
+    // Navigate to Login after 2.0s
+    Timer(const Duration(milliseconds: 2000), () {
       if (mounted) {
         widget.onSplashFinished();
       }
     });
+  }
+
+  Future<void> _requestAppPermissionsEarly() async {
+    try {
+      if (!kIsWeb && (Platform.isAndroid || Platform.isIOS)) {
+        await [
+          Permission.camera,
+          Permission.location,
+        ].request();
+
+        LocationPermission geoPerm = await Geolocator.checkPermission();
+        if (geoPerm == LocationPermission.denied) {
+          await Geolocator.requestPermission();
+        }
+      }
+    } catch (e) {
+      debugPrint('[SplashScreen] Early permission check notice: $e');
+    }
   }
 
   @override
